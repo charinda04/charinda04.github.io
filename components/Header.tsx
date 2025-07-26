@@ -11,20 +11,12 @@ export const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    setIsMobileMenuOpen(false); // Close mobile menu after navigation
-  };
-
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
 
   return (
-    <header className="w-full px-6 py-4 border-b border-theme-border">
+    <header className="sticky top-0 z-50 w-full px-6 py-4 border-b border-theme-border bg-theme-bg backdrop-blur-sm">
       <nav className="max-w-6xl mx-auto flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-theme-accent">
@@ -37,18 +29,18 @@ export const Header = () => {
 
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
-          <button
-            onClick={() => scrollToSection("work")}
+          <Link
+            href="/work"
             className="text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium"
           >
             Work
-          </button>
-          <button
-            onClick={() => scrollToSection("bio")}
+          </Link>
+          <Link
+            href="/bio"
             className="text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium"
           >
             Bio
-          </button>
+          </Link>
           <Link
             href="/blogs"
             className="text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium"
@@ -87,20 +79,22 @@ export const Header = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-theme-card-bg border-t border-theme-card-border">
+        <div className="md:hidden bg-theme-bg border-t border-theme-card-border backdrop-blur-sm">
           <div className="max-w-6xl mx-auto px-6 py-4 space-y-4">
-            <button
-              onClick={() => scrollToSection("work")}
-              className="block w-full text-left text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium py-2"
+            <Link
+              href="/work"
+              onClick={closeMobileMenu}
+              className="block text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium py-2"
             >
               Work
-            </button>
-            <button
-              onClick={() => scrollToSection("bio")}
-              className="block w-full text-left text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium py-2"
+            </Link>
+            <Link
+              href="/bio"
+              onClick={closeMobileMenu}
+              className="block text-theme-text hover:text-theme-accent transition-colors duration-200 font-medium py-2"
             >
               Bio
-            </button>
+            </Link>
             <Link
               href="/blogs"
               onClick={closeMobileMenu}
