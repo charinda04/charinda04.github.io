@@ -1,71 +1,107 @@
 import Link from "next/link";
 
-import { Footer, Header, WorkSection } from "@/components";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Header } from "@/components/Header";
+import { WorkSection } from "../../components/WorkSection";
+import { Footer } from "../../components/Footer";
 
 export default function WorkPage() {
   const skills = [
     {
       category: "Frontend Development",
       technologies: [
-        "React", "Next.js", "Vue.js", "TypeScript", "JavaScript",
-        "HTML5", "CSS3", "Tailwind CSS", "SASS/SCSS"
-      ]
+        "React",
+        "Next.js",
+        "Vue.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "SASS/SCSS",
+      ],
     },
     {
       category: "Mobile Development",
       technologies: [
-        "React Native", "Flutter", "iOS (Swift)", "Android (Kotlin)",
-        "Expo", "PhoneGap/Cordova"
-      ]
+        "React Native",
+        "Flutter",
+        "iOS (Swift)",
+        "Android (Kotlin)",
+        "Expo",
+        "PhoneGap/Cordova",
+      ],
     },
     {
       category: "Backend Development",
       technologies: [
-        "Node.js", "Express.js", "Python", "Django", "FastAPI",
-        "PostgreSQL", "MongoDB", "Redis", "GraphQL", "REST APIs"
-      ]
+        "Node.js",
+        "Express.js",
+        "Python",
+        "Django",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis",
+        "GraphQL",
+        "REST APIs",
+      ],
     },
     {
       category: "DevOps & Tools",
       technologies: [
-        "Docker", "AWS", "Vercel", "Git", "GitHub Actions",
-        "Jest", "Cypress", "Webpack", "Vite"
-      ]
-    }
+        "Docker",
+        "AWS",
+        "Vercel",
+        "Git",
+        "GitHub Actions",
+        "Jest",
+        "Cypress",
+        "Webpack",
+        "Vite",
+      ],
+    },
   ];
 
   const achievements = [
     {
       title: "10+ Mobile Apps Published",
-      description: "Successfully launched mobile applications with over 100K+ combined downloads on App Store and Google Play."
+      description:
+        "Successfully launched mobile applications with over 100K+ combined downloads on App Store and Google Play.",
     },
     {
       title: "50+ Web Projects Delivered",
-      description: "Completed diverse web development projects ranging from e-commerce platforms to enterprise dashboards."
+      description:
+        "Completed diverse web development projects ranging from e-commerce platforms to enterprise dashboards.",
     },
     {
       title: "Team Lead Experience",
-      description: "Led development teams of 3-8 developers, mentoring junior developers and managing project timelines."
+      description:
+        "Led development teams of 3-8 developers, mentoring junior developers and managing project timelines.",
     },
     {
       title: "Open Source Contributor",
-      description: "Active contributor to various open-source projects with 500+ GitHub contributions in the past year."
-    }
+      description:
+        "Active contributor to various open-source projects with 500+ GitHub contributions in the past year.",
+    },
   ];
 
   return (
-    <div className="font-sans min-h-screen transition-colors duration-300 bg-theme-bg">
+    <div className="min-h-screen bg-theme-bg">
       <Header />
-      
-      <main className="max-w-6xl mx-auto px-8 py-16">
+
+      <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-theme-3xl font-bold text-theme-text mb-4">
-            My Work & Experience
+        <div className="text-center space-minimal">
+          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">
+            Work & Experience
           </h1>
-          <p className="text-theme-lg text-theme-text-secondary max-w-2xl mx-auto">
-            Passionate about creating exceptional digital experiences through clean code, 
-            innovative solutions, and user-centered design.
+          <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
+            Passionate about creating exceptional digital experiences through
+            clean code, innovative solutions, and user-centered design.
           </p>
         </div>
 
@@ -73,92 +109,100 @@ export default function WorkPage() {
         <WorkSection />
 
         {/* Skills Section */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-theme-3xl font-bold text-theme-text mb-4 relative inline-block">
+        <section className="space-minimal">
+          <div className="text-center mb-8">
+            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
               Technical Skills
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-theme-accent"></div>
             </h2>
+            <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="grid md:grid-cols-2 gap-6">
             {skills.map((skillGroup, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-theme-card-bg border border-theme-card-border rounded-xl p-6 shadow-lg"
+                className="border-theme-border bg-theme-card-bg shadow-minimal"
               >
-                <h3 className="text-theme-xl font-semibold text-theme-text mb-4">
-                  {skillGroup.category}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {skillGroup.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-theme-sm bg-theme-accent/10 text-theme-accent rounded-full border border-theme-accent/20"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-theme-lg text-theme-text">
+                    {skillGroup.category}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    {skillGroup.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
 
         {/* Achievements Section */}
-        <section className="mb-16">
-          <div className="text-center mb-12">
-            <h2 className="text-theme-3xl font-bold text-theme-text mb-4 relative inline-block">
+        <section className="space-minimal">
+          <div className="text-center mb-8">
+            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
               Key Achievements
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-theme-accent"></div>
             </h2>
+            <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
+
+          <div className="grid md:grid-cols-2 gap-6">
             {achievements.map((achievement, index) => (
-              <div
+              <Card
                 key={index}
-                className="bg-theme-card-bg border border-theme-card-border rounded-xl p-6 shadow-lg"
+                className="border-theme-border bg-theme-card-bg shadow-minimal"
               >
-                <h3 className="text-theme-xl font-semibold text-theme-text mb-3">
-                  {achievement.title}
-                </h3>
-                <p className="text-theme-text-secondary leading-relaxed">
-                  {achievement.description}
-                </p>
-              </div>
+                <CardContent className="pt-6">
+                  <h3 className="text-theme-lg font-medium text-theme-text mb-3">
+                    {achievement.title}
+                  </h3>
+                  <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
+                    {achievement.description}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>
 
         {/* Call to Action */}
-        <div className="text-center">
-          <div className="bg-theme-card-bg border border-theme-card-border rounded-xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-theme-2xl font-bold text-theme-text mb-4">
+        <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-2xl mx-auto">
+          <CardContent className="pt-6 text-center space-minimal-sm">
+            <h3 className="text-theme-xl font-medium text-theme-text">
               Let's Work Together
             </h3>
-            <p className="text-theme-text-secondary mb-6">
-              I'm always interested in new opportunities and challenging projects. 
-              Let's discuss how we can bring your ideas to life.
+            <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
+              I'm always interested in new opportunities and challenging
+              projects. Let's discuss how we can bring your ideas to life.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/projects"
-                className="inline-block px-6 py-3 bg-theme-accent text-white font-semibold rounded-lg hover:bg-theme-accent-secondary transition-colors duration-200"
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <Button
+                asChild
+                className="bg-theme-accent hover:bg-theme-accent-secondary text-white"
               >
-                View My Projects
-              </Link>
-              <Link
-                href="/"
-                className="inline-block px-6 py-3 border border-theme-accent text-theme-accent font-semibold rounded-lg hover:bg-theme-accent hover:text-white transition-colors duration-200"
+                <Link href="/projects">View My Projects</Link>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-theme-accent text-theme-accent hover:bg-theme-accent hover:text-white"
               >
-                Get In Touch
-              </Link>
+                <Link href="/">Get In Touch</Link>
+              </Button>
             </div>
-          </div>
-        </div>
+          </CardContent>
+        </Card>
       </main>
-      
+
       <Footer />
     </div>
   );

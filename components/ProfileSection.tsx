@@ -2,30 +2,31 @@
 
 export const ProfileSection = () => {
   return (
-    <div className="w-full max-w-2xl mx-auto mb-12">
+    <div className="w-full max-w-xl mx-auto space-minimal-lg">
       {/* Profile Picture and Name */}
-      <div className="text-center mb-8">
-        <div className="relative inline-block mb-6">
-          <img
-            src="/profile.jpg"
-            alt="Charinda Dissanayake"
-            className="w-32 h-32 rounded-full object-cover border-4 border-theme-accent shadow-lg"
-          />
+      <div className="text-center space-minimal">
+        <div className="flex justify-center mb-6">
+          <div className="w-24 h-24 border-2 border-theme-border shadow-minimal rounded-full bg-theme-accent flex items-center justify-center">
+            <span className="text-theme-bg text-theme-lg font-semibold">CD</span>
+          </div>
         </div>
         
-        <h1 className="font-bold mb-2 text-theme-3xl text-theme-text">
-          Charinda Dissanayake
-        </h1>
-        
-        <h2 className="font-medium text-theme-xl text-theme-text-accent">
-          Software Engineer ( Web / Mobile )
-        </h2>
+        <div className="space-y-2">
+          <h1 className="font-semibold text-theme-3xl text-theme-text tracking-tight">
+            Charinda Dissanayake
+          </h1>
+          
+          <p className="text-theme-lg text-theme-text-secondary">
+            Software Engineer • Web & Mobile
+          </p>
+        </div>
       </div>
 
-      {/* Intro Text Box */}
-      <div className="rounded-xl p-6 text-center shadow-lg border border-theme-card-border bg-theme-card-bg">
-        <p className="leading-relaxed text-theme-lg text-theme-text">
-          Hello, I'm a mobile app developer based in Sri Lanka!
+      {/* Intro Text Card */}
+      <div className="border-theme-border bg-theme-card-bg shadow-minimal border rounded-xl p-6">
+        <p className="text-center leading-relaxed text-theme-base text-theme-text">
+          Hello! I'm a passionate software engineer based in Sri Lanka, specializing in creating 
+          beautiful and functional web and mobile applications.
         </p>
       </div>
     </div>

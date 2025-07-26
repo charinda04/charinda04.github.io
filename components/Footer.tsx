@@ -1,61 +1,61 @@
 "use client";
 
-import {
-  BlueSkyIcon,
-  FacebookIcon,
-  GitHubIcon,
-  LinkedInIcon,
-  ThreadsIcon,
-  TwitterIcon,
-} from "@/assets/icons";
+// import {
+//   BlueSkyIcon,
+//   FacebookIcon,
+//   GitHubIcon,
+//   LinkedInIcon,
+//   ThreadsIcon,
+//   TwitterIcon,
+// } from "@/assets/icons";
 
 export const Footer = () => {
   const socialLinks = [
     {
       name: "Facebook",
       url: "https://facebook.com/charinda",
-      icon: <FacebookIcon />,
+      icon: "F",
     },
     {
       name: "Twitter",
       url: "https://twitter.com/charinda",
-      icon: <TwitterIcon />,
+      icon: "T",
     },
     {
       name: "LinkedIn",
       url: "https://linkedin.com/in/charinda",
-      icon: <LinkedInIcon />,
+      icon: "L",
     },
     {
       name: "GitHub",
       url: "https://github.com/charinda",
-      icon: <GitHubIcon />,
+      icon: "G",
     },
     {
       name: "BlueSky",
       url: "https://bsky.app/profile/charinda",
-      icon: <BlueSkyIcon />,
+      icon: "B",
     },
     {
       name: "Threads",
       url: "https://threads.net/@charinda",
-      icon: <ThreadsIcon />,
+      icon: "Th",
     },
   ];
 
   return (
-    <footer className="w-full bg-theme-card-bg border-t border-theme-card-border py-8 mt-16">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="flex flex-col items-center space-y-6">
+    <footer className="w-full border-t border-theme-border bg-theme-bg py-6">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex flex-col items-center space-y-4">
           {/* Social Media Links */}
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex items-center gap-3">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-theme-accent/10 text-theme-text-secondary hover:bg-theme-accent hover:text-white transition-all duration-300 hover:scale-110"
+                className="w-8 h-8 flex items-center justify-center rounded-md text-theme-text-secondary hover:text-theme-text hover:bg-theme-button-bg transition-colors duration-200"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -65,11 +65,8 @@ export const Footer = () => {
           
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-theme-text-secondary text-theme-sm">
-              © 2025 Charinda Dissanayake. All rights reserved.
-            </p>
-            <p className="text-theme-text-secondary text-theme-xs mt-1">
-              Built with Next.js & Tailwind CSS
+            <p className="text-theme-text-secondary text-theme-xs">
+              © 2025 Charinda Dissanayake
             </p>
           </div>
         </div>

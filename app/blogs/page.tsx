@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Footer, Header } from "@/components";
 
 export default function BlogsPage() {
@@ -55,79 +59,82 @@ export default function BlogsPage() {
   ];
 
   return (
-    <div className="font-sans min-h-screen transition-colors duration-300 bg-theme-bg">
+    <div className="min-h-screen bg-theme-bg">
       <Header />
       
-      <main className="max-w-6xl mx-auto px-8 py-16">
+      <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-theme-3xl font-bold text-theme-text mb-4">
+        <div className="text-center space-minimal">
+          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">
             Blog Posts
           </h1>
-          <p className="text-theme-lg text-theme-text-secondary max-w-2xl mx-auto">
+          <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
             Thoughts, tutorials, and insights about web development, mobile apps, and software engineering.
           </p>
+          <Separator className="w-12 mx-auto bg-theme-accent" />
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {blogPosts.map((post) => (
-            <article
-              key={post.id}
-              className="bg-theme-card-bg border border-theme-card-border rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="mb-4">
-                <h2 className="text-theme-xl font-semibold text-theme-text mb-3 line-clamp-2">
+            <Card key={post.id} className="border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300">
+              <CardHeader className="pb-4">
+                <CardTitle className="text-theme-lg font-medium text-theme-text leading-tight">
                   {post.title}
-                </h2>
-                <p className="text-theme-text-secondary leading-relaxed line-clamp-3">
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
                   {post.excerpt}
                 </p>
-              </div>
-              
-              <div className="flex flex-wrap gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 text-theme-xs bg-theme-accent/10 text-theme-accent rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              
-              <div className="flex items-center justify-between text-theme-sm text-theme-text-secondary">
-                <span>{post.date}</span>
-                <span>{post.readTime}</span>
-              </div>
-              
-              <Link
-                href={`/blogs/${post.id}`}
-                className="inline-block mt-4 text-theme-accent hover:text-theme-accent-secondary font-medium transition-colors duration-200"
-              >
-                Read More →
-              </Link>
-            </article>
+                
+                <div className="flex flex-wrap gap-1">
+                  {post.tags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="secondary"
+                      className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 text-theme-xs"
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+                
+                <div className="flex items-center justify-between text-theme-xs text-theme-text-secondary pt-2">
+                  <span>{post.date}</span>
+                  <span>{post.readTime}</span>
+                </div>
+                
+                <Button 
+                  asChild 
+                  variant="ghost" 
+                  className="w-full justify-start p-0 h-auto text-theme-accent hover:text-theme-accent-secondary hover:bg-transparent"
+                >
+                  <Link href={`/blogs/${post.id}`}>
+                    Read More →
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
           ))}
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-theme-card-bg border border-theme-card-border rounded-xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-theme-2xl font-bold text-theme-text mb-4">
+        <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-2xl mx-auto">
+          <CardContent className="pt-6 text-center space-minimal-sm">
+            <h3 className="text-theme-xl font-medium text-theme-text">
               Want to stay updated?
             </h3>
-            <p className="text-theme-text-secondary mb-6">
+            <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
               Follow me on social media for the latest posts and insights about web development.
             </p>
-            <Link
-              href="/"
-              className="inline-block px-6 py-3 bg-theme-accent text-white font-semibold rounded-lg hover:bg-theme-accent-secondary transition-colors duration-200"
-            >
-              Back to Home
-            </Link>
-          </div>
-        </div>
+            <Button asChild className="bg-theme-accent hover:bg-theme-accent-secondary text-white">
+              <Link href="/">
+                Back to Home
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
       </main>
       
       <Footer />
