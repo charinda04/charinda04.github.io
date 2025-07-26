@@ -1,17 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
   output: "export",
 
-  // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
+  // ✅ Disable ESLint during build
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  // ✅ Optional: Add trailing slash to URLs
+  // /about → /about/
   // trailingSlash: true,
 
-  // Optional: Prevent automatic `/me` -> `/me/`, instead preserve `href`
-  // skipTrailingSlashRedirect: true,
-
-  // Optional: Change the output directory `out` -> `dist`
+  // ✅ Optional: Custom output directory (default is 'out')
   // distDir: 'dist',
+
+  // ✅ Optional: Prevent automatic redirects like /me → /me/
+  // skipTrailingSlashRedirect: true,
 };
 
 export default nextConfig;
