@@ -1,11 +1,4 @@
-"use client";
-
 import { CountdownTimer } from "@/components/CountdownTimer";
-import { Header } from "@/components/Header";
-import { ProfileSection } from "@/components/ProfileSection";
-import { WorkSection } from "@/components/WorkSection";
-import { BioSection } from "@/components/BioSection";
-import { Footer } from "@/components/Footer";
 
 // Work in Progress Component
 function WorkInProgressNotice() {
@@ -24,7 +17,7 @@ function WorkInProgressNotice() {
 export default function Home() {
   return (
     <div className="font-sans min-h-screen transition-colors duration-300 bg-theme-bg">
-      <Header />
+      {/* <Header /> */}
 
       <main className="flex flex-col items-center px-8 py-16">
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
