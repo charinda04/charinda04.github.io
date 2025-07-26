@@ -1,37 +1,29 @@
-interface HeaderProps {
-  isDark: boolean;
-  toggleTheme: () => void;
-}
+"use client";
+
+import { useTheme } from "next-themes";
 
 // Navigation Header Component
-export const Header = ({ isDark, toggleTheme }: HeaderProps) => {
+export const Header = () => {
+  const { theme, setTheme } = useTheme();
   return (
-    <header className="w-full px-6 py-4 border-b border-gray-200/20">
+    <header className="w-full px-6 py-4 border-b border-theme-border">
       <nav className="max-w-6xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-lg">L</span>
+          <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-theme-accent">
+            <span className="font-bold text-white text-theme-lg">L</span>
           </div>
-          <h1
-            className={`text-xl font-bold ${
-              isDark ? "text-white" : "text-gray-800"
-            }`}
-          >
+          <h1 className="font-bold text-theme-xl text-theme-text">
             Launch Timer
           </h1>
         </div>
 
         {/* Theme Toggle */}
         <button
-          onClick={toggleTheme}
-          className={`p-2 rounded-lg transition-colors duration-200 ${
-            isDark
-              ? "bg-gray-700 hover:bg-gray-600 text-yellow-400"
-              : "bg-white hover:bg-gray-100 text-gray-600"
-          }`}
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="p-2 rounded-lg transition-colors duration-200 bg-theme-button-bg text-theme-button-text hover:bg-theme-button-hover"
           aria-label="Toggle theme"
         >
-          {isDark ? (
+          {theme === "dark" ? (
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
               <path
                 fillRule="evenodd"

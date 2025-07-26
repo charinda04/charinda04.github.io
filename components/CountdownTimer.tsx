@@ -2,12 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-interface CountdownTimerProps {
-  isDark: boolean;
-}
-
 // Countdown Timer Component
-export const CountdownTimer = ({ isDark }: CountdownTimerProps) => {
+export const CountdownTimer = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -49,35 +45,19 @@ export const CountdownTimer = ({ isDark }: CountdownTimerProps) => {
 
   return (
     <div className="text-center mb-12">
-      <h2
-        className={`text-3xl font-bold mb-8 ${
-          isDark ? "text-white" : "text-gray-800"
-        }`}
-      >
+      <h2 className="font-bold mb-8 text-theme-3xl text-theme-text">
         Launch Countdown
       </h2>
       <div className="flex gap-6 justify-center">
         {Object.entries(timeLeft).map(([unit, value]) => (
           <div
             key={unit}
-            className={`px-6 py-4 rounded-xl text-center min-w-[80px] shadow-lg ${
-              isDark
-                ? "bg-gray-800/50 border border-gray-700"
-                : "bg-white/70 border border-gray-200"
-            }`}
+            className="px-6 py-4 rounded-xl text-center min-w-[80px] shadow-lg border border-theme-card-border bg-theme-card-bg"
           >
-            <div
-              className={`text-3xl font-bold font-mono ${
-                isDark ? "text-white" : "text-gray-800"
-              }`}
-            >
+            <div className="font-bold font-mono text-theme-3xl text-theme-text">
               {value}
             </div>
-            <div
-              className={`text-sm font-medium mt-1 ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
-            >
+            <div className="font-medium mt-1 text-theme-sm text-theme-text-secondary">
               {unit.toUpperCase()}
             </div>
           </div>

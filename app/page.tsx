@@ -2,30 +2,16 @@
 
 import { CountdownTimer } from "@/components/CountdownTimer";
 import { Header } from "@/components/Header";
-import { useState, useEffect } from "react";
+import { ProfileSection } from "@/components/ProfileSection";
 
 // Work in Progress Component
-interface WorkInProgressNoticeProps {
-  isDark: boolean;
-}
-
-function WorkInProgressNotice({ isDark }: WorkInProgressNoticeProps) {
+function WorkInProgressNotice() {
   return (
-    <div
-      className={`rounded-xl p-6 text-center max-w-md shadow-lg ${
-        isDark
-          ? "bg-yellow-900/30 border border-yellow-700/50"
-          : "bg-yellow-50/80 border border-yellow-200"
-      }`}
-    >
-      <p
-        className={`font-semibold text-lg mb-2 ${
-          isDark ? "text-yellow-300" : "text-yellow-800"
-        }`}
-      >
+    <div className="rounded-xl p-6 text-center max-w-md shadow-lg border border-theme-warning-border bg-theme-warning-bg">
+      <p className="font-semibold mb-2 text-theme-lg text-theme-warning-text">
         🚧 Work in Progress
       </p>
-      <p className={`${isDark ? "text-yellow-200" : "text-yellow-700"}`}>
+      <p className="text-theme-warning-text-secondary">
         This application is currently under development. Stay tuned for updates!
       </p>
     </div>
@@ -33,22 +19,14 @@ function WorkInProgressNotice({ isDark }: WorkInProgressNoticeProps) {
 }
 
 export default function Home() {
-  const [isDark, setIsDark] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
-
   return (
-    <div
-      className="font-sans min-h-screen transition-colors duration-300"
-      style={{ backgroundColor: isDark ? "#202023" : "#f0e7db" }}
-    >
-      <Header isDark={isDark} toggleTheme={toggleTheme} />
+    <div className="font-sans min-h-screen transition-colors duration-300 bg-theme-bg">
+      <Header />
 
       <main className="flex flex-col items-center justify-center px-8 py-16 min-h-[calc(100vh-80px)]">
-        <CountdownTimer isDark={isDark} />
-        <WorkInProgressNotice isDark={isDark} />
+        <ProfileSection />
+        <CountdownTimer />
+        <WorkInProgressNotice />
       </main>
     </div>
   );
