@@ -28,16 +28,16 @@ export default function Home() {
 
       <main className="flex flex-col items-center px-8 py-16">
         <div className="flex flex-col items-center justify-center min-h-[calc(100vh-80px)]">
-          <ProfileSection />
+          {/* <ProfileSection /> */}
           <CountdownTimer />
           <WorkInProgressNotice />
         </div>
-        
-        <WorkSection />
-        <BioSection />
+
+        {/* <WorkSection />
+        <BioSection /> */}
       </main>
-      
-      <Footer />
+
+      {/* <Footer /> */}
     </div>
   );
 }
