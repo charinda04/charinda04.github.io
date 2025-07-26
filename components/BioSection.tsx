@@ -1,58 +1,8 @@
 "use client";
 
+import { BIO_TIMELINE } from "@/constants";
+
 export const BioSection = () => {
-  const timelineItems = [
-    {
-      year: "1990",
-      title: "Born in Colombo, Sri Lanka",
-      description: "Started life's journey in the beautiful island nation of Sri Lanka."
-    },
-    {
-      year: "1995",
-      title: "First Computer Experience",
-      description: "Got fascinated with computers and technology at a young age."
-    },
-    {
-      year: "2008",
-      title: "High School Graduation",
-      description: "Completed secondary education with focus on mathematics and science."
-    },
-    {
-      year: "2012",
-      title: "University Degree",
-      description: "Graduated with Bachelor's in Computer Science from University of Colombo."
-    },
-    {
-      year: "2016",
-      title: "Started Professional Career",
-      description: "Began working as a Junior Developer, diving into web development."
-    },
-    {
-      year: "2018",
-      title: "Mobile Development Focus",
-      description: "Transitioned to mobile app development, specializing in React Native."
-    },
-    {
-      year: "2020",
-      title: "Full Stack Expertise",
-      description: "Expanded skills to full-stack development with modern frameworks."
-    },
-    {
-      year: "2022",
-      title: "Senior Developer Role",
-      description: "Promoted to senior position, leading development teams and projects."
-    },
-    {
-      year: "2024",
-      title: "Freelance Consultant",
-      description: "Started consulting for startups and established companies."
-    },
-    {
-      year: "2025",
-      title: "Current Focus",
-      description: "Building innovative mobile and web solutions while mentoring developers."
-    }
-  ];
 
   return (
     <section className="w-full max-w-4xl mx-auto mb-16 px-4">
@@ -68,7 +18,7 @@ export const BioSection = () => {
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-theme-border"></div>
         
         <div className="space-y-8">
-          {timelineItems.map((item, index) => (
+          {BIO_TIMELINE.map((item, index) => (
             <div key={index} className="relative flex items-start">
               {/* Timeline dot */}
               <div className="absolute left-4 w-4 h-4 bg-theme-accent rounded-full border-4 border-theme-bg"></div>

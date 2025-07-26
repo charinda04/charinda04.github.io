@@ -7,89 +7,11 @@ import { Separator } from "@/components/ui/separator";
 import { GitHubIcon } from "@/assets/icons";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { PROJECTS, PROJECT_STATUS_VARIANTS } from "@/constants";
 
 export default function ProjectsPage() {
-  const projects = [
-    {
-      id: 1,
-      title: "ECommerce Mobile App",
-      description:
-        "A full-featured e-commerce mobile application built with React Native, featuring user authentication, product catalog, cart management, and payment integration.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React Native", "TypeScript", "Redux Toolkit", "Firebase"],
-      githubUrl: "https://github.com/charinda/ecommerce-app",
-      liveUrl:
-        "https://play.google.com/store/apps/details?id=com.charinda.ecommerce",
-      status: "Live",
-    },
-    {
-      id: 2,
-      title: "Task Management Dashboard",
-      description:
-        "A comprehensive project management tool with team collaboration features, real-time updates, and advanced analytics built with Next.js and Node.js.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "Node.js", "PostgreSQL", "Socket.io"],
-      githubUrl: "https://github.com/charinda/task-dashboard",
-      liveUrl: "https://taskmanager.charinda.dev",
-      status: "Live",
-    },
-    {
-      id: 3,
-      title: "Weather Forecast App",
-      description:
-        "A beautiful weather application with location-based forecasts, interactive maps, and weather alerts. Features a clean, responsive design.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "OpenWeather API", "Tailwind CSS", "PWA"],
-      githubUrl: "https://github.com/charinda/weather-app",
-      liveUrl: "https://weather.charinda.dev",
-      status: "Live",
-    },
-    {
-      id: 4,
-      title: "Cryptocurrency Tracker",
-      description:
-        "Real-time cryptocurrency tracking application with portfolio management, price alerts, and detailed market analysis charts.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Vue.js", "Chart.js", "CoinGecko API", "Vuex"],
-      githubUrl: "https://github.com/charinda/crypto-tracker",
-      liveUrl: "https://crypto.charinda.dev",
-      status: "Live",
-    },
-    {
-      id: 5,
-      title: "Social Media Analytics Tool",
-      description:
-        "A comprehensive analytics dashboard for social media managers to track engagement, growth, and performance across multiple platforms.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "D3.js", "Express.js", "MongoDB"],
-      githubUrl: "https://github.com/charinda/social-analytics",
-      liveUrl: null,
-      status: "In Development",
-    },
-    {
-      id: 6,
-      title: "Recipe Sharing Platform",
-      description:
-        "A community-driven platform where users can share, discover, and rate recipes. Features advanced search, meal planning, and shopping lists.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Flutter", "Django", "PostgreSQL", "AWS S3"],
-      githubUrl: "https://github.com/charinda/recipe-platform",
-      liveUrl: null,
-      status: "Coming Soon",
-    },
-  ];
-
   const getStatusVariant = (status: string) => {
-    switch (status) {
-      case "Live":
-        return "default";
-      case "In Development":
-        return "secondary";
-      case "Coming Soon":
-        return "outline";
-      default:
-        return "secondary";
-    }
+    return PROJECT_STATUS_VARIANTS[status as keyof typeof PROJECT_STATUS_VARIANTS] || "secondary";
   };
 
   return (
@@ -111,7 +33,7 @@ export default function ProjectsPage() {
 
         {/* Projects Grid */}
         <div className="grid gap-6 md:grid-cols-2">
-          {projects.map((project) => (
+          {PROJECTS.map((project) => (
             <Card
               key={project.id}
               className="border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden"

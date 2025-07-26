@@ -96,13 +96,13 @@ export const Header = () => {
             >
               Bio
             </Link>
-            <Link
+            {/* <Link
               href="/blogs"
               onClick={closeMobileMenu}
               className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
             >
               Blogs
-            </Link>
+            </Link> */}
             <Link
               href="/projects"
               onClick={closeMobileMenu}

@@ -7,87 +7,9 @@ import { Separator } from "@/components/ui/separator";
 import { Header } from "@/components/Header";
 import { WorkSection } from "../../components/WorkSection";
 import { Footer } from "../../components/Footer";
+import { TECHNICAL_SKILLS, ACHIEVEMENTS } from "@/constants";
 
 export default function WorkPage() {
-  const skills = [
-    {
-      category: "Frontend Development",
-      technologies: [
-        "React",
-        "Next.js",
-        "Vue.js",
-        "TypeScript",
-        "JavaScript",
-        "HTML5",
-        "CSS3",
-        "Tailwind CSS",
-        "SASS/SCSS",
-      ],
-    },
-    {
-      category: "Mobile Development",
-      technologies: [
-        "React Native",
-        "Flutter",
-        "iOS (Swift)",
-        "Android (Kotlin)",
-        "Expo",
-        "PhoneGap/Cordova",
-      ],
-    },
-    {
-      category: "Backend Development",
-      technologies: [
-        "Node.js",
-        "Express.js",
-        "Python",
-        "Django",
-        "FastAPI",
-        "PostgreSQL",
-        "MongoDB",
-        "Redis",
-        "GraphQL",
-        "REST APIs",
-      ],
-    },
-    {
-      category: "DevOps & Tools",
-      technologies: [
-        "Docker",
-        "AWS",
-        "Vercel",
-        "Git",
-        "GitHub Actions",
-        "Jest",
-        "Cypress",
-        "Webpack",
-        "Vite",
-      ],
-    },
-  ];
-
-  const achievements = [
-    {
-      title: "10+ Mobile Apps Published",
-      description:
-        "Successfully launched mobile applications with over 100K+ combined downloads on App Store and Google Play.",
-    },
-    {
-      title: "50+ Web Projects Delivered",
-      description:
-        "Completed diverse web development projects ranging from e-commerce platforms to enterprise dashboards.",
-    },
-    {
-      title: "Team Lead Experience",
-      description:
-        "Led development teams of 3-8 developers, mentoring junior developers and managing project timelines.",
-    },
-    {
-      title: "Open Source Contributor",
-      description:
-        "Active contributor to various open-source projects with 500+ GitHub contributions in the past year.",
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-theme-bg">
@@ -118,7 +40,7 @@ export default function WorkPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {skills.map((skillGroup, index) => (
+            {TECHNICAL_SKILLS.map((skillGroup, index) => (
               <Card
                 key={index}
                 className="border-theme-border bg-theme-card-bg shadow-minimal"
@@ -156,7 +78,7 @@ export default function WorkPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {achievements.map((achievement, index) => (
+            {ACHIEVEMENTS.map((achievement, index) => (
               <Card
                 key={index}
                 className="border-theme-border bg-theme-card-bg shadow-minimal"

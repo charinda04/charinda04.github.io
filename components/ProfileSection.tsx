@@ -1,5 +1,7 @@
 "use client";
 
+import { PERSONAL_INFO } from "@/constants";
+
 export const ProfileSection = () => {
   return (
     <div className="w-full max-w-xl mx-auto space-minimal-lg">
@@ -7,17 +9,17 @@ export const ProfileSection = () => {
       <div className="text-center space-minimal">
         <div className="flex justify-center mb-6">
           <div className="w-24 h-24 border-2 border-theme-border shadow-minimal rounded-full bg-theme-accent flex items-center justify-center">
-            <span className="text-theme-bg text-theme-lg font-semibold">CD</span>
+            <span className="text-theme-bg text-theme-lg font-semibold">{PERSONAL_INFO.initials}</span>
           </div>
         </div>
         
         <div className="space-y-2">
           <h1 className="font-semibold text-theme-3xl text-theme-text tracking-tight">
-            Charinda Dissanayake
+            {PERSONAL_INFO.name}
           </h1>
           
           <p className="text-theme-lg text-theme-text-secondary">
-            Software Engineer • Web & Mobile
+            {PERSONAL_INFO.title}
           </p>
         </div>
       </div>
@@ -25,8 +27,7 @@ export const ProfileSection = () => {
       {/* Intro Text Card */}
       <div className="border-theme-border bg-theme-card-bg shadow-minimal border rounded-xl p-6">
         <p className="text-center leading-relaxed text-theme-base text-theme-text">
-          Hello! I'm a passionate software engineer based in Sri Lanka, specializing in creating 
-          beautiful and functional web and mobile applications.
+          {PERSONAL_INFO.intro}
         </p>
       </div>
     </div>

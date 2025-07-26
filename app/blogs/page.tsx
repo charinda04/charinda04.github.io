@@ -4,7 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Footer, Header } from "@/components";
+import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 
 export default function BlogsPage() {
   const blogPosts = [

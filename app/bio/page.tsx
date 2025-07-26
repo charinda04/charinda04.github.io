@@ -7,76 +7,9 @@ import { Separator } from "@/components/ui/separator";
 import { Header } from "../../components/Header";
 import { BioSection } from "../../components/BioSection";
 import { Footer } from "../../components/Footer";
+import { PERSONAL_INFO, VALUES_AND_PHILOSOPHY, INTERESTS } from "@/constants";
 
 export default function BioPage() {
-  const personalInfo = {
-    location: "Colombo, Sri Lanka",
-    education: "B.Sc. Computer Science, University of Colombo",
-    languages: ["English", "Sinhala", "Tamil"],
-    hobbies: ["Photography", "Travel", "Open Source", "Tech Blogging"],
-  };
-
-  const values = [
-    {
-      title: "Continuous Learning",
-      description:
-        "I believe in staying updated with the latest technologies and best practices. The tech world evolves rapidly, and I'm committed to growing with it.",
-    },
-    {
-      title: "Quality Over Quantity",
-      description:
-        "I focus on writing clean, maintainable code that stands the test of time. Every line of code should have a purpose and contribute to the overall solution.",
-    },
-    {
-      title: "User-Centric Design",
-      description:
-        "Technology should serve people, not the other way around. I always keep the end user's experience at the forefront of every development decision.",
-    },
-    {
-      title: "Collaborative Spirit",
-      description:
-        "Great software is built by great teams. I value open communication, knowledge sharing, and learning from diverse perspectives.",
-    },
-  ];
-
-  const interests = [
-    {
-      category: "Technology Trends",
-      items: [
-        "AI/Machine Learning",
-        "Web3 & Blockchain",
-        "IoT Development",
-        "Cloud Computing",
-      ],
-    },
-    {
-      category: "Development Philosophy",
-      items: [
-        "Clean Architecture",
-        "Test-Driven Development",
-        "Agile Methodologies",
-        "DevOps Culture",
-      ],
-    },
-    {
-      category: "Community Involvement",
-      items: [
-        "Tech Meetups",
-        "Code Reviews",
-        "Mentoring",
-        "Open Source Contributions",
-      ],
-    },
-    {
-      category: "Personal Growth",
-      items: [
-        "Public Speaking",
-        "Technical Writing",
-        "Team Leadership",
-        "Product Strategy",
-      ],
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-theme-bg">
@@ -143,7 +76,7 @@ export default function BioPage() {
                   Location
                 </h3>
                 <p className="text-theme-xs text-theme-text-secondary">
-                  {personalInfo.location}
+                  {PERSONAL_INFO.location}
                 </p>
               </CardContent>
             </Card>
@@ -155,7 +88,7 @@ export default function BioPage() {
                   Education
                 </h3>
                 <p className="text-theme-xs text-theme-text-secondary">
-                  {personalInfo.education}
+                  {PERSONAL_INFO.education}
                 </p>
               </CardContent>
             </Card>
@@ -167,7 +100,7 @@ export default function BioPage() {
                   Languages
                 </h3>
                 <p className="text-theme-xs text-theme-text-secondary">
-                  {personalInfo.languages.join(", ")}
+                  {PERSONAL_INFO.languages.join(", ")}
                 </p>
               </CardContent>
             </Card>
@@ -179,7 +112,7 @@ export default function BioPage() {
                   Hobbies
                 </h3>
                 <p className="text-theme-xs text-theme-text-secondary">
-                  {personalInfo.hobbies.join(", ")}
+                  {PERSONAL_INFO.hobbies.join(", ")}
                 </p>
               </CardContent>
             </Card>
@@ -199,7 +132,7 @@ export default function BioPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {values.map((value, index) => (
+            {VALUES_AND_PHILOSOPHY.map((value, index) => (
               <Card
                 key={index}
                 className="border-theme-border bg-theme-card-bg shadow-minimal"
@@ -227,7 +160,7 @@ export default function BioPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {interests.map((interest, index) => (
+            {INTERESTS.map((interest, index) => (
               <Card
                 key={index}
                 className="border-theme-border bg-theme-card-bg shadow-minimal"
