@@ -6,10 +6,12 @@ declare global {
   }
 }
 
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+
 // Track page views
 export const trackPageView = (url: string, title: string) => {
-  if (typeof window.gtag !== 'undefined') {
-    window.gtag('config', 'GA_MEASUREMENT_ID', {
+  if (typeof window.gtag !== 'undefined' && GA_ID) {
+    window.gtag('config', GA_ID, {
       page_title: title,
       page_location: url,
     });
@@ -18,7 +20,7 @@ export const trackPageView = (url: string, title: string) => {
 
 // Track custom events
 export const trackEvent = (eventName: string, parameters?: any) => {
-  if (typeof window.gtag !== 'undefined') {
+  if (typeof window.gtag !== 'undefined' && GA_ID) {
     window.gtag('event', eventName, parameters);
   }
 };
