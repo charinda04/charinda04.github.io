@@ -9,7 +9,7 @@ export const ProfileSection = () => {
       {/* Profile Picture and Name */}
       <div className="text-center space-minimal">
         <div className="flex justify-center mb-6">
-          <div className="w-32 h-32 border-2 border-theme-border shadow-minimal rounded-full overflow-hidden bg-theme-accent">
+          <div className="w-52 h-52 border-2 border-theme-border shadow-minimal rounded-full overflow-hidden bg-theme-accent">
             <Image
               src="/assets/images/profile.jpg"
               alt={`${PERSONAL_INFO.name} profile picture`}

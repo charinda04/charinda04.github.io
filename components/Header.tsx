@@ -61,10 +61,14 @@ export const Header = () => {
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-8 h-8 p-0 hover:bg-theme-button-bg rounded-md transition-colors"
+            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-sm hover:shadow-md dark:border-gray-600"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <SunIcon /> : <MoonIcon />}
+            {theme === "dark" ? (
+              <SunIcon className="w-5 h-5 text-yellow-400" />
+            ) : (
+              <MoonIcon />
+            )}
           </button>
 
           {/* Mobile Menu Button */}

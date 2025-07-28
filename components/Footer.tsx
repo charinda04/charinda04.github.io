@@ -13,32 +13,32 @@ export const Footer = () => {
   const socialLinks = [
     {
       name: "Facebook",
-      url: "https://facebook.com/charinda",
+      url: "https://web.facebook.com/charinda1/",
       icon: "F",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/charinda",
+      url: "https://x.com/Charinda_D",
       icon: "T",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/charinda",
+      url: "https://www.linkedin.com/in/charinda-dissanayake/",
       icon: "L",
     },
     {
       name: "GitHub",
-      url: "https://github.com/charinda",
+      url: "https://github.com/charinda04",
       icon: "G",
     },
     {
       name: "BlueSky",
-      url: "https://bsky.app/profile/charinda",
+      url: "https://bsky.app/profile/charinda.bsky.social",
       icon: "B",
     },
     {
       name: "Threads",
-      url: "https://threads.net/@charinda",
+      url: "https://www.threads.com/@charinda_jayath",
       icon: "Th",
     },
   ];
@@ -62,7 +62,7 @@ export const Footer = () => {
               </a>
             ))}
           </div>
-          
+
           {/* Copyright */}
           <div className="text-center">
             <p className="text-theme-text-secondary text-theme-xs">
