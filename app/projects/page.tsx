@@ -1,21 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { GitHubIcon } from "@/assets/icons";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
-import { PROJECTS, WORK_PROJECTS, PROJECT_STATUS_VARIANTS } from "@/constants";
+import { WorkProjectCard } from "../../components/WorkProjectCard";
+import { PersonalProjectCard } from "../../components/PersonalProjectCard";
+import { PROJECTS, WORK_PROJECTS } from "@/constants";
 
 export default function ProjectsPage() {
   const [activeSection, setActiveSection] = useState<"work" | "personal">("work");
-
-  const getStatusVariant = (status: string) => {
-    return PROJECT_STATUS_VARIANTS[status as keyof typeof PROJECT_STATUS_VARIANTS] || "secondary";
-  };
 
   return (
     <div className="min-h-screen bg-theme-bg flex flex-col page-transition">
@@ -73,126 +67,21 @@ export default function ProjectsPage() {
           {activeSection === "work" ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {WORK_PROJECTS.map((project, index) => (
-                <Card
+                <WorkProjectCard
                   key={project.id}
-                  className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
-                >
-                  {/* Project Image/Icon */}
-                  <div className="h-40 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border relative">
-                    <div className="text-theme-accent text-3xl font-bold">{project.title.charAt(0)}</div>
-                    <div className="absolute top-3 right-3 text-theme-xs text-theme-text-secondary bg-theme-bg/80 px-2 py-1 rounded">
-                      {project.company}
-                    </div>
-                  </div>
-
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-theme-lg font-medium text-theme-text leading-tight mb-1">
-                      {project.title}
-                    </CardTitle>
-                    <div className="text-theme-sm font-medium text-theme-accent mb-1">{project.role}</div>
-                    <div className="text-theme-xs text-theme-text-secondary">{project.period}</div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-                    {/* Achievements */}
-                    <div className="space-y-2">
-                      {project.achievements.map((achievement, index) => (
-                        <div key={index} className="flex items-start gap-2">
-                          <div className="w-1.5 h-1.5 bg-theme-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-theme-xs text-theme-text-secondary leading-relaxed">{achievement}</p>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-1 pt-2">
-                      {project.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="bg-theme-text text-theme-bg hover:bg-theme-accent hover:text-theme-bg text-theme-xs px-2 py-1"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                  project={project}
+                  index={index}
+                />
               ))}
             </div>
           ) : (
             <div className="grid gap-6 md:grid-cols-2">
               {PROJECTS.map((project, index) => (
-                <Card
+                <PersonalProjectCard
                   key={project.id}
-                  className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
-                >
-                  {/* Project Image/Icon */}
-                  <div className="h-32 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border">
-                    <div className="text-theme-accent text-2xl font-semibold">{project.title.charAt(0)}</div>
-                  </div>
-
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <CardTitle className="text-theme-lg font-medium text-theme-text leading-tight">
-                        {project.title}
-                      </CardTitle>
-                      <Badge variant={getStatusVariant(project.status) as any} className="ml-2 shrink-0">
-                        {project.status}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-4">
-                    <p className="text-theme-sm text-theme-text-secondary leading-relaxed">{project.description}</p>
-
-                    {/* Technologies */}
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech) => (
-                        <Badge
-                          key={tech}
-                          variant="secondary"
-                          className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 text-theme-xs"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-
-                    {/* Project Links */}
-                    <div className="flex items-center gap-4 pt-2">
-                      <Button
-                        asChild
-                        variant="ghost"
-                        size="sm"
-                        className="p-0 h-auto text-theme-text-secondary hover:text-theme-accent hover:bg-transparent"
-                      >
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-2"
-                        >
-                          <GitHubIcon className="w-4 h-4" />
-                          <span className="text-theme-sm">Code</span>
-                        </a>
-                      </Button>
-
-                      {project.liveUrl && (
-                        <Button
-                          asChild
-                          variant="ghost"
-                          size="sm"
-                          className="p-0 h-auto text-theme-accent hover:text-theme-accent-secondary hover:bg-transparent"
-                        >
-                          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-theme-sm">
-                            Live Demo →
-                          </a>
-                        </Button>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
+                  project={project}
+                  index={index}
+                />
               ))}
             </div>
           )}

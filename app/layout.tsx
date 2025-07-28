@@ -161,7 +161,7 @@ export default function RootLayout({
 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-theme-bg text-theme-text`} style={{backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)'}}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" themes={["light", "dark"]} enableSystem={false}>
           <RouteGuard>{children}</RouteGuard>
         </ThemeProvider>
