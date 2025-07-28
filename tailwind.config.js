@@ -25,6 +25,17 @@ module.exports = {
         'theme-warning-border': 'var(--theme-warning-border)',
         'theme-warning-text': 'var(--theme-warning-text)',
         'theme-warning-text-secondary': 'var(--theme-warning-text-secondary)',
+        // Button specific colors
+        'theme-primary': 'var(--theme-primary)',
+        'theme-primary-hover': 'var(--theme-primary-hover)',
+        'theme-primary-text': 'var(--theme-primary-text)',
+        'theme-secondary': 'var(--theme-secondary)',
+        'theme-secondary-hover': 'var(--theme-secondary-hover)',
+        'theme-secondary-text': 'var(--theme-secondary-text)',
+        // Icon colors
+        'theme-icon': 'var(--theme-icon)',
+        'theme-icon-hover': 'var(--theme-icon-hover)',
+        'theme-icon-active': 'var(--theme-icon-active)',
       },
       fontSize: {
         'theme-xs': 'var(--theme-font-xs)',

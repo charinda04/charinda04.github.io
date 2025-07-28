@@ -14,14 +14,14 @@ export const BioSection = () => {
       </div>
       
       <div className="relative">
-        {/* Timeline line */}
-        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-theme-border"></div>
+        {/* Timeline line - enhanced styling */}
+        <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-theme-accent to-theme-accent-secondary shadow-sm"></div>
         
         <div className="space-y-8">
           {BIO_TIMELINE.map((item, index) => (
             <div key={index} className="relative flex items-start">
-              {/* Timeline dot */}
-              <div className="absolute left-4 w-4 h-4 bg-theme-accent rounded-full border-4 border-theme-bg"></div>
+              {/* Timeline dot - enhanced styling */}
+              <div className="absolute left-4 w-4 h-4 bg-theme-accent rounded-full border-4 border-theme-bg shadow-md z-10"></div>
               
               {/* Content */}
               <div className="ml-12 bg-theme-card-bg border border-theme-card-border rounded-xl p-6 shadow-lg flex-1">

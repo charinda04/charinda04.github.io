@@ -1,10 +1,10 @@
 export const PERSONAL_INFO = {
   name: "Charinda Dissanayake",
   title: "Senior Software Engineer • React & React Native Expert",
-  location: "Colombo, Sri Lanka",
-  education: "B.Sc. Computer Science, University of Colombo",
-  languages: ["English", "Sinhala", "Tamil"],
-  hobbies: ["Photography", "Travel", "Open Source", "Tech Blogging"],
+  location: "Gampaha, Sri Lanka",
+  education: "B.Sc. Management and Information Technology, University of Kelaniya",
+  languages: ["English", "Sinhala"],
+  hobbies: ["Reading books", "Watching movies/ tv shows", "Listening to music"],
   initials: "CD",
   intro:
     "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 8+ years of experience, I create beautiful and functional web and mobile applications.",
@@ -12,62 +12,79 @@ export const PERSONAL_INFO = {
 
 export const BIO_TIMELINE = [
   {
-    year: "1990",
-    title: "Born in Colombo, Sri Lanka",
-    description:
-      "Started life's journey in the beautiful island nation of Sri Lanka.",
+    year: "1994",
+    title: "Born in Kandy, Sri Lanka",
+    description: "Started life's journey in the beautiful island nation of Sri Lanka.",
   },
+  // {
+  //   year: "1995",
+  //   title: "First Computer Experience",
+  //   description: "Got fascinated with computers and technology at a young age.",
+  // },
   {
-    year: "1995",
-    title: "First Computer Experience",
-    description: "Got fascinated with computers and technology at a young age.",
-  },
-  {
-    year: "2008",
-    title: "High School Graduation",
-    description:
-      "Completed secondary education with focus on mathematics and science.",
-  },
-  {
-    year: "2012",
-    title: "University Degree",
-    description:
-      "Graduated with Bachelor's in Computer Science from University of Colombo.",
-  },
-  {
-    year: "2016",
-    title: "Started Professional Career",
-    description:
-      "Began working as a Junior Developer, diving into web development.",
+    year: "2013",
+    title: "School Graduation",
+    description: "Completed school education with focus on mathematics.",
   },
   {
     year: "2018",
-    title: "Mobile Development Focus",
-    description:
-      "Transitioned to mobile app development, specializing in React Native.",
+    title: "Internship",
+    description: "Worked at Calcey Technologies as a Software Engineering intern.",
   },
   {
-    year: "2020",
-    title: "Full Stack Expertise",
-    description:
-      "Expanded skills to full-stack development with modern frameworks.",
+    year: "2019",
+    title: "University Degree",
+    description: "Graduated with Bachelor's in Management and Information Technology from University of Kelaniya.",
   },
+  {
+    year: "2019 July",
+    title: "Started Professional Career",
+    description: "Began working as a Junior Developer, diving into mobile development.",
+  },
+  // {
+  //   year: "2019",
+  //   title: "Mobile Development Focus",
+  //   description: "Transitioned to mobile app development, specializing in React Native.",
+  // },
+  // {
+  //   year: "2020",
+  //   title: "Full Stack Expertise",
+  //   description: "Expanded skills to full-stack development with modern frameworks.",
+  // },
   {
     year: "2022",
     title: "Senior Developer Role",
-    description:
-      "Promoted to senior position, leading development teams and projects.",
+    description: "Promoted to senior position, working with more responsibilities",
   },
   {
-    year: "2024",
-    title: "Freelance Consultant",
-    description: "Started consulting for startups and established companies.",
+    year: "2023",
+    title: "Associate Technical Lead - Mobile",
+    description: "Promoted to Associate Technical Lead position, leading development teams and projects.",
+  },
+  {
+    year: "2023 April",
+    title: "Leaving Calcey",
+    description: "",
+  },
+  {
+    year: "2023 March",
+    title: "Joined RozieAI",
+    description: "",
   },
   {
     year: "2025",
+    title: "Leaving RozieAI",
+    description: "",
+  },
+  {
+    year: "2025 ",
+    title: "Joined Avantrio",
+    description: "",
+  },
+  {
+    year: "2025 ",
     title: "Current Focus",
-    description:
-      "Building innovative mobile and web solutions while mentoring developers.",
+    description: "Building innovative mobile and web solutions while mentoring developers.",
   },
 ];
 
@@ -79,7 +96,7 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
-      "Leading development of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+      "create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
     skills: ["React Native", "Flutter", "TypeScript", "Team Leadership", "Code Review"],
   },
   {
@@ -93,24 +110,36 @@ export const WORK_EXPERIENCE = [
     skills: ["React", "Node.js", "MongoDB", "REST APIs", "Responsive Design"],
   },
   {
-    title: "Frontend Engineer",
-    company: "StartupHub",
-    period: "2018 - 2020",
+    title: "Software Engineer",
+    company: "Calcey Technologies",
+    period: "2019 Jul - 2021 Dec",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
-    description:
-      "Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices.",
+    description: `Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices.
+
+      Worked in 98 Adventures, Halsa Baby projects as a React Native developer.
+
+Halsa Baby is a mobile app that pairs with a wearable device for infants. The app helps parents keep track of their infant’s vitals in real-time (e.g. oxygen levels, body temperature, heart rate) and triggers push notifications if the vitals indicate a cause for concern.
+- Created graph components for bar charts and line charts using react-native-svg and d3 libraries
+- Added custom animation using react-native-reanimated
+Tools/Technologies: React Native, Firebase, D3.js, TypeScript, Fastlane, Redux
+
+98 Adventures owns and operates multiple hotels, attractions, and experiences in Ella, a popular tourist destination in Sri Lanka. This is a mobile application for 98 Adventures, listing down hotels, restaurants, and attractions in Ella, along with interactive maps for easy navigation.
+- Created the navigation structure using react-navigation
+- Created UI components in React Native
+- Created the custom map component using react-native-maps
+- Created offline support for the app by initially downloading content and storing it in the realm database
+Tools/Technologies: React Native, Firebase, TypeScript, Fastlane, Redux, Realm`,
     skills: ["React", "TypeScript", "JavaScript", "CSS3", "Performance Optimization"],
   },
   {
-    title: "Software Engineer",
-    company: "WebCraft Agency",
-    period: "2016 - 2018",
+    title: "Software Engineer Intern",
+    company: "Calcey Technologies",
+    period: "2018 Sep - 2019 Feb",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
-    description:
-      "Started career as a Software Engineer developing websites using HTML, CSS, JavaScript, and PHP. Gained experience in client communication and project management.",
-    skills: ["HTML", "CSS", "JavaScript", "PHP", "Client Management"],
+    description: "Started career as a Software Engineer Intern developing mobile applications using React native.",
+    skills: ["React", "React Native", "JavaScript", "Stylesheets"],
   },
 ];
 
@@ -140,39 +169,19 @@ export const VALUES_AND_PHILOSOPHY = [
 export const INTERESTS = [
   {
     category: "Technology Trends",
-    items: [
-      "AI/Machine Learning",
-      "Web3 & Blockchain",
-      "IoT Development",
-      "Cloud Computing",
-    ],
+    items: ["AI/Machine Learning", "Web3 & Blockchain", "IoT Development", "Cloud Computing"],
   },
   {
     category: "Development Philosophy",
-    items: [
-      "Clean Architecture",
-      "Test-Driven Development",
-      "Agile Methodologies",
-      "DevOps Culture",
-    ],
+    items: ["Clean Architecture", "Test-Driven Development", "Agile Methodologies", "DevOps Culture"],
   },
   {
     category: "Community Involvement",
-    items: [
-      "Tech Meetups",
-      "Code Reviews",
-      "Mentoring",
-      "Open Source Contributions",
-    ],
+    items: ["Tech Meetups", "Code Reviews", "Mentoring", "Open Source Contributions"],
   },
   {
     category: "Personal Growth",
-    items: [
-      "Public Speaking",
-      "Technical Writing",
-      "Team Leadership",
-      "Product Strategy",
-    ],
+    items: ["Public Speaking", "Technical Writing", "Team Leadership", "Product Strategy"],
   },
 ];
 
@@ -193,27 +202,20 @@ export const TECHNICAL_SKILLS = [
   },
   {
     category: "Mobile Development",
-    technologies: [
-      "React Native",
-      "Expo",
-      "TypeScript",
-      "JavaScript",
-      "Stylesheet",
-      "Nativewind",
-    ],
+    technologies: ["React Native", "Expo", "TypeScript", "JavaScript", "Stylesheet", "Nativewind"],
   },
   {
     category: "Backend Development",
     technologies: [
       "Node.js",
       "Express.js",
-      "Python",
-      "Django",
-      "FastAPI",
+      // "Python",
+      // "Django",
+      // "FastAPI",
       "PostgreSQL",
-      "MongoDB",
-      "Redis",
-      "GraphQL",
+      // "MongoDB",
+      // "Redis",
+      // "GraphQL",
       "REST APIs",
     ],
   },
@@ -246,8 +248,7 @@ export const ACHIEVEMENTS = [
   // },
   {
     title: "Team Lead Experience",
-    description:
-      "Led development teams of 3-8 developers, mentoring junior developers and managing project timelines.",
+    description: "Led development teams of 3-8 developers, mentoring junior developers and managing project timelines.",
   },
   // {
   //   title: "Open Source Contributor",
@@ -265,8 +266,7 @@ export const PROJECTS = [
     image: "/api/placeholder/400/250",
     technologies: ["React Native", "TypeScript", "Redux Toolkit", "Firebase"],
     githubUrl: "https://github.com/charinda/ecommerce-app",
-    liveUrl:
-      "https://play.google.com/store/apps/details?id=com.charinda.ecommerce",
+    liveUrl: "https://play.google.com/store/apps/details?id=com.charinda.ecommerce",
     status: "Live",
   },
   {

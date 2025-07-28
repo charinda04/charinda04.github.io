@@ -23,9 +23,7 @@ export const Header = () => {
           <div className="w-8 h-8 rounded-full bg-theme-accent flex items-center justify-center transition-transform group-hover:scale-105">
             <span className="font-semibold text-theme-bg text-theme-sm">C</span>
           </div>
-          <h1 className="font-medium text-theme-lg text-theme-text tracking-tight">
-            Charinda
-          </h1>
+          <h1 className="font-medium text-theme-lg text-theme-text tracking-tight">Charinda</h1>
         </Link>
 
         {/* Desktop Navigation Links */}
@@ -49,13 +47,13 @@ export const Header = () => {
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg"
+            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg justify-center align-center"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <SunIcon className="w-5 h-5 text-amber-400" />
+              <SunIcon className="w-5 h-5 text-theme-icon-active" />
             ) : (
-              <MoonIcon className="w-5 h-5 text-theme-text-secondary" />
+              <MoonIcon className="w-5 h-5 text-theme-icon" />
             )}
           </button>
 

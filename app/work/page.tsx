@@ -1,23 +1,24 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
+import { Header } from "@/components/Header";
+import { WorkSection } from "../../components/WorkSection";
+import { Footer } from "../../components/Footer";
+import { TECHNICAL_SKILLS } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Work Experience - Charinda Dissanayake | Senior Software Engineer",
-  description: "Explore Charinda Dissanayake's professional work experience as a Senior Software Engineer, Frontend Engineer, and Fullstack Engineer. Expert in React, React Native, and modern web technologies.",
-  keywords: "Charinda work experience, React developer, React Native engineer, Frontend engineer career, Software engineer experience",
+  description:
+    "Explore Charinda Dissanayake's professional work experience as a Senior Software Engineer, Frontend Engineer, and Fullstack Engineer. Expert in React, React Native, and modern web technologies.",
+  keywords:
+    "Charinda work experience, React developer, React Native engineer, Frontend engineer career, Software engineer experience",
   openGraph: {
     title: "Work Experience - Charinda Dissanayake",
     description: "Professional journey of a Senior Software Engineer specializing in React and React Native",
     url: "https://charinda04.github.io/work",
   },
 };
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
-import { Header } from "@/components/Header";
-import { WorkSection } from "../../components/WorkSection";
-import { Footer } from "../../components/Footer";
-import { CallToAction } from "@/components/CallToAction";
-import { TECHNICAL_SKILLS } from "@/constants";
 
 export default function WorkPage() {
   return (
@@ -27,12 +28,10 @@ export default function WorkPage() {
       <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
         {/* Header */}
         <div className="text-center space-minimal">
-          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">
-            Work & Experience
-          </h1>
+          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">Work & Experience</h1>
           <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
-            Passionate about creating exceptional digital experiences through
-            clean code, innovative solutions, and user-centered design.
+            Passionate about creating exceptional digital experiences through clean code, innovative solutions, and
+            user-centered design.
           </p>
         </div>
 
@@ -42,9 +41,7 @@ export default function WorkPage() {
         {/* Skills Section */}
         <section className="space-minimal">
           <div className="text-center mb-8">
-            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
-              Technical Skills
-            </h2>
+            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">Technical Skills</h2>
             <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
 
@@ -56,14 +53,9 @@ export default function WorkPage() {
             }`}
           >
             {TECHNICAL_SKILLS.map((skillGroup, index) => (
-              <Card
-                key={index}
-                className="border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm"
-              >
+              <Card key={index} className="border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm">
                 <CardHeader className="pb-4">
-                  <CardTitle className="text-theme-lg text-theme-text">
-                    {skillGroup.category}
-                  </CardTitle>
+                  <CardTitle className="text-theme-lg text-theme-text">{skillGroup.category}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
@@ -112,7 +104,7 @@ export default function WorkPage() {
         </section> */}
 
         {/* Call to Action */}
-        <CallToAction />
+        {/* <CallToAction /> */}
       </main>
 
       <Footer />

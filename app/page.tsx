@@ -38,9 +38,9 @@ export default function Home() {
         aria-label="Toggle theme"
       >
         {theme === "dark" ? (
-          <SunIcon className="w-6 h-6 text-amber-400" />
+          <SunIcon className="w-6 h-6 text-theme-icon-active" />
         ) : (
-          <MoonIcon className="w-6 h-6 text-theme-text-secondary" />
+          <MoonIcon className="w-6 h-6 text-theme-icon" />
         )}
       </button>
 
@@ -78,7 +78,7 @@ export default function Home() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 p-2 text-theme-text-secondary hover:text-theme-accent transition-colors duration-200"
+                  className="w-10 h-10 p-2 text-theme-icon hover:text-theme-icon-hover transition-colors duration-200"
                   aria-label={social.name}
                 >
                   <Icon className="w-6 h-6" />
