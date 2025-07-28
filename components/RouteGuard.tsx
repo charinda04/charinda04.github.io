@@ -3,7 +3,7 @@
 import { useRouter, usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-const allowedRoutes = ['/', '/work', '/bio'];
+const allowedRoutes = ['/', '/work', '/projects', '/bio'];
 
 export const RouteGuard = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();

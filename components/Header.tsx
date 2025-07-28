@@ -50,6 +50,16 @@ export const Header = () => {
             Work
           </Link>
           <Link
+            href="/projects"
+            className={`px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+              pathname === "/projects"
+                ? "text-theme-accent bg-theme-accent/10 font-medium"
+                : "text-theme-text-secondary hover:text-theme-text"
+            }`}
+          >
+            Projects
+          </Link>
+          <Link
             href="/bio"
             className={`px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
               pathname === "/bio"
@@ -108,6 +118,17 @@ export const Header = () => {
               }`}
             >
               Work
+            </Link>
+            <Link
+              href="/projects"
+              onClick={closeMobileMenu}
+              className={`block px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+                pathname === "/projects"
+                  ? "text-theme-accent bg-theme-accent/10 font-medium"
+                  : "text-theme-text-secondary hover:text-theme-text"
+              }`}
+            >
+              Projects
             </Link>
             <Link
               href="/bio"

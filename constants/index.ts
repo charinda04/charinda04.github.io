@@ -347,6 +347,76 @@ export const ACHIEVEMENTS = [
   // },
 ];
 
+export const WORK_PROJECTS = [
+  {
+    id: 1,
+    title: "Stampen Media",
+    company: "Sweden",
+    role: "Tech Lead",
+    period: "Jun 2022 - Aug 2024",
+    image: "/api/placeholder/400/250",
+    achievements: [
+      "Led major platform migration, boosting daily page views by 300% to over 4 million, while maintaining high availability and limiting cost increases to under 50%.",
+      "Managed and mentored a remote, cross-functional team of 7 in the customer experience vertical, leading to improved team productivity and project efficiency.",
+      "Developed interactive site components for data visualization, significantly enhancing user engagement and comprehension metrics."
+    ],
+    technologies: ["Next.js", "AWS AppSync", "AWS Lambda", "PostgreSQL"]
+  },
+  {
+    id: 2,
+    title: "AiScout",
+    company: "United Kingdom", 
+    role: "Associate Technical Lead",
+    period: "Jan 2022 - Jun 2022",
+    image: "/api/placeholder/400/250",
+    achievements: [
+      "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
+      "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features."
+    ],
+    technologies: [".NET Core", "Python", "React"]
+  },
+  {
+    id: 3,
+    title: "Dreamsave Insights",
+    company: "United States",
+    role: "Senior Software Engineer", 
+    period: "Jul 2020 - Jan 2022",
+    image: "/api/placeholder/400/250",
+    achievements: [
+      "Spearheaded limited back-end development on an analytical tool, processing multi-year data from over 1,500 savings groups, enabling rapid trend visualization and accurate financial predictions.",
+      "Optimized system performance by employing advanced data structures and pre-processing techniques, reducing request processing times to sub 1s levels.",
+      "Collaborated with cross-functional teams to implement data-driven strategies, enhancing organizational effectiveness and increasing user engagement by 25%."
+    ],
+    technologies: ["Flask (Python)", "React.js", "MongoDB", "Apache Cassandra"]
+  },
+  {
+    id: 4,
+    title: "MotivateHT",
+    company: "United States",
+    role: "Senior Software Engineer",
+    period: "Dec 2018 - Jul 2020", 
+    image: "/api/placeholder/400/250",
+    achievements: [
+      "Led a back-end team of four to develop core booking and scheduling functionalities, implementing rich notification channels that boosted user engagement.",
+      "Engineered the infrastructure for a new project, utilizing best practices to create a cloud-agnostic, low cost and highly scalable system."
+    ],
+    technologies: [".NET Core", "PostgreSQL"]
+  },
+  {
+    id: 5,
+    title: "Ancon",
+    company: "Sweden",
+    role: "Senior Software Engineer",
+    period: "May 2018 - Dec 2019",
+    image: "/api/placeholder/400/250", 
+    achievements: [
+      "Drove and mentored a remote team of five to drive the back-end development of the G2 platform migration, resulting in improved system performance and scalability.",
+      "Enhanced back-end scalability and built new functionalities to serve over 100,000 users, developing a multi-tenant system capable of supporting over 1,000 client restaurants."
+    ],
+    technologies: [".NET Core", "React.js", "PostgreSQL"]
+  }
+];
+
 export const PROJECTS = [
   {
     id: 1,
