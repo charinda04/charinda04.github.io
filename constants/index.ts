@@ -331,3 +331,41 @@ export const PROJECT_STATUS_VARIANTS = {
   "In Development": "secondary",
   "Coming Soon": "outline",
 } as const;
+
+export const SOCIAL_LINKS = [
+  {
+    name: "GitHub",
+    url: "https://github.com/charinda04",
+    icon: "GitHubIcon",
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/charinda-dissanayake/",
+    icon: "LinkedInIcon",
+  },
+  {
+    name: "Twitter",
+    url: "https://x.com/Charinda_D",
+    icon: "TwitterIcon",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/charinda_jayath/",
+    icon: "InstagramIcon",
+  },
+  {
+    name: "Facebook",
+    url: "https://web.facebook.com/charinda1/",
+    icon: "FacebookIcon",
+  },
+  {
+    name: "BlueSky",
+    url: "https://bsky.app/profile/charinda.bsky.social",
+    icon: "BlueSkyIcon",
+  },
+  {
+    name: "Threads",
+    url: "https://www.threads.com/@charinda_jayath",
+    icon: "ThreadsIcon",
+  },
+];

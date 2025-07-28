@@ -13,3 +13,4 @@ export { LinkedInIcon } from "./LinkedInIcon";
 export { GitHubIcon } from "./GitHubIcon";
 export { BlueSkyIcon } from "./BlueSkyIcon";
 export { ThreadsIcon } from "./ThreadsIcon";
+export { InstagramIcon } from "./InstagramIcon";

@@ -1,47 +1,26 @@
 "use client";
 
-// import {
-//   BlueSkyIcon,
-//   FacebookIcon,
-//   GitHubIcon,
-//   LinkedInIcon,
-//   ThreadsIcon,
-//   TwitterIcon,
-// } from "@/assets/icons";
+import {
+  BlueSkyIcon,
+  FacebookIcon,
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  ThreadsIcon,
+  TwitterIcon,
+} from "@/assets/icons";
+import { SOCIAL_LINKS } from "@/constants";
 
 export const Footer = () => {
-  const socialLinks = [
-    {
-      name: "Facebook",
-      url: "https://web.facebook.com/charinda1/",
-      icon: "F",
-    },
-    {
-      name: "Twitter",
-      url: "https://x.com/Charinda_D",
-      icon: "T",
-    },
-    {
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/charinda-dissanayake/",
-      icon: "L",
-    },
-    {
-      name: "GitHub",
-      url: "https://github.com/charinda04",
-      icon: "G",
-    },
-    {
-      name: "BlueSky",
-      url: "https://bsky.app/profile/charinda.bsky.social",
-      icon: "B",
-    },
-    {
-      name: "Threads",
-      url: "https://www.threads.com/@charinda_jayath",
-      icon: "Th",
-    },
-  ];
+  const iconMap = {
+    GitHubIcon,
+    LinkedInIcon,
+    TwitterIcon,
+    InstagramIcon,
+    BlueSkyIcon,
+    FacebookIcon,
+    ThreadsIcon,
+  };
 
   return (
     <footer className="w-full border-t border-theme-border bg-theme-bg py-6">
@@ -49,18 +28,21 @@ export const Footer = () => {
         <div className="flex flex-col items-center space-y-4">
           {/* Social Media Links */}
           <div className="flex items-center gap-3">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-8 h-8 flex items-center justify-center rounded-md text-theme-text-secondary hover:text-theme-text hover:bg-theme-button-bg transition-colors duration-200"
-                aria-label={social.name}
-              >
-                {social.icon}
-              </a>
-            ))}
+            {SOCIAL_LINKS.map((social) => {
+              const Icon = iconMap[social.icon as keyof typeof iconMap];
+              return (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-8 h-8 p-1.5 flex items-center justify-center rounded-md text-theme-text-secondary hover:text-theme-accent hover:bg-theme-button-bg transition-colors duration-200"
+                  aria-label={social.name}
+                >
+                  <Icon className="w-5 h-5" />
+                </a>
+              );
+            })}
           </div>
 
           {/* Copyright */}
