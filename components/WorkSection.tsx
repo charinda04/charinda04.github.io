@@ -53,7 +53,7 @@ export const WorkSection = () => {
                         <p className="text-theme-lg text-theme-text font-semibold">{work.company}</p>
                       </div>
                       <div className="text-right">
-                        <span className="inline-flex items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/10 text-theme-accent border border-theme-accent/20">
+                        <span className="inline-flex items-center  border-[0.01px] px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/10 text-theme-accent border border-theme-accent/20">
                           {work.employmentType}
                         </span>
                       </div>
@@ -92,7 +92,7 @@ export const WorkSection = () => {
                         {work.projects.map((project, projectIndex) => (
                           <div
                             key={projectIndex}
-                            className="bg-theme-accent/5 rounded-xl p-5 border border-theme-accent/10"
+                            className="bg-theme-accent/5 rounded-xl p-5 border-[0px] border-theme-accent/10"
                           >
                             {/* Project Title */}
                             <h5 className="font-semibold text-theme-text mb-2 text-theme-base">{project.name}</h5>
@@ -146,7 +146,7 @@ export const WorkSection = () => {
                           {work.skills.map((skill, skillIndex) => (
                             <span
                               key={skillIndex}
-                              className="inline-flex items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent border border-theme-accent/10 hover:bg-theme-accent/10 transition-colors duration-200"
+                              className="inline-flex border-[0.01px] items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent border border-theme-accent/10 hover:bg-theme-accent/10 transition-colors duration-200"
                             >
                               {skill}
                             </span>

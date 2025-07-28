@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 // import { Button } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "@/assets/icons";
 export const Header = () => {
   const { theme, setTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
@@ -27,7 +29,7 @@ export const Header = () => {
               alt="Charinda Dissanayake"
               width={32}
               height={32}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover brightness-75"
               priority
             />
           </div>
@@ -38,13 +40,21 @@ export const Header = () => {
         <div className="hidden md:flex items-center space-x-1">
           <Link
             href="/work"
-            className="px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
+            className={`px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+              pathname === '/work' 
+                ? 'text-theme-accent bg-theme-accent/10 font-medium' 
+                : 'text-theme-text-secondary hover:text-theme-text'
+            }`}
           >
             Work
           </Link>
           <Link
             href="/bio"
-            className="px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
+            className={`px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+              pathname === '/bio' 
+                ? 'text-theme-accent bg-theme-accent/10 font-medium' 
+                : 'text-theme-text-secondary hover:text-theme-text'
+            }`}
           >
             Bio
           </Link>
@@ -83,14 +93,22 @@ export const Header = () => {
             <Link
               href="/work"
               onClick={closeMobileMenu}
-              className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
+              className={`block px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+                pathname === '/work' 
+                  ? 'text-theme-accent bg-theme-accent/10 font-medium' 
+                  : 'text-theme-text-secondary hover:text-theme-text'
+              }`}
             >
               Work
             </Link>
             <Link
               href="/bio"
               onClick={closeMobileMenu}
-              className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
+              className={`block px-3 py-2 text-theme-sm transition-colors duration-200 rounded-md hover:bg-theme-button-bg ${
+                pathname === '/bio' 
+                  ? 'text-theme-accent bg-theme-accent/10 font-medium' 
+                  : 'text-theme-text-secondary hover:text-theme-text'
+              }`}
             >
               Bio
             </Link>

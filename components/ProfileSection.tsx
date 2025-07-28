@@ -15,7 +15,7 @@ export const ProfileSection = () => {
               alt={`${PERSONAL_INFO.name} profile picture`}
               width={128}
               height={128}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover brightness-75"
               priority
             />
           </div>

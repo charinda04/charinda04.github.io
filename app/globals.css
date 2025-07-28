@@ -235,6 +235,9 @@
   .bg-theme-button-bg {
     background-color: var(--theme-button-bg);
   }
+  .bg-theme-text-accent {
+    background-color: var(--theme-text-accent);
+  }
   .text-theme-text {
     color: var(--theme-text);
   }

@@ -15,8 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Charinda Dissanayake - Senior Software Engineer | React & React Native Expert",
-  description: "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
+  metadataBase: new URL('https://charinda04.github.io'),
+  title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
+  description: "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     "Charinda Dissanayake", 
     "React",
     "React Native",
+    "Next.js",
+    "NextJS",
     "Frontend Engineer",
     "Fullstack Engineer", 
     "Senior Software Engineer",
@@ -54,8 +57,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://charinda04.github.io",
-    title: "Charinda Dissanayake - Senior Software Engineer | React & React Native Expert",
-    description: "Senior Software Engineer specializing in React, React Native, and full-stack development. Expert in mobile and web applications.",
+    title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
+    description: "Senior Software Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications.",
     siteName: "Charinda Dissanayake Portfolio",
     images: [
       {
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Charinda Dissanayake - Senior Software Engineer",
-    description: "React & React Native Expert | Frontend & Fullstack Engineer",
+    description: "React, Next.js & React Native Expert | Frontend & Fullstack Engineer",
     creator: "@Charinda_D",
     images: ["/assets/images/profile.jpg"],
   },
@@ -102,6 +105,7 @@ export default function RootLayout({
     ],
     "knowsAbout": [
       "React",
+      "Next.js",
       "React Native", 
       "JavaScript",
       "TypeScript",
@@ -141,7 +145,7 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="data-theme"
-          defaultTheme="light"
+          defaultTheme="dark"
           themes={["light", "dark"]}
           enableSystem={false}
         >

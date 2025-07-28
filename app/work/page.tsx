@@ -63,7 +63,7 @@ export default function WorkPage() {
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20"
+                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20 border-[0.01px]"
                       >
                         {tech}
                       </Badge>
