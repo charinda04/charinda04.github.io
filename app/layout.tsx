@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Charinda Dissanayake - Senior Software Engineer | React & React Native Expert",
   description: "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   keywords: [
     "Charinda",
     "Charinda Dissanayake", 
@@ -123,6 +128,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="shortcut icon" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
