@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { ProfileSection } from "../components/ProfileSection";
 import { SOCIAL_LINKS } from "../constants";
-import { 
-  SunIcon, 
+import {
+  SunIcon,
   MoonIcon,
   GitHubIcon,
   LinkedInIcon,
@@ -13,7 +13,7 @@ import {
   InstagramIcon,
   BlueSkyIcon,
   FacebookIcon,
-  ThreadsIcon
+  ThreadsIcon,
 } from "../assets/icons";
 
 export default function Home() {
@@ -34,7 +34,7 @@ export default function Home() {
       {/* Theme Toggle - Minimal top corner */}
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="fixed top-6 right-6 w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 z-50"
+        className="fixed top-6 right-6 w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 z-50 justify-center align-center"
         aria-label="Toggle theme"
       >
         {theme === "dark" ? (
@@ -46,17 +46,15 @@ export default function Home() {
 
       {/* Main Content - Centered */}
       <div className="w-full max-w-xl mx-auto text-center space-y-12">
-        
         {/* Profile Section */}
         <ProfileSection />
-        
+
         {/* Navigation Links - Centered */}
         <nav className="flex justify-center">
           <div className="flex gap-8">
             {[
               { href: "/work", label: "Work" },
               { href: "/bio", label: "Bio" },
-              { href: "/projects", label: "Projects" },
             ].map((link) => (
               <Link
                 key={link.href}
@@ -68,7 +66,7 @@ export default function Home() {
             ))}
           </div>
         </nav>
-        
+
         {/* Social Media Links - Centered */}
         <div className="flex justify-center">
           <div className="flex gap-4 flex-wrap justify-center">
@@ -89,7 +87,6 @@ export default function Home() {
             })}
           </div>
         </div>
-        
       </div>
     </div>
   );

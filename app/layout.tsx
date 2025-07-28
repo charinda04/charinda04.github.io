@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { RouteGuard } from "../components/RouteGuard";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -136,7 +137,9 @@ export default function RootLayout({
           themes={["light", "dark"]}
           enableSystem={false}
         >
-          {children}
+          <RouteGuard>
+            {children}
+          </RouteGuard>
         </ThemeProvider>
       </body>
     </html>

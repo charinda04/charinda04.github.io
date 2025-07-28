@@ -42,18 +42,6 @@ export const Header = () => {
           >
             Bio
           </Link>
-          {/* <Link
-            href="/blogs"
-            className="px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
-          >
-            Blogs
-          </Link> */}
-          <Link
-            href="/projects"
-            className="px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
-          >
-            Projects
-          </Link>
         </div>
 
         {/* Desktop Theme Toggle & Mobile Menu Button */}
@@ -99,20 +87,6 @@ export const Header = () => {
               className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
             >
               Bio
-            </Link>
-            {/* <Link
-              href="/blogs"
-              onClick={closeMobileMenu}
-              className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
-            >
-              Blogs
-            </Link> */}
-            <Link
-              href="/projects"
-              onClick={closeMobileMenu}
-              className="block px-3 py-2 text-theme-sm text-theme-text-secondary hover:text-theme-text transition-colors duration-200 rounded-md hover:bg-theme-button-bg"
-            >
-              Projects
             </Link>
           </div>
         </div>
