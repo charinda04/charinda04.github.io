@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import { GitHubIcon } from "@/assets/icons";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
+import { CallToAction } from "@/components/CallToAction";
 import { PROJECTS, PROJECT_STATUS_VARIANTS } from "@/constants";
 
 export default function ProjectsPage() {
@@ -120,32 +119,12 @@ export default function ProjectsPage() {
         </div>
 
         {/* Call to Action */}
-        <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-2xl mx-auto">
-          <CardContent className="pt-6 text-center space-minimal-sm">
-            <h3 className="text-theme-xl font-medium text-theme-text">
-              Interested in working together?
-            </h3>
-            <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
-              I'm always open to discussing new opportunities and interesting
-              projects.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                asChild
-                className="bg-theme-accent hover:bg-theme-accent-secondary text-white"
-              >
-                <Link href="/">Get In Touch</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-theme-accent text-theme-accent hover:bg-theme-accent hover:text-white"
-              >
-                <Link href="/blogs">Read My Blog</Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <CallToAction 
+          title="Interested in working together?"
+          description="I'm always open to discussing new opportunities and interesting projects."
+          primaryButton={{ text: "Get In Touch", href: "/" }}
+          secondaryButton={{ text: "Read My Blog", href: "/blogs" }}
+        />
       </main>
 
       <Footer />

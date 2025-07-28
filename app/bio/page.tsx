@@ -1,12 +1,10 @@
-import Link from "next/link";
-
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "../../components/Header";
 import { BioSection } from "../../components/BioSection";
 import { Footer } from "../../components/Footer";
+import { CallToAction } from "@/components/CallToAction";
 import { PERSONAL_INFO, VALUES_AND_PHILOSOPHY, INTERESTS } from "@/constants";
 
 export default function BioPage() {
@@ -187,32 +185,12 @@ export default function BioPage() {
         </section>
 
         {/* Call to Action */}
-        <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-2xl mx-auto">
-          <CardContent className="pt-6 text-center space-minimal-sm">
-            <h3 className="text-theme-xl font-medium text-theme-text">
-              Let's Connect!
-            </h3>
-            <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
-              I love meeting new people and discussing ideas about technology,
-              life, and everything in between. Feel free to reach out!
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                asChild
-                className="bg-theme-accent hover:bg-theme-accent-secondary text-white"
-              >
-                <Link href="/blogs">Read My Blog</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-theme-accent text-theme-accent hover:bg-theme-accent hover:text-white"
-              >
-                <Link href="/work">View My Work</Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <CallToAction 
+          title="Let's Connect!"
+          description="I love meeting new people and discussing ideas about technology, life, and everything in between. Feel free to reach out!"
+          primaryButton={{ text: "Read My Blog", href: "/blogs" }}
+          secondaryButton={{ text: "View My Work", href: "/work" }}
+        />
       </main>
 
       <Footer />

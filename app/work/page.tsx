@@ -1,16 +1,13 @@
-import Link from "next/link";
-
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "@/components/Header";
 import { WorkSection } from "../../components/WorkSection";
 import { Footer } from "../../components/Footer";
-import { TECHNICAL_SKILLS, ACHIEVEMENTS } from "@/constants";
+import { CallToAction } from "@/components/CallToAction";
+import { TECHNICAL_SKILLS } from "@/constants";
 
 export default function WorkPage() {
-
   return (
     <div className="min-h-screen bg-theme-bg">
       <Header />
@@ -39,11 +36,17 @@ export default function WorkPage() {
             <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div
+            className={`grid gap-6 ${
+              TECHNICAL_SKILLS.length % 2 === 1
+                ? "md:grid-cols-2 lg:grid-cols-3 justify-items-center"
+                : "md:grid-cols-2"
+            }`}
+          >
             {TECHNICAL_SKILLS.map((skillGroup, index) => (
               <Card
                 key={index}
-                className="border-theme-border bg-theme-card-bg shadow-minimal"
+                className="border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm"
               >
                 <CardHeader className="pb-4">
                   <CardTitle className="text-theme-lg text-theme-text">
@@ -69,7 +72,7 @@ export default function WorkPage() {
         </section>
 
         {/* Achievements Section */}
-        <section className="space-minimal">
+        {/* <section className="space-minimal">
           <div className="text-center mb-8">
             <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
               Key Achievements
@@ -77,7 +80,7 @@ export default function WorkPage() {
             <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className={`grid gap-6 ${ACHIEVEMENTS.length === 1 ? 'max-w-lg mx-auto' : 'md:grid-cols-2'}`}>
             {ACHIEVEMENTS.map((achievement, index) => (
               <Card
                 key={index}
@@ -94,35 +97,10 @@ export default function WorkPage() {
               </Card>
             ))}
           </div>
-        </section>
+        </section> */}
 
         {/* Call to Action */}
-        <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-2xl mx-auto">
-          <CardContent className="pt-6 text-center space-minimal-sm">
-            <h3 className="text-theme-xl font-medium text-theme-text">
-              Let's Work Together
-            </h3>
-            <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
-              I'm always interested in new opportunities and challenging
-              projects. Let's discuss how we can bring your ideas to life.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Button
-                asChild
-                className="bg-theme-accent hover:bg-theme-accent-secondary text-white"
-              >
-                <Link href="/projects">View My Projects</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-theme-accent text-theme-accent hover:bg-theme-accent hover:text-white"
-              >
-                <Link href="/">Get In Touch</Link>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
+        <CallToAction />
       </main>
 
       <Footer />

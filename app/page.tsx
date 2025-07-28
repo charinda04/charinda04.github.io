@@ -9,7 +9,9 @@ export default function Home() {
       <Header />
 
       <main className="flex-1 flex items-center justify-center px-6 py-12">
+        {/* <div className="flex items-center justify-center mb-16"> */}
         <ProfileSection />
+        {/* </div> */}
       </main>
 
       <Footer />
