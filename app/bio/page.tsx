@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "../../components/Header";
-import { BioSection } from "../../components/BioSection";
 import { Footer } from "../../components/Footer";
 import { PERSONAL_INFO } from "@/constants";
 
@@ -101,7 +100,7 @@ export default function BioPage() {
         </section>
 
         {/* Timeline */}
-        <BioSection />
+        {/* <BioSection /> */}
 
         {/* Values & Philosophy */}
         {/* <section className="space-minimal">
