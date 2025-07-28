@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Projects - Charinda Dissanayake | React & React Native Portfolio",
+  description: "Explore projects by Charinda Dissanayake featuring React, React Native, and full-stack applications. Mobile apps, web applications, and software engineering projects.",
+  keywords: "Charinda projects, React projects, React Native apps, mobile development portfolio, web development projects",
+  openGraph: {
+    title: "Projects - Charinda Dissanayake Portfolio",
+    description: "Showcase of React, React Native, and full-stack development projects",
+    url: "https://charinda04.github.io/projects",
+  },
+};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";

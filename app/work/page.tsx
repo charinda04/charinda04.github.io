@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "Work Experience - Charinda Dissanayake | Senior Software Engineer",
+  description: "Explore Charinda Dissanayake's professional work experience as a Senior Software Engineer, Frontend Engineer, and Fullstack Engineer. Expert in React, React Native, and modern web technologies.",
+  keywords: "Charinda work experience, React developer, React Native engineer, Frontend engineer career, Software engineer experience",
+  openGraph: {
+    title: "Work Experience - Charinda Dissanayake",
+    description: "Professional journey of a Senior Software Engineer specializing in React and React Native",
+    url: "https://charinda04.github.io/work",
+  },
+};
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "@/components/Header";

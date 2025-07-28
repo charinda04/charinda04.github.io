@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow indexing of all pages
+Sitemap: https://charinda04.github.io/sitemap.xml
+
+# High priority pages
+Allow: /
+Allow: /work
+Allow: /bio
+Allow: /projects
+
+# Disallow any admin or development files
+Disallow: /_next/
+Disallow: /api/
+Disallow: *.json$
+
+# Cache directive
+Crawl-delay: 1

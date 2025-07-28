@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
+
+export const metadata: Metadata = {
+  title: "About Charinda Dissanayake | Senior Software Engineer Biography",
+  description: "Learn about Charinda Dissanayake, a passionate Senior Software Engineer from Sri Lanka specializing in React, React Native, and full-stack development. Personal journey and professional values.",
+  keywords: "Charinda Dissanayake bio, software engineer Sri Lanka, React developer about, personal story, career journey",
+  openGraph: {
+    title: "About Charinda Dissanayake - Software Engineer",
+    description: "Personal journey and professional story of a Senior Software Engineer",
+    url: "https://charinda04.github.io/bio",
+  },
+};
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Header } from "../../components/Header";

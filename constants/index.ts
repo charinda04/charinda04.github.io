@@ -1,13 +1,13 @@
 export const PERSONAL_INFO = {
   name: "Charinda Dissanayake",
-  title: "Software Engineer • Web & Mobile",
+  title: "Senior Software Engineer • React & React Native Expert",
   location: "Colombo, Sri Lanka",
   education: "B.Sc. Computer Science, University of Colombo",
   languages: ["English", "Sinhala", "Tamil"],
   hobbies: ["Photography", "Travel", "Open Source", "Tech Blogging"],
   initials: "CD",
   intro:
-    "Hello! I'm a passionate software engineer based in Sri Lanka, specializing in creating beautiful and functional web and mobile applications.",
+    "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 8+ years of experience, I create beautiful and functional web and mobile applications.",
 };
 
 export const BIO_TIMELINE = [
@@ -73,43 +73,43 @@ export const BIO_TIMELINE = [
 
 export const WORK_EXPERIENCE = [
   {
-    title: "Senior Mobile Developer",
+    title: "Senior Software Engineer",
     company: "Tech Solutions Inc.",
     period: "2022 - Present",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
-      "Leading development of cross-platform mobile applications using React Native and Flutter. Responsible for architecture decisions, code reviews, and mentoring junior developers.",
+      "Leading development of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
     skills: ["React Native", "Flutter", "TypeScript", "Team Leadership", "Code Review"],
   },
   {
-    title: "Full Stack Developer",
+    title: "Fullstack Engineer",
     company: "Digital Innovations Ltd.",
     period: "2020 - 2022",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Hybrid",
     description:
-      "Developed and maintained web applications using React, Node.js, and MongoDB. Collaborated with design teams to create responsive and user-friendly interfaces.",
+      "Developed and maintained React-based web applications and Node.js backend systems as a Fullstack Engineer. Collaborated with design teams to create responsive and user-friendly interfaces using modern React patterns.",
     skills: ["React", "Node.js", "MongoDB", "REST APIs", "Responsive Design"],
   },
   {
-    title: "Frontend Developer",
+    title: "Frontend Engineer",
     company: "StartupHub",
     period: "2018 - 2020",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
     description:
-      "Built modern web applications with React and TypeScript. Implemented responsive designs and optimized application performance.",
+      "Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices.",
     skills: ["React", "TypeScript", "JavaScript", "CSS3", "Performance Optimization"],
   },
   {
-    title: "Junior Developer",
+    title: "Software Engineer",
     company: "WebCraft Agency",
     period: "2016 - 2018",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
     description:
-      "Started career developing websites using HTML, CSS, JavaScript, and PHP. Gained experience in client communication and project management.",
+      "Started career as a Software Engineer developing websites using HTML, CSS, JavaScript, and PHP. Gained experience in client communication and project management.",
     skills: ["HTML", "CSS", "JavaScript", "PHP", "Client Management"],
   },
 ];
