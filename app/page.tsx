@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+
 import { ProfileSection } from "../components/ProfileSection";
 import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
 import { trackDownload, trackExternalLink } from "../lib/analytics";
@@ -19,6 +21,11 @@ import {
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const iconMap = {
     GitHubIcon,
@@ -35,10 +42,12 @@ export default function Home() {
       {/* Theme Toggle - Minimal top corner */}
       <button
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="fixed top-6 right-6 w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 z-50 justify-center align-center"
+        className="fixed top-6 right-6 w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 z-50 flex items-center justify-center"
         aria-label="Toggle theme"
       >
-        {theme === "dark" ? (
+        {!mounted ? (
+          <div className="w-6 h-6" />
+        ) : theme === "dark" ? (
           <SunIcon className="w-6 h-6 text-theme-icon-sun" />
         ) : (
           <MoonIcon className="w-6 h-6 text-theme-icon" />
@@ -127,11 +136,16 @@ export default function Home() {
           <a
             href="/assets/documents/CV_Charinda.pdf"
             download="CV_Charinda.pdf"
-            onClick={() => trackDownload('CV_Charinda.pdf')}
+            onClick={() => trackDownload("CV_Charinda.pdf")}
             className="group inline-flex items-center gap-3 px-6 py-3 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 font-medium"
           >
             <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
-              <svg className="w-4 h-4 text-theme-accent group-hover:text-theme-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-4 h-4 text-theme-accent group-hover:text-theme-accent transition-colors duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -140,7 +154,9 @@ export default function Home() {
                 />
               </svg>
             </div>
-            <span className="text-theme-text group-hover:text-theme-accent transition-colors duration-300">Download Résumé</span>
+            <span className="text-theme-text group-hover:text-theme-accent transition-colors duration-300">
+              Download Résumé
+            </span>
           </a>
         </div>
 

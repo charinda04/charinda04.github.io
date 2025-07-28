@@ -1,16 +1,5 @@
 import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
-
-export const metadata: Metadata = {
-  title: "Projects - Charinda Dissanayake | React & React Native Portfolio",
-  description: "Explore projects by Charinda Dissanayake featuring React, React Native, and full-stack applications. Mobile apps, web applications, and software engineering projects.",
-  keywords: "Charinda projects, React projects, React Native apps, mobile development portfolio, web development projects",
-  openGraph: {
-    title: "Projects - Charinda Dissanayake Portfolio",
-    description: "Showcase of React, React Native, and full-stack development projects",
-    url: "https://charinda04.github.io/projects",
-  },
-};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -19,6 +8,19 @@ import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { CallToAction } from "@/components/CallToAction";
 import { PROJECTS, PROJECT_STATUS_VARIANTS } from "@/constants";
+
+export const metadata: Metadata = {
+  title: "Projects - Charinda Dissanayake | React & React Native Portfolio",
+  description:
+    "Explore projects by Charinda Dissanayake featuring React, React Native, and full-stack applications. Mobile apps, web applications, and software engineering projects.",
+  keywords:
+    "Charinda projects, React projects, React Native apps, mobile development portfolio, web development projects",
+  openGraph: {
+    title: "Projects - Charinda Dissanayake Portfolio",
+    description: "Showcase of React, React Native, and full-stack development projects",
+    url: "https://charinda04.github.io/projects",
+  },
+};
 
 export default function ProjectsPage() {
   const getStatusVariant = (status: string) => {
@@ -32,12 +34,9 @@ export default function ProjectsPage() {
       <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
         {/* Header */}
         <div className="text-center space-minimal">
-          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">
-            My Projects
-          </h1>
+          <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">My Projects</h1>
           <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
-            A collection of web and mobile applications I've built, ranging from
-            personal projects to client work.
+            A collection of web and mobile applications I've built, ranging from personal projects to client work.
           </p>
           <Separator className="w-12 mx-auto bg-theme-accent" />
         </div>
@@ -51,9 +50,7 @@ export default function ProjectsPage() {
             >
               {/* Project Image/Icon */}
               <div className="h-32 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border">
-                <div className="text-theme-accent text-2xl font-semibold">
-                  {project.title.charAt(0)}
-                </div>
+                <div className="text-theme-accent text-2xl font-semibold">{project.title.charAt(0)}</div>
               </div>
 
               <CardHeader className="pb-4">
@@ -61,19 +58,14 @@ export default function ProjectsPage() {
                   <CardTitle className="text-theme-lg font-medium text-theme-text leading-tight">
                     {project.title}
                   </CardTitle>
-                  <Badge
-                    variant={getStatusVariant(project.status) as any}
-                    className="ml-2 shrink-0"
-                  >
+                  <Badge variant={getStatusVariant(project.status) as any} className="ml-2 shrink-0">
                     {project.status}
                   </Badge>
                 </div>
               </CardHeader>
 
               <CardContent className="space-y-4">
-                <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
-                  {project.description}
-                </p>
+                <p className="text-theme-sm text-theme-text-secondary leading-relaxed">{project.description}</p>
 
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-1">
@@ -114,12 +106,7 @@ export default function ProjectsPage() {
                       size="sm"
                       className="p-0 h-auto text-theme-accent hover:text-theme-accent-secondary hover:bg-transparent"
                     >
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-theme-sm"
-                      >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-theme-sm">
                         Live Demo →
                       </a>
                     </Button>
@@ -131,7 +118,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Call to Action */}
-        <CallToAction 
+        <CallToAction
           title="Interested in working together?"
           description="I'm always open to discussing new opportunities and interesting projects."
           primaryButton={{ text: "Get In Touch", href: "/" }}

@@ -14,21 +14,21 @@ export const WorkSection = () => {
 
       <div className="relative max-w-3xl mx-auto">
         {/* Timeline Line - beautiful gradient with glow */}
-        <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-theme-accent/20 via-theme-accent to-theme-accent/20 shadow-lg"></div>
+        {/* <div className="absolute left-6 top-8 bottom-8 w-0.5 bg-gradient-to-b from-theme-accent/20 via-theme-accent to-theme-accent/20 shadow-lg"></div> */}
 
         <div className="space-y-12">
           {WORK_EXPERIENCE.map((work, index) => (
             <div key={index} className="relative group">
               {/* Timeline Dot - glowing dot with pulse animation */}
-              <div className="absolute left-4 top-8 w-4 h-4 bg-theme-accent rounded-full shadow-lg z-20 ring-4 ring-theme-bg ring-opacity-100">
+              {/* <div className="absolute left-4 top-8 w-4 h-4 bg-theme-accent rounded-full shadow-lg z-20 ring-4 ring-theme-bg ring-opacity-100">
                 <div className="absolute inset-0 bg-theme-accent rounded-full animate-ping opacity-20"></div>
-              </div>
+              </div> */}
 
               {/* Connecting Line - horizontal line from dot to content */}
               {/* <div className="absolute left-8 top-9 w-8 h-1 bg-gradient-to-r from-theme-accent via-theme-accent/70 to-theme-accent/20 shadow-sm z-10 rounded-full"></div> */}
 
               {/* Main Content Container */}
-              <div className="ml-12 relative">
+              <div className=" relative">
                 {/* Company Logo Card */}
                 {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-theme-card-bg to-theme-button-bg border border-theme-border rounded-2xl shadow-lg mb-4 group-hover:shadow-xl transition-all duration-300">
                   <span className="text-theme-accent font-bold text-lg">

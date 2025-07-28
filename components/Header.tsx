@@ -81,7 +81,11 @@ export const Header = () => {
             className="md:hidden w-8 h-8 p-0 hover:bg-theme-button-bg rounded-md transition-colors"
             aria-label="Toggle mobile menu"
           >
-            {isMobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
+            {isMobileMenuOpen ? (
+              <CloseIcon className="w-5 h-5 text-theme-text" />
+            ) : (
+              <MenuIcon className="w-5 h-5 text-theme-text" />
+            )}
           </button>
         </div>
       </nav>
