@@ -250,14 +250,23 @@
   .text-theme-accent {
     color: var(--theme-accent);
   }
+  .text-theme-icon {
+    color: var(--theme-icon);
+  }
   .text-theme-icon-sun {
     color: var(--theme-icon-sun);
+  }
+  .bg-theme-accent {
+    background-color: var(--theme-accent);
   }
   .border-theme-border {
     border-color: var(--theme-border);
   }
   .border-theme-card-border {
     border-color: var(--theme-card-border);
+  }
+  .border-theme-accent {
+    border-color: var(--theme-accent);
   }
 
   /* Minimal spacing utilities */

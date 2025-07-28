@@ -8,6 +8,7 @@ import Image from "next/image";
 
 // import { Button } from "@/components/ui/button";
 import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "@/assets/icons";
+import { AccentColorPicker } from "./AccentColorPicker";
 
 // Navigation Header Component
 export const Header = () => {
@@ -60,12 +61,15 @@ export const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop Theme Toggle & Mobile Menu Button */}
+        {/* Desktop Theme Toggle, Accent Color Picker & Mobile Menu Button */}
         <div className="flex items-center space-x-2">
+          {/* Accent Color Picker */}
+          <AccentColorPicker />
+          
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg justify-center align-center"
+            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg flex items-center justify-center"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (

@@ -20,10 +20,10 @@ export const metadata: Metadata = {
 
 export default function BioPage() {
   return (
-    <div className="min-h-screen bg-theme-bg">
+    <div className="min-h-screen bg-theme-bg flex flex-col">
       <Header />
 
-      <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
+      <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full">
         {/* Header */}
         <div className="text-center space-minimal">
           <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">About Me</h1>

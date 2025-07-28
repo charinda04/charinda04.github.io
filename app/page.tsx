@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import { ProfileSection } from "../components/ProfileSection";
+import { AccentColorPicker } from "../components/AccentColorPicker";
 import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
 import { trackDownload, trackExternalLink } from "../lib/analytics";
 import {
@@ -39,20 +40,26 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-theme-bg flex flex-col items-center justify-center px-6 py-8">
-      {/* Theme Toggle - Minimal top corner */}
-      <button
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="fixed top-6 right-6 w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 z-50 flex items-center justify-center"
-        aria-label="Toggle theme"
-      >
-        {!mounted ? (
-          <div className="w-6 h-6" />
-        ) : theme === "dark" ? (
-          <SunIcon className="w-6 h-6 text-theme-icon-sun" />
-        ) : (
-          <MoonIcon className="w-6 h-6 text-theme-icon" />
-        )}
-      </button>
+      {/* Top Controls - Accent Color Picker & Theme Toggle */}
+      <div className="fixed top-6 right-6 flex items-center gap-2 z-50">
+        {/* Accent Color Picker */}
+        <AccentColorPicker />
+        
+        {/* Theme Toggle */}
+        <button
+          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          className="w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 flex items-center justify-center"
+          aria-label="Toggle theme"
+        >
+          {!mounted ? (
+            <div className="w-6 h-6" />
+          ) : theme === "dark" ? (
+            <SunIcon className="w-6 h-6 text-theme-icon-sun" />
+          ) : (
+            <MoonIcon className="w-6 h-6 text-theme-icon" />
+          )}
+        </button>
+      </div>
 
       {/* Main Content - Centered */}
       <div className="w-full max-w-xl mx-auto text-center space-y-12">
