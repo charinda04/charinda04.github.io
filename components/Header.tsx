@@ -61,13 +61,13 @@ export const Header = () => {
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-sm hover:shadow-md dark:border-gray-600"
+            className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <SunIcon className="w-5 h-5 text-yellow-400" />
+              <SunIcon className="w-5 h-5 text-amber-400" />
             ) : (
-              <MoonIcon />
+              <MoonIcon className="w-5 h-5 text-theme-text-secondary" />
             )}
           </button>
 

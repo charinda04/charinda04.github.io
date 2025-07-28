@@ -5,19 +5,19 @@
 
 :root,
 [data-theme="light"] {
-  /* Minimal light theme colors */
-  --theme-bg: #fafafa;
-  --theme-text: #0f0f0f;
-  --theme-text-secondary: #525252;
-  --theme-text-accent: #0f0f0f;
-  --theme-border: #e5e5e5;
+  /* Enhanced light theme colors */
+  --theme-bg: #ffffff;
+  --theme-text: #1f2937;
+  --theme-text-secondary: #6b7280;
+  --theme-text-accent: #2563eb;
+  --theme-border: #e5e7eb;
   --theme-card-bg: #ffffff;
-  --theme-card-border: #e5e5e5;
-  --theme-button-bg: #f5f5f5;
-  --theme-button-hover: #e5e5e5;
-  --theme-button-text: #0f0f0f;
-  --theme-accent: #0f0f0f;
-  --theme-accent-secondary: #525252;
+  --theme-card-border: #e5e7eb;
+  --theme-button-bg: #f9fafb;
+  --theme-button-hover: #f3f4f6;
+  --theme-button-text: #1f2937;
+  --theme-accent: #2563eb;
+  --theme-accent-secondary: #1d4ed8;
   --theme-warning-bg: #fef3c7;
   --theme-warning-border: #f59e0b;
   --theme-warning-text: #92400e;
@@ -35,19 +35,19 @@
 }
 
 [data-theme="dark"] {
-  /* Minimal dark theme colors */
-  --theme-bg: #0a0a0a;
-  --theme-text: #fafafa;
-  --theme-text-secondary: #a3a3a3;
-  --theme-text-accent: #fafafa;
-  --theme-border: #262626;
-  --theme-card-bg: #171717;
-  --theme-card-border: #262626;
-  --theme-button-bg: #262626;
-  --theme-button-hover: #404040;
-  --theme-button-text: #fafafa;
-  --theme-accent: #fafafa;
-  --theme-accent-secondary: #a3a3a3;
+  /* Enhanced dark theme colors inspired by tania.dev */
+  --theme-bg: #0d1117;
+  --theme-text: #e6edf3;
+  --theme-text-secondary: #8b949e;
+  --theme-text-accent: #58a6ff;
+  --theme-border: #21262d;
+  --theme-card-bg: #161b22;
+  --theme-card-border: #30363d;
+  --theme-button-bg: #21262d;
+  --theme-button-hover: #30363d;
+  --theme-button-text: #e6edf3;
+  --theme-accent: #58a6ff;
+  --theme-accent-secondary: #1f6feb;
   --theme-warning-bg: #451a03;
   --theme-warning-border: #f59e0b;
   --theme-warning-text: #fcd34d;
@@ -196,7 +196,52 @@
   .space-minimal-sm { @apply space-y-4; }
   .space-minimal-lg { @apply space-y-8; }
   
-  /* Clean shadows */
-  .shadow-minimal { box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1); }
-  .shadow-minimal-lg { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+  /* Enhanced shadows for both themes */
+  .shadow-minimal { 
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06); 
+  }
+  .shadow-minimal-lg { 
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06); 
+  }
+  
+  /* Dark mode shadow adjustments */
+  .dark .shadow-minimal {
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px 0 rgb(0 0 0 / 0.2);
+  }
+  .dark .shadow-minimal-lg {
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -1px rgb(0 0 0 / 0.2);
+  }
+  
+  /* Subtle backdrop blur for cards */
+  .backdrop-blur-card {
+    backdrop-filter: blur(8px);
+    background-color: rgb(255 255 255 / 0.8);
+  }
+  .dark .backdrop-blur-card {
+    background-color: rgb(22 27 34 / 0.8);
+  }
+  
+  /* Enhanced gradient backgrounds */
+  .gradient-card {
+    background: linear-gradient(135deg, var(--theme-card-bg) 0%, rgb(255 255 255 / 0.95) 100%);
+  }
+  .dark .gradient-card {
+    background: linear-gradient(135deg, var(--theme-card-bg) 0%, rgb(22 27 34 / 0.95) 100%);
+  }
+  
+  /* Improved hover states */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Professional text styling */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--theme-text) 0%, var(--theme-text-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
