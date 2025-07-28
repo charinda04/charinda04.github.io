@@ -6,6 +6,7 @@ export const PERSONAL_INFO = {
   languages: ["English", "Sinhala"],
   hobbies: ["Reading books", "Watching movies/ tv shows", "Listening to music"],
   initials: "CD",
+  email: "charinda04@gmail.com",
   intro:
     "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 8+ years of experience, I create beautiful and functional web and mobile applications.",
 };
@@ -96,17 +97,41 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
-      "create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+      "Create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
     skills: ["React Native", "Flutter", "TypeScript", "Team Leadership", "Code Review"],
   },
   {
-    title: "Fullstack Engineer",
-    company: "Digital Innovations Ltd.",
-    period: "2020 - 2022",
+    title: "Senior Software Engineer",
+    company: "Calcey",
+    period: "2022 Jan - 2022 Dec",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Hybrid",
     description:
       "Developed and maintained React-based web applications and Node.js backend systems as a Fullstack Engineer. Collaborated with design teams to create responsive and user-friendly interfaces using modern React patterns.",
+    projects: [
+      {
+        name: "AiScout - Player",
+        description:
+          "The app helps players to create profiles with pictures, videos, game schedules, scores, statistics, etc. ​And take part in challenges (testing skills and fitness), creating a forum for the best talent to be discovered.",
+        achievements: [
+          "• Facilitated recording and submitting video trials using react-native-image-picker library.",
+          "• Facilitated obtaining player information using forms. (using formik)",
+          "• Created a player feed using react-native-fast-image library.",
+          "• Submitted production releases to the Apple App Store and Google Play Store",
+        ],
+        technologies: ["React Native", "Firebase", "WatermelonDB", "TypeScript", "Fastlane", "Redux"],
+      },
+      {
+        name: "AiScout - Scout",
+        description:
+          "The app helps scouts to watch players and their activities. Notify about football fixtures and facilitate adding custom notes about player performances on each match.",
+        achievements: [
+          "• Helped create the questionnaire used by the scouts to store details about player match performance.",
+          "• Added offline functionality using watermelondb, enabling content upload at a later time.",
+        ],
+        technologies: ["React Native", "Firebase", "WatermelonDB", "TypeScript", "Fastlane", "Redux"],
+      },
+    ],
     skills: ["React", "Node.js", "MongoDB", "REST APIs", "Responsive Design"],
   },
   {
@@ -115,30 +140,42 @@ export const WORK_EXPERIENCE = [
     period: "2019 Jul - 2021 Dec",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
-    description: `Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices.
-
-      Worked in 98 Adventures, Halsa Baby projects as a React Native developer.
-
-Halsa Baby is a mobile app that pairs with a wearable device for infants. The app helps parents keep track of their infant’s vitals in real-time (e.g. oxygen levels, body temperature, heart rate) and triggers push notifications if the vitals indicate a cause for concern.
-- Created graph components for bar charts and line charts using react-native-svg and d3 libraries
-- Added custom animation using react-native-reanimated
-Tools/Technologies: React Native, Firebase, D3.js, TypeScript, Fastlane, Redux
-
-98 Adventures owns and operates multiple hotels, attractions, and experiences in Ella, a popular tourist destination in Sri Lanka. This is a mobile application for 98 Adventures, listing down hotels, restaurants, and attractions in Ella, along with interactive maps for easy navigation.
-- Created the navigation structure using react-navigation
-- Created UI components in React Native
-- Created the custom map component using react-native-maps
-- Created offline support for the app by initially downloading content and storing it in the realm database
-Tools/Technologies: React Native, Firebase, TypeScript, Fastlane, Redux, Realm`,
+    description:
+      "Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices. Worked as a React Native developer on multiple client projects.",
+    projects: [
+      {
+        name: "Halsa Baby",
+        description:
+          "A mobile app that pairs with a wearable device for infants. The app helps parents keep track of their infant's vitals in real-time (e.g. oxygen levels, body temperature, heart rate) and triggers push notifications if the vitals indicate a cause for concern.",
+        achievements: [
+          "• Created graph components for bar charts and line charts using react-native-svg and d3 libraries",
+          "• Added custom animation using react-native-reanimated",
+        ],
+        technologies: ["React Native", "Firebase", "D3.js", "TypeScript", "Fastlane", "Redux"],
+      },
+      {
+        name: "98 Adventures",
+        description:
+          "98 Adventures owns and operates multiple hotels, attractions, and experiences in Ella, a popular tourist destination in Sri Lanka. This is a mobile application listing hotels, restaurants, and attractions in Ella, along with interactive maps for easy navigation.",
+        achievements: [
+          "• Created the navigation structure using react-navigation",
+          "• Created UI components in React Native",
+          "• Created the custom map component using react-native-maps",
+          "• Created offline support for the app by initially downloading content and storing it in the realm database",
+        ],
+        technologies: ["React Native", "Firebase", "TypeScript", "Fastlane", "Redux", "Realm"],
+      },
+    ],
     skills: ["React", "TypeScript", "JavaScript", "CSS3", "Performance Optimization"],
   },
   {
     title: "Software Engineer Intern",
     company: "Calcey Technologies",
     period: "2018 Sep - 2019 Feb",
-    employmentType: "Full-time",
+    employmentType: "Internship",
     location: "Colombo, Sri Lanka · On-site",
-    description: "Started career as a Software Engineer Intern developing mobile applications using React native.",
+    description:
+      "Started career as a Software Engineer Intern developing mobile applications using React Native. Gained foundational experience in mobile app development and software engineering practices.",
     skills: ["React", "React Native", "JavaScript", "Stylesheets"],
   },
 ];

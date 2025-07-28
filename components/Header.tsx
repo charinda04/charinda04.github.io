@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 // import { Button } from "@/components/ui/button";
 import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "@/assets/icons";
@@ -20,8 +21,15 @@ export const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-theme-border bg-theme-bg/80 backdrop-blur-md">
       <nav className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-3 group">
-          <div className="w-8 h-8 rounded-full bg-theme-accent flex items-center justify-center transition-transform group-hover:scale-105">
-            <span className="font-semibold text-theme-bg text-theme-sm">C</span>
+          <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-theme-accent transition-transform group-hover:scale-105 shadow-sm">
+            <Image 
+              src="/assets/images/profile.jpg" 
+              alt="Charinda Dissanayake"
+              width={32}
+              height={32}
+              className="w-full h-full object-cover"
+              priority
+            />
           </div>
           <h1 className="font-medium text-theme-lg text-theme-text tracking-tight">Charinda</h1>
         </Link>

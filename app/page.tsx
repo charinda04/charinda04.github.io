@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { ProfileSection } from "../components/ProfileSection";
-import { SOCIAL_LINKS } from "../constants";
+import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
 import {
   SunIcon,
   MoonIcon,
@@ -49,23 +49,96 @@ export default function Home() {
         {/* Profile Section */}
         <ProfileSection />
 
-        {/* Navigation Links - Centered */}
+        {/* Navigation Links - Enhanced Clickable Cards */}
         <nav className="flex justify-center">
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             {[
-              { href: "/work", label: "Work" },
-              { href: "/bio", label: "Bio" },
+              {
+                href: "/work",
+                label: "Work",
+                description: "View my professional experience",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6z"
+                    />
+                  </svg>
+                ),
+              },
+              {
+                href: "/bio",
+                label: "Bio",
+                description: "Learn about my journey",
+                icon: (
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                    />
+                  </svg>
+                ),
+              },
             ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-theme-lg font-medium text-theme-text-secondary hover:text-theme-accent transition-colors duration-200"
+                className="group flex flex-col items-center p-4 bg-theme-card-bg border border-theme-card-border rounded-2xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 w-[160px]"
               >
-                {link.label}
+                <div className="w-10 h-10 bg-theme-accent/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-theme-accent/20 transition-colors duration-300">
+                  <div className="text-theme-accent group-hover:text-theme-accent transition-colors duration-300">
+                    {link.icon}
+                  </div>
+                </div>
+                <h3 className="text-theme-lg font-semibold text-theme-text mb-2 group-hover:text-theme-accent transition-colors duration-300">
+                  {link.label}
+                </h3>
+                <p className="text-theme-sm text-theme-text-secondary text-center leading-tight">{link.description}</p>
               </Link>
             ))}
           </div>
         </nav>
+
+        {/* Contact Email */}
+        <div className="flex justify-center">
+          <a
+            href={`mailto:${PERSONAL_INFO.email}`}
+            className="inline-flex items-center gap-2 px-4 py-2 text-theme-base text-theme-text-secondary hover:text-theme-accent transition-colors duration-200 rounded-lg hover:bg-theme-button-bg"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+            {PERSONAL_INFO.email}
+          </a>
+        </div>
+
+        {/* Download Resume Button */}
+        <div className="flex justify-center">
+          <a
+            href="/assets/documents/CV_Charinda.pdf"
+            download="CV_Charinda.pdf"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-theme-primary hover:bg-theme-primary-hover text-theme-primary-text font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            Download Résumé
+          </a>
+        </div>
 
         {/* Social Media Links - Centered */}
         <div className="flex justify-center">

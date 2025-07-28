@@ -82,10 +82,60 @@ export const WorkSection = () => {
                       </span>
                     </div>
 
-                    <p className="text-theme-base text-theme-text-secondary leading-relaxed mb-6">{work.description}</p>
+                    {/* Main Description */}
+                    <p className="text-theme-base text-theme-text-secondary leading-relaxed mb-6">
+                      {work.description}
+                    </p>
 
-                    {/* Skills - Beautiful pill design */}
-                    {work.skills && work.skills.length > 0 && (
+                    {/* Projects Section */}
+                    {work.projects && work.projects.length > 0 && (
+                      <div className="space-y-4 mb-6">
+                        <h4 className="text-theme-lg font-semibold text-theme-text mb-3">Key Projects</h4>
+                        {work.projects.map((project, projectIndex) => (
+                          <div key={projectIndex} className="bg-theme-accent/5 rounded-xl p-5 border border-theme-accent/10">
+                            {/* Project Title */}
+                            <h5 className="font-semibold text-theme-text mb-2 text-theme-base">{project.name}</h5>
+                            
+                            {/* Project Description */}
+                            <p className="mb-3 text-theme-sm text-theme-text-secondary leading-relaxed">
+                              {project.description}
+                            </p>
+                            
+                            {/* Achievements */}
+                            {project.achievements && project.achievements.length > 0 && (
+                              <ul className="space-y-1 mb-4">
+                                {project.achievements.map((achievement, achievementIndex) => (
+                                  <li key={achievementIndex} className="flex items-start gap-2 text-theme-sm text-theme-text-secondary">
+                                    <span className="text-theme-accent font-bold flex-shrink-0">•</span>
+                                    <span>{achievement.startsWith('•') ? achievement.substring(2) : achievement}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            
+                            {/* Project Technologies */}
+                            {project.technologies && project.technologies.length > 0 && (
+                              <div className="border-t border-theme-accent/10 pt-3">
+                                <p className="text-theme-xs font-medium text-theme-accent mb-2">Technologies:</p>
+                                <div className="flex flex-wrap gap-1">
+                                  {project.technologies.map((tech, techIndex) => (
+                                    <span
+                                      key={techIndex}
+                                      className="inline-flex items-center px-2 py-0.5 rounded text-theme-xs bg-theme-accent/10 text-theme-accent border border-theme-accent/20"
+                                    >
+                                      {tech}
+                                    </span>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* Skills - Beautiful pill design (only show if no projects with technologies) */}
+                    {work.skills && work.skills.length > 0 && !work.projects?.some(project => project.technologies && project.technologies.length > 0) && (
                       <div className="flex flex-wrap gap-2">
                         {work.skills.map((skill, skillIndex) => (
                           <span

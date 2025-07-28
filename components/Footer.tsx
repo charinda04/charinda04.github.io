@@ -47,9 +47,7 @@ export const Footer = () => {
 
           {/* Copyright */}
           <div className="text-center">
-            <p className="text-theme-text-secondary text-theme-xs">
-              © 2025 Charinda Dissanayake
-            </p>
+            <p className="text-theme-text-secondary text-theme-xs">Made with ❤️ by Charinda Dissanayake</p>
           </div>
         </div>
       </div>
