@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTheme } from "next-themes";
 import { ProfileSection } from "../components/ProfileSection";
 import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
+import { trackDownload, trackExternalLink } from "../lib/analytics";
 import {
   SunIcon,
   MoonIcon,
@@ -126,6 +127,7 @@ export default function Home() {
           <a
             href="/assets/documents/CV_Charinda.pdf"
             download="CV_Charinda.pdf"
+            onClick={() => trackDownload('CV_Charinda.pdf')}
             className="group inline-flex items-center gap-3 px-6 py-3 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 font-medium"
           >
             <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
@@ -153,6 +155,7 @@ export default function Home() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackExternalLink(social.url, social.name)}
                   className="group w-12 h-12 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 flex items-center justify-center"
                   aria-label={social.name}
                 >

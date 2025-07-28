@@ -15,29 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://charinda04.github.io'),
+  metadataBase: new URL("https://charinda04.github.io"),
   title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
-  description: "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
+  description:
+    "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
   },
   keywords: [
     "Charinda",
-    "Charinda Dissanayake", 
+    "Charinda Dissanayake",
     "React",
     "React Native",
     "Next.js",
     "NextJS",
     "Frontend Engineer",
-    "Fullstack Engineer", 
+    "Fullstack Engineer",
     "Senior Software Engineer",
     "JavaScript",
     "TypeScript",
     "Mobile Development",
     "Web Development",
-    "Software Engineer Sri Lanka"
+    "Software Engineer Sri Lanka",
   ],
   authors: [{ name: "Charinda Dissanayake" }],
   creator: "Charinda Dissanayake",
@@ -58,7 +59,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://charinda04.github.io",
     title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
-    description: "Senior Software Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications.",
+    description:
+      "Senior Software Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications.",
     siteName: "Charinda Dissanayake Portfolio",
     images: [
       {
@@ -92,41 +94,42 @@ export default function RootLayout({
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Charinda Dissanayake",
-    "jobTitle": "Senior Software Engineer",
-    "description": "Senior Software Engineer specializing in React, React Native, and full-stack development with 8+ years of experience.",
-    "url": "https://charinda04.github.io",
-    "image": "https://charinda04.github.io/assets/images/profile.jpg",
-    "sameAs": [
+    name: "Charinda Dissanayake",
+    jobTitle: "Senior Software Engineer",
+    description:
+      "Senior Software Engineer specializing in React, React Native, and full-stack development with 8+ years of experience.",
+    url: "https://charinda04.github.io",
+    image: "https://charinda04.github.io/assets/images/profile.jpg",
+    sameAs: [
       "https://github.com/charinda04",
       "https://www.linkedin.com/in/charinda-dissanayake/",
       "https://x.com/Charinda_D",
-      "https://www.instagram.com/charinda_jayath/"
+      "https://www.instagram.com/charinda_jayath/",
     ],
-    "knowsAbout": [
+    knowsAbout: [
       "React",
       "Next.js",
-      "React Native", 
+      "React Native",
       "JavaScript",
       "TypeScript",
       "Frontend Development",
       "Full Stack Development",
       "Mobile Development",
       "Web Development",
-      "Software Engineering"
+      "Software Engineering",
     ],
-    "hasOccupation": {
+    hasOccupation: {
       "@type": "Occupation",
-      "name": "Senior Software Engineer",
-      "occupationLocation": {
+      name: "Senior Software Engineer",
+      occupationLocation: {
         "@type": "Place",
-        "name": "Colombo, Sri Lanka"
-      }
+        name: "Colombo, Sri Lanka",
+      },
     },
-    "alumniOf": {
+    alumniOf: {
       "@type": "CollegeOrUniversity",
-      "name": "University of Colombo"
-    }
+      name: "University of Colombo",
+    },
   };
 
   return (
@@ -135,23 +138,28 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="shortcut icon" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
+
+        {/* Google Analytics */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-8YCBQFKF8M"></script>
         <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-8YCBQFKF8M', {
+                page_title: document.title,
+                page_location: window.location.href,
+              });
+            `,
+          }}
         />
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="dark"
-          themes={["light", "dark"]}
-          enableSystem={false}
-        >
-          <RouteGuard>
-            {children}
-          </RouteGuard>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ThemeProvider attribute="data-theme" defaultTheme="dark" themes={["light", "dark"]} enableSystem={false}>
+          <RouteGuard>{children}</RouteGuard>
         </ThemeProvider>
       </body>
     </html>
