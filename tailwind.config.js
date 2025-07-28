@@ -36,6 +36,7 @@ module.exports = {
         'theme-icon': 'var(--theme-icon)',
         'theme-icon-hover': 'var(--theme-icon-hover)',
         'theme-icon-active': 'var(--theme-icon-active)',
+        'theme-icon-sun': 'var(--theme-icon-sun)',
       },
       fontSize: {
         'theme-xs': 'var(--theme-font-xs)',

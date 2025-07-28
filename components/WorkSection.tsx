@@ -30,7 +30,7 @@ export const WorkSection = () => {
               {/* Main Content Container */}
               <div className="ml-12 relative">
                 {/* Company Logo Card */}
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-theme-card-bg to-theme-button-bg border border-theme-border rounded-2xl shadow-lg mb-4 group-hover:shadow-xl transition-all duration-300">
+                {/* <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-theme-card-bg to-theme-button-bg border border-theme-border rounded-2xl shadow-lg mb-4 group-hover:shadow-xl transition-all duration-300">
                   <span className="text-theme-accent font-bold text-lg">
                     {work.company
                       .split(" ")
@@ -38,7 +38,7 @@ export const WorkSection = () => {
                       .join("")
                       .slice(0, 2)}
                   </span>
-                </div>
+                </div> */}
 
                 {/* Content Card with hover effect */}
                 <div className="bg-theme-card-bg border border-theme-card-border rounded-2xl p-8 shadow-minimal group-hover:shadow-minimal-lg transition-all duration-300 relative overflow-hidden">
@@ -50,7 +50,7 @@ export const WorkSection = () => {
                     <div className="flex items-start justify-between mb-4">
                       <div>
                         <h3 className="text-theme-xl font-bold text-theme-text mb-1">{work.title}</h3>
-                        <p className="text-theme-lg text-theme-text-accent font-semibold">{work.company}</p>
+                        <p className="text-theme-lg text-theme-text font-semibold">{work.company}</p>
                       </div>
                       <div className="text-right">
                         <span className="inline-flex items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/10 text-theme-accent border border-theme-accent/20">
@@ -83,36 +83,40 @@ export const WorkSection = () => {
                     </div>
 
                     {/* Main Description */}
-                    <p className="text-theme-base text-theme-text-secondary leading-relaxed mb-6">
-                      {work.description}
-                    </p>
+                    <p className="text-theme-base text-theme-text-secondary leading-relaxed mb-6">{work.description}</p>
 
                     {/* Projects Section */}
                     {work.projects && work.projects.length > 0 && (
                       <div className="space-y-4 mb-6">
                         <h4 className="text-theme-lg font-semibold text-theme-text mb-3">Key Projects</h4>
                         {work.projects.map((project, projectIndex) => (
-                          <div key={projectIndex} className="bg-theme-accent/5 rounded-xl p-5 border border-theme-accent/10">
+                          <div
+                            key={projectIndex}
+                            className="bg-theme-accent/5 rounded-xl p-5 border border-theme-accent/10"
+                          >
                             {/* Project Title */}
                             <h5 className="font-semibold text-theme-text mb-2 text-theme-base">{project.name}</h5>
-                            
+
                             {/* Project Description */}
                             <p className="mb-3 text-theme-sm text-theme-text-secondary leading-relaxed">
                               {project.description}
                             </p>
-                            
+
                             {/* Achievements */}
                             {project.achievements && project.achievements.length > 0 && (
                               <ul className="space-y-1 mb-4">
                                 {project.achievements.map((achievement, achievementIndex) => (
-                                  <li key={achievementIndex} className="flex items-start gap-2 text-theme-sm text-theme-text-secondary">
+                                  <li
+                                    key={achievementIndex}
+                                    className="flex items-start gap-2 text-theme-sm text-theme-text-secondary"
+                                  >
                                     <span className="text-theme-accent font-bold flex-shrink-0">•</span>
-                                    <span>{achievement.startsWith('•') ? achievement.substring(2) : achievement}</span>
+                                    <span>{achievement.startsWith("•") ? achievement.substring(2) : achievement}</span>
                                   </li>
                                 ))}
                               </ul>
                             )}
-                            
+
                             {/* Project Technologies */}
                             {project.technologies && project.technologies.length > 0 && (
                               <div className="border-t border-theme-accent/10 pt-3">
@@ -135,18 +139,20 @@ export const WorkSection = () => {
                     )}
 
                     {/* Skills - Beautiful pill design (only show if no projects with technologies) */}
-                    {work.skills && work.skills.length > 0 && !work.projects?.some(project => project.technologies && project.technologies.length > 0) && (
-                      <div className="flex flex-wrap gap-2">
-                        {work.skills.map((skill, skillIndex) => (
-                          <span
-                            key={skillIndex}
-                            className="inline-flex items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent border border-theme-accent/10 hover:bg-theme-accent/10 transition-colors duration-200"
-                          >
-                            {skill}
-                          </span>
-                        ))}
-                      </div>
-                    )}
+                    {work.skills &&
+                      work.skills.length > 0 &&
+                      !work.projects?.some((project) => project.technologies && project.technologies.length > 0) && (
+                        <div className="flex flex-wrap gap-2">
+                          {work.skills.map((skill, skillIndex) => (
+                            <span
+                              key={skillIndex}
+                              className="inline-flex items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent border border-theme-accent/10 hover:bg-theme-accent/10 transition-colors duration-200"
+                            >
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                   </div>
                 </div>
               </div>

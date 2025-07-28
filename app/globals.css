@@ -35,6 +35,7 @@
   --theme-icon: #6b7280;
   --theme-icon-hover: #2563eb;
   --theme-icon-active: #1d4ed8;
+  --theme-icon-sun: #fcd34d;
 
   /* Minimal font sizes with better hierarchy */
   --theme-font-xs: 0.75rem;
@@ -78,6 +79,7 @@
   --theme-icon: #8b949e;
   --theme-icon-hover: #58a6ff;
   --theme-icon-active: #1f6feb;
+  --theme-icon-sun: #fcd34d;
 }
 
 @theme inline {
@@ -239,8 +241,14 @@
   .text-theme-text-secondary {
     color: var(--theme-text-secondary);
   }
+  .text-theme-text-accent {
+    color: var(--theme-text-accent);
+  }
   .text-theme-accent {
     color: var(--theme-accent);
+  }
+  .text-theme-icon-sun {
+    color: var(--theme-icon-sun);
   }
   .border-theme-border {
     border-color: var(--theme-border);

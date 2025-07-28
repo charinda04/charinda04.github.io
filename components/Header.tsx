@@ -59,7 +59,7 @@ export const Header = () => {
             aria-label="Toggle theme"
           >
             {theme === "dark" ? (
-              <SunIcon className="w-5 h-5 text-theme-icon-active" />
+              <SunIcon className="w-5 h-5 text-theme-icon-sun" />
             ) : (
               <MoonIcon className="w-5 h-5 text-theme-icon" />
             )}

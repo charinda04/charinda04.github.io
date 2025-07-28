@@ -38,7 +38,7 @@ export default function Home() {
         aria-label="Toggle theme"
       >
         {theme === "dark" ? (
-          <SunIcon className="w-6 h-6 text-theme-icon-active" />
+          <SunIcon className="w-6 h-6 text-theme-icon-sun" />
         ) : (
           <MoonIcon className="w-6 h-6 text-theme-icon" />
         )}
@@ -126,23 +126,25 @@ export default function Home() {
           <a
             href="/assets/documents/CV_Charinda.pdf"
             download="CV_Charinda.pdf"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-theme-primary hover:bg-theme-primary-hover text-theme-primary-text font-medium rounded-xl transition-all duration-200 shadow-sm hover:shadow-md"
+            className="group inline-flex items-center gap-3 px-6 py-3 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 font-medium"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-              />
-            </svg>
-            Download Résumé
+            <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
+              <svg className="w-4 h-4 text-theme-accent group-hover:text-theme-accent transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                />
+              </svg>
+            </div>
+            <span className="text-theme-text group-hover:text-theme-accent transition-colors duration-300">Download Résumé</span>
           </a>
         </div>
 
         {/* Social Media Links - Centered */}
         <div className="flex justify-center">
-          <div className="flex gap-4 flex-wrap justify-center">
+          <div className="flex gap-3 flex-wrap justify-center">
             {SOCIAL_LINKS.map((social) => {
               const Icon = iconMap[social.icon as keyof typeof iconMap];
               return (
@@ -151,14 +153,20 @@ export default function Home() {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 p-2 text-theme-icon hover:text-theme-icon-hover transition-colors duration-200"
+                  className="group w-12 h-12 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 flex items-center justify-center"
                   aria-label={social.name}
                 >
-                  <Icon className="w-6 h-6" />
+                  <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
+                    <Icon className="w-4 h-4 text-theme-accent group-hover:text-theme-accent transition-colors duration-300" />
+                  </div>
                 </a>
               );
             })}
           </div>
+        </div>
+
+        <div className="text-center">
+          <p className="text-theme-text-secondary text-theme-xs">Made with ❤️ by Charinda Dissanayake</p>
         </div>
       </div>
     </div>

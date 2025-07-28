@@ -3,7 +3,6 @@
 import { BIO_TIMELINE } from "@/constants";
 
 export const BioSection = () => {
-
   return (
     <section className="w-full max-w-4xl mx-auto mb-16 px-4">
       <div className="text-center mb-12">
@@ -12,30 +11,26 @@ export const BioSection = () => {
           <div className="absolute bottom-0 left-0 w-full h-0.5 bg-theme-accent"></div>
         </h2>
       </div>
-      
+
       <div className="relative">
         {/* Timeline line - enhanced styling */}
         <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-theme-accent to-theme-accent-secondary shadow-sm"></div>
-        
+
         <div className="space-y-8">
           {BIO_TIMELINE.map((item, index) => (
             <div key={index} className="relative flex items-start">
               {/* Timeline dot - enhanced styling */}
               <div className="absolute left-4 w-4 h-4 bg-theme-accent rounded-full border-4 border-theme-bg shadow-md z-10"></div>
-              
+
               {/* Content */}
               <div className="ml-12 bg-theme-card-bg border border-theme-card-border rounded-xl p-6 shadow-lg flex-1">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3">
-                  <h3 className="text-theme-xl font-semibold text-theme-text">
-                    {item.title}
-                  </h3>
-                  <span className="text-theme-text-accent font-bold text-theme-lg bg-theme-accent/10 px-3 py-1 rounded-full">
+                  <h3 className="text-theme-xl font-semibold text-theme-text">{item.title}</h3>
+                  <span className=" text-theme-accent font-bold text-theme-lg bg-theme-accent/10 px-3 py-1 rounded-full">
                     {item.year}
                   </span>
                 </div>
-                <p className="text-theme-text-secondary leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-theme-text-secondary leading-relaxed">{item.description}</p>
               </div>
             </div>
           ))}

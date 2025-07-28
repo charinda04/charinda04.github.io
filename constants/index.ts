@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   initials: "CD",
   email: "charinda04@gmail.com",
   intro:
-    "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 8+ years of experience, I create beautiful and functional web and mobile applications.",
+    "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 5+ years of experience, I create beautiful and functional web and mobile applications.",
 };
 
 export const BIO_TIMELINE = [
@@ -91,13 +91,66 @@ export const BIO_TIMELINE = [
 
 export const WORK_EXPERIENCE = [
   {
-    title: "Senior Software Engineer",
-    company: "Tech Solutions Inc.",
+    title: "Senior Frontend Developer",
+    company: "RozieAI",
+    period: "2023 May - 2025",
+    employmentType: "Full-time",
+    location: "Colombo, Sri Lanka · Remote",
+    description:
+      "Create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+    projects: [
+      {
+        name: "Rozie Video Gallery",
+        description: "This video gallery application is shared with clients to show them how to use Rozie services.",
+        achievements: [
+          "• Created OTP login with email.",
+          "• Handled audio upload and play/ pause audio.",
+          "• Set up navigation structure, including a custom drawer navigation.",
+          "• Use web sockets to fetch transcript data",
+        ],
+        technologies: ["React 18", "TypeScript", "Redux"],
+      },
+      {
+        name: "Insights Dashboard",
+        description: "The app is a dashboard for viewing, filtering, and sorting client data.",
+        achievements: [
+          "•Showed a large amount of data using ngx-datatable library.",
+          "• Displayed charting diagrams using Highcharts.",
+        ],
+        technologies: ["Angular 15", "TypeScript"],
+      },
+      {
+        name: "Experience Studio",
+        description: "The app is a dashboard for creating skills and adding data to the knowledge base.",
+        achievements: ["• Updated the existing skill work-item UI panels with the new UI."],
+        technologies: ["React 18", "TypeScript", "Redux"],
+      },
+    ],
+    skills: ["React Native", "Flutter", "TypeScript", "Team Leadership", "Code Review"],
+  },
+  {
+    title: "Associate Technical Lead",
+    company: "Calcey",
     period: "2022 - Present",
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
       "Create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+    projects: [
+      {
+        name: "AiScout - Coach",
+        description: "The app helps coaches submit player trials and review the rated results.",
+        achievements: [
+          "• Initialised the react-native app and created the initial structure.",
+          "• Added changes to automate releases using Fastlane for each environment. (Dev, QA, Staging, RC)",
+          "• Set up navigation structure, including a custom drawer navigation.",
+          "• Connected to Firebase and added Firebase push-notifications.",
+          "• Showed in-app push notifications using react-native-push-notification library.",
+          "• Led and managed a team of developers assigned to the app.",
+        ],
+        technologies: ["React Native", "Firebase", "WatermelonDB", "TypeScript", "Fastlane", "Redux"],
+      },
+    ],
     skills: ["React Native", "Flutter", "TypeScript", "Team Leadership", "Code Review"],
   },
   {
