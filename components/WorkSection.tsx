@@ -18,7 +18,7 @@ export const WorkSection = () => {
 
         <div className="space-y-12">
           {WORK_EXPERIENCE.map((work, index) => (
-            <div key={index} className="relative group">
+            <div key={index} className={`relative group animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}>
               {/* Timeline Dot - glowing dot with pulse animation */}
               {/* <div className="absolute left-4 top-8 w-4 h-4 bg-theme-accent rounded-full shadow-lg z-20 ring-4 ring-theme-bg ring-opacity-100">
                 <div className="absolute inset-0 bg-theme-accent rounded-full animate-ping opacity-20"></div>
@@ -41,7 +41,7 @@ export const WorkSection = () => {
                 </div> */}
 
                 {/* Content Card with hover effect */}
-                <div className="bg-theme-card-bg border border-theme-card-border rounded-2xl p-8 shadow-minimal group-hover:shadow-minimal-lg transition-all duration-300 relative overflow-hidden">
+                <div className="bg-theme-card-bg border border-theme-card-border rounded-2xl p-8 shadow-minimal group-hover:shadow-minimal-lg transition-all duration-300 relative overflow-hidden hover-lift">
                   {/* Subtle background pattern */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-theme-accent/5 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
 

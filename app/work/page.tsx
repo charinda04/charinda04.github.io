@@ -22,12 +22,12 @@ export const metadata: Metadata = {
 
 export default function WorkPage() {
   return (
-    <div className="min-h-screen bg-theme-bg">
+    <div className="min-h-screen bg-theme-bg flex flex-col page-transition">
       <Header />
 
-      <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
+      <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full">
         {/* Header */}
-        <div className="text-center space-minimal">
+        <div className="text-center space-minimal animate-fade-in-up animate-stagger-1">
           <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">Work & Experience</h1>
           <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
             Passionate about creating exceptional digital experiences through clean code, innovative solutions, and
@@ -36,11 +36,13 @@ export default function WorkPage() {
         </div>
 
         {/* Work Experience Section */}
-        <WorkSection />
+        <div className="animate-fade-in-up animate-stagger-2">
+          <WorkSection />
+        </div>
 
         {/* Skills Section */}
         <section className="space-minimal">
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 animate-fade-in-up animate-stagger-3">
             <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">Technical Skills</h2>
             <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
@@ -53,7 +55,10 @@ export default function WorkPage() {
             }`}
           >
             {TECHNICAL_SKILLS.map((skillGroup, index) => (
-              <Card key={index} className="border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm">
+              <Card 
+                key={index} 
+                className={`border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 4, 6)}`}
+              >
                 <CardHeader className="pb-4">
                   <CardTitle className="text-theme-lg text-theme-text">{skillGroup.category}</CardTitle>
                 </CardHeader>
@@ -63,7 +68,7 @@ export default function WorkPage() {
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20 border-[0.01px]"
+                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20 border-[0.01px] transition-all duration-200 hover:scale-105"
                       >
                         {tech}
                       </Badge>

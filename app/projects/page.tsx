@@ -18,12 +18,12 @@ export default function ProjectsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-theme-bg flex flex-col">
+    <div className="min-h-screen bg-theme-bg flex flex-col page-transition">
       <Header />
 
       <main className="flex-1 max-w-6xl mx-auto px-6 py-12 space-minimal-lg w-full">
         {/* Header */}
-        <div className="text-center space-minimal">
+        <div className="text-center space-minimal animate-fade-in-up animate-stagger-1">
           <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">My Projects</h1>
           <p className="text-theme-base text-theme-text-secondary max-w-xl mx-auto leading-relaxed">
             A collection of web and mobile applications I've built, ranging from personal projects to client work.
@@ -32,7 +32,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Project Toggle */}
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-8 animate-fade-in-up animate-stagger-2">
           <div className="bg-theme-card-bg border border-theme-border rounded-lg p-1 shadow-minimal">
             <button
               onClick={() => setActiveSection("work")}
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
 
         {/* Dynamic Projects Section */}
         <section className="space-minimal">
-          <div className="text-left mb-8">
+          <div className="text-left mb-8 animate-fade-in-up animate-stagger-3">
             <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
               {activeSection === "work" ? "Recent Projects" : "Personal Projects"}
             </h2>
@@ -72,10 +72,10 @@ export default function ProjectsPage() {
 
           {activeSection === "work" ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {WORK_PROJECTS.map((project) => (
+              {WORK_PROJECTS.map((project, index) => (
                 <Card
                   key={project.id}
-                  className="border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden"
+                  className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
                 >
                   {/* Project Image/Icon */}
                   <div className="h-40 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border relative">
@@ -122,10 +122,10 @@ export default function ProjectsPage() {
             </div>
           ) : (
             <div className="grid gap-6 md:grid-cols-2">
-              {PROJECTS.map((project) => (
+              {PROJECTS.map((project, index) => (
                 <Card
                   key={project.id}
-                  className="border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden"
+                  className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
                 >
                   {/* Project Image/Icon */}
                   <div className="h-32 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border">
