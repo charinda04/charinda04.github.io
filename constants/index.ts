@@ -97,7 +97,7 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
-      "Create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+      "Create UI of multiple products  as a Senior Frontend Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend technologies.",
     projects: [
       {
         name: "Rozie Video Gallery",
@@ -135,13 +135,13 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Remote",
     description:
-      "Create UI of cross-platform mobile applications using React Native and Flutter as a Senior Software Engineer. Responsible for architecture decisions, code reviews, and mentoring junior developers in modern frontend and fullstack technologies.",
+      "Create UI of cross-platform mobile applications using React Native as an Associate Technical Lead. Responsible for architecture decisions, code reviews, and mentoring junior developers.",
     projects: [
       {
         name: "AiScout - Coach",
         description: "The app helps coaches submit player trials and review the rated results.",
         achievements: [
-          "• Initialised the react-native app and created the initial structure.",
+          "• Initialized the react-native app and created the initial structure.",
           "• Added changes to automate releases using Fastlane for each environment. (Dev, QA, Staging, RC)",
           "• Set up navigation structure, including a custom drawer navigation.",
           "• Connected to Firebase and added Firebase push-notifications.",
@@ -160,7 +160,7 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · Hybrid",
     description:
-      "Developed and maintained React-based web applications and Node.js backend systems as a Fullstack Engineer. Collaborated with design teams to create responsive and user-friendly interfaces using modern React patterns.",
+      "Developed and maintained mobile applications using React Native. Collaborated with design teams to create responsive and user-friendly interfaces using modern React/ React Native patterns.",
     projects: [
       {
         name: "AiScout - Player",
@@ -194,7 +194,7 @@ export const WORK_EXPERIENCE = [
     employmentType: "Full-time",
     location: "Colombo, Sri Lanka · On-site",
     description:
-      "Built modern web applications with React and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React best practices. Worked as a React Native developer on multiple client projects.",
+      "Built modern mobile applications using React Native and TypeScript as a Frontend Engineer. Implemented responsive designs and optimized application performance using React/ React Native best practices. Worked as a React Native developer on multiple client projects.",
     projects: [
       {
         name: "Halsa Baby",
