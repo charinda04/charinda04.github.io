@@ -30,20 +30,15 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
     <Card
       className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
     >
-      {/* Project Image/Icon */}
+      {/* Project Image */}
       <div className="h-32 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border relative overflow-hidden">
         <Image
           src={project.image}
           alt={project.title}
           width={128}
           height={128}
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-theme-accent text-2xl font-semibold bg-theme-bg/80 w-12 h-12 rounded-full flex items-center justify-center border border-theme-accent/20">
-            {project.title.charAt(0)}
-          </div>
-        </div>
       </div>
 
       <CardHeader className="pb-4">
@@ -63,13 +58,12 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
         {/* Technologies */}
         <div className="flex flex-wrap gap-1">
           {project.technologies.map((tech) => (
-            <Badge
+            <span
               key={tech}
-              variant="secondary"
-              className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 text-theme-xs"
+              className="inline-flex items-center bg-theme-card-border text-theme-text hover:bg-theme-accent hover:text-theme-bg text-theme-xs px-2 py-1 rounded transition-colors duration-200"
             >
               {tech}
-            </Badge>
+            </span>
           ))}
         </div>
 

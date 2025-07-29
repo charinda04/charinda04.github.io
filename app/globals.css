@@ -250,6 +250,10 @@
     scrollbar-color: var(--theme-border) var(--theme-bg);
   }
   
+  /* Fixed header spacing */
+  .page-with-header {
+    padding-top: 80px;
+  }
 }
 
 @layer utilities {

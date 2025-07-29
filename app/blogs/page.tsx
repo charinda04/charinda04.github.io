@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 
 export default function BlogsPage() {
@@ -61,7 +60,6 @@ export default function BlogsPage() {
 
   return (
     <div className="min-h-screen bg-theme-bg">
-      <Header />
       
       <main className="max-w-4xl mx-auto px-6 py-12 space-minimal-lg">
         {/* Header */}

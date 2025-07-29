@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { RouteGuard } from "../components/RouteGuard";
+import { ConditionalHeader } from "../components/ConditionalHeader";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -163,6 +164,7 @@ export default function RootLayout({
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-theme-bg text-theme-text`} style={{backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)'}}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" themes={["light", "dark"]} enableSystem={false}>
+          <ConditionalHeader />
           <RouteGuard>{children}</RouteGuard>
         </ThemeProvider>
       </body>

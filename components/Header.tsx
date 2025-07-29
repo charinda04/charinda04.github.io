@@ -21,7 +21,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-theme-border bg-theme-bg/80 backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-theme-border bg-theme-bg/95 backdrop-blur-md shadow-sm">
       <nav className="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center space-x-3 group">
           <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-theme-accent transition-transform group-hover:scale-105 shadow-sm">

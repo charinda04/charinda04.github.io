@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Header } from "@/components/Header";
 import { WorkSection } from "../../components/WorkSection";
 import { Footer } from "../../components/Footer";
 import { TECHNICAL_SKILLS } from "@/constants";
@@ -23,9 +22,8 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <div className="min-h-screen bg-theme-bg flex flex-col page-transition">
-      <Header />
 
-      <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full">
+      <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full min-h-[calc(100vh-80px)]">
         {/* Header */}
         <div className="text-center space-minimal animate-fade-in-up animate-stagger-1">
           <h1 className="text-theme-4xl font-semibold text-theme-text tracking-tight">Work & Experience</h1>

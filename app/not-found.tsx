@@ -2,12 +2,10 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Header } from "../components/Header";
 
 export default function NotFound() {
   return (
     <div className="min-h-screen bg-theme-bg">
-      <Header />
       
       <main className="flex items-center justify-center px-6 py-12 min-h-[calc(100vh-80px)]">
         <Card className="border-theme-border bg-theme-card-bg shadow-minimal max-w-md w-full">

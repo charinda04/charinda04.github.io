@@ -368,12 +368,31 @@ export const WORK_PROJECTS = [
     company: "United Kingdom",
     role: "Associate Technical Lead",
     period: "Jan 2021 - Jun 2023",
-    image: "/assets/images/ai_scout.webp",
+    image: "/assets/images/ai_scout_player.webp",
     achievements: [
-      "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
-      "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features.",
+      // "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
+      // "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features.",
     ],
     technologies: ["React Native"],
+    webUrl: "https://www.ai.io/",
+    androidUrl: "https://play.google.com/store/apps/details?id=com.aiscout.player&hl=en",
+    iosUrl: "https://apps.apple.com/gb/app/aiscout/id1508291341",
+  },
+  {
+    id: 2,
+    title: "AiScout",
+    company: "United Kingdom",
+    role: "Associate Technical Lead",
+    period: "Jan 2021 - Jun 2023",
+    image: "/assets/images/ai_scout_scout.webp",
+    achievements: [
+      // "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
+      // "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features.",
+    ],
+    technologies: ["React Native"],
+    webUrl: "https://www.ai.io/",
+    androidUrl: "https://play.google.com/store/apps/details?id=com.aiscout.scout&hl=en",
+    iosUrl: "https://apps.apple.com/gb/app/aiscout-scout/id1509000378",
   },
   // {
   //   id: 3,
@@ -420,13 +439,13 @@ export const WORK_PROJECTS = [
 export const PROJECTS = [
   {
     id: 1,
-    title: "ECommerce Mobile App",
+    title: "Personal webpage",
     description:
-      "A full-featured e-commerce mobile application built with React Native, featuring user authentication, product catalog, cart management, and payment integration.",
+      "A personal webpage created to show my work experience, personal details and things I have worked on and working on",
     image: "/assets/images/personal.png",
-    technologies: ["React Native", "TypeScript", "Redux Toolkit", "Firebase"],
-    githubUrl: "https://github.com/charinda/ecommerce-app",
-    // liveUrl: "https://play.google.com/store/apps/details?id=com.charinda.ecommerce",
+    technologies: ["NextJs", "Tailwind"],
+    githubUrl: "https://github.com/charinda04/charinda04.github.io",
+    liveUrl: "https://charinda04.github.io/",
     status: "Live",
   },
   // {
