@@ -18,23 +18,14 @@
   --theme-button-text: #1f2937;
   --theme-accent: #8b5cf6;
   --theme-accent-secondary: #7c3aed;
-  --theme-warning-bg: #fef3c7;
-  --theme-warning-border: #f59e0b;
-  --theme-warning-text: #92400e;
-  --theme-warning-text-secondary: #b45309;
 
   /* Button specific colors */
   --theme-primary: #2563eb;
   --theme-primary-hover: #1d4ed8;
   --theme-primary-text: #ffffff;
-  --theme-secondary: #f3f4f6;
-  --theme-secondary-hover: #e5e7eb;
-  --theme-secondary-text: #1f2937;
 
   /* Icon colors */
   --theme-icon: #6b7280;
-  --theme-icon-hover: #2563eb;
-  --theme-icon-active: #1d4ed8;
   --theme-icon-sun: #fcd34d;
 
   /* Minimal font sizes with better hierarchy */
@@ -62,23 +53,14 @@
   --theme-button-text: #e6edf3;
   --theme-accent: #8b5cf6;
   --theme-accent-secondary: #7c3aed;
-  --theme-warning-bg: #451a03;
-  --theme-warning-border: #f59e0b;
-  --theme-warning-text: #fcd34d;
-  --theme-warning-text-secondary: #fde68a;
 
   /* Button specific colors */
   --theme-primary: #58a6ff;
   --theme-primary-hover: #1f6feb;
   --theme-primary-text: #ffffff;
-  --theme-secondary: #21262d;
-  --theme-secondary-hover: #30363d;
-  --theme-secondary-text: #e6edf3;
 
   /* Icon colors */
   --theme-icon: #8b949e;
-  --theme-icon-hover: #58a6ff;
-  --theme-icon-active: #1f6feb;
   --theme-icon-sun: #fcd34d;
 }
 
