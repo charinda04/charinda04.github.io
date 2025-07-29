@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "../../components/Footer";
 import { PERSONAL_INFO } from "@/constants";
-import { PassionLinks } from "./components/PassionLinks";
+import { PassionLinks } from "@/components/PassionLinks";
 
 export const metadata: Metadata = {
   title: "About Charinda Dissanayake | Senior Software Engineer Biography",
