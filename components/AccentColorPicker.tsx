@@ -20,7 +20,7 @@ interface AccentColorPickerProps {
 
 export const AccentColorPicker: React.FC<AccentColorPickerProps> = ({ onColorChange }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedColor, setSelectedColor] = useState<AccentColorId>("Purple");
+  const [selectedColor, setSelectedColor] = useState<AccentColorId>("purple");
   const [isClient, setIsClient] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
