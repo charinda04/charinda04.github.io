@@ -2,33 +2,30 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GitHubIcon } from "@/assets/icons";
-import { PROJECT_STATUS_VARIANTS } from "@/constants";
+import { PROJECT_STATUS_VARIANTS, PersonalProject } from "@/constants";
+import { trackButtonClick } from "@/lib/analytics";
 import Image from "next/image";
-
-interface PersonalProject {
-  id: number;
-  title: string;
-  description: (string | { type: "link"; url: string; text: string })[];
-  image: string;
-  technologies: string[];
-  githubUrl: string;
-  liveUrl: string | null;
-  status: string;
-}
+import { memo, useMemo } from "react";
 
 interface PersonalProjectCardProps {
   project: PersonalProject;
   index: number;
 }
 
-export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ project, index }) => {
-  const getStatusVariant = (status: string) => {
-    return PROJECT_STATUS_VARIANTS[status as keyof typeof PROJECT_STATUS_VARIANTS] || "secondary";
-  };
+export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ project, index }) => {
+  const statusVariant = useMemo(() => 
+    PROJECT_STATUS_VARIANTS[project.status as keyof typeof PROJECT_STATUS_VARIANTS] || "secondary",
+    [project.status]
+  );
+
+  const animationClass = useMemo(() => 
+    `animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`,
+    [index]
+  );
 
   return (
     <Card
-      className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`}
+      className={`border-theme-border bg-theme-card-bg shadow-minimal hover:shadow-minimal-lg transition-shadow duration-300 overflow-hidden hover-lift ${animationClass}`}
     >
       {/* Project Image */}
       <div className="h-32 bg-gradient-to-br from-theme-accent/10 to-theme-accent-secondary/10 flex items-center justify-center border-b border-theme-border relative overflow-hidden">
@@ -46,7 +43,7 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
           <CardTitle className="text-theme-lg font-medium text-theme-text leading-tight">
             {project.title}
           </CardTitle>
-          <Badge variant={getStatusVariant(project.status) as any} className="ml-2 shrink-0">
+          <Badge variant={statusVariant as any} className="ml-2 shrink-0">
             {project.status}
           </Badge>
         </div>
@@ -99,6 +96,7 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
+              onClick={() => trackButtonClick(`Project Code - ${project.title}`, "/projects")}
             >
               <GitHubIcon className="w-4 h-4" />
               <span className="text-theme-sm">Code</span>
@@ -112,7 +110,13 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
               size="sm"
               className="p-0 h-auto text-theme-accent hover:text-theme-accent-secondary hover:bg-transparent"
             >
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-theme-sm">
+              <a 
+                href={project.liveUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-theme-sm"
+                onClick={() => trackButtonClick(`Project Demo - ${project.title}`, "/projects")}
+              >
                 Live Demo →
               </a>
             </Button>
@@ -121,4 +125,6 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
       </CardContent>
     </Card>
   );
-};
+});
+
+PersonalProjectCard.displayName = 'PersonalProjectCard';

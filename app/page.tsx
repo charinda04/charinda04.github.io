@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { ProfileSection } from "../components/ProfileSection";
 import { AccentColorPicker } from "../components/AccentColorPicker";
 import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
-import { trackDownload, trackExternalLink } from "../lib/analytics";
+import { trackDownload, trackExternalLink, trackButtonClick } from "../lib/analytics";
 import {
   SunIcon,
   MoonIcon,
@@ -47,7 +47,11 @@ export default function Home() {
         
         {/* Theme Toggle */}
         <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => {
+            const newTheme = theme === "dark" ? "light" : "dark";
+            setTheme(newTheme);
+            trackButtonClick(`Homepage Theme Toggle - ${newTheme}`, "/");
+          }}
           className="w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 flex items-center justify-center hover-lift"
           aria-label="Toggle theme"
         >

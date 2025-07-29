@@ -9,6 +9,7 @@ import Image from "next/image";
 // import { Button } from "@/components/ui/button";
 import { CloseIcon, MenuIcon, MoonIcon, SunIcon } from "@/assets/icons";
 import { AccentColorPicker } from "./AccentColorPicker";
+import { trackButtonClick } from "@/lib/analytics";
 
 // Navigation Header Component
 export const Header = () => {
@@ -78,7 +79,11 @@ export const Header = () => {
           
           {/* Theme Toggle */}
           <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            onClick={() => {
+              const newTheme = theme === "dark" ? "light" : "dark";
+              setTheme(newTheme);
+              trackButtonClick(`Theme Toggle - ${newTheme}`, window.location.pathname);
+            }}
             className="w-9 h-9 p-1.5 border border-theme-border bg-theme-card-bg hover:bg-theme-button-bg rounded-lg transition-all duration-200 shadow-minimal hover:shadow-minimal-lg flex items-center justify-center"
             aria-label="Toggle theme"
           >
@@ -91,7 +96,10 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              setIsMobileMenuOpen(!isMobileMenuOpen);
+              trackButtonClick("Mobile Menu Toggle", window.location.pathname);
+            }}
             className="md:hidden w-8 h-8 p-0 hover:bg-theme-button-bg rounded-md transition-colors"
             aria-label="Toggle mobile menu"
           >

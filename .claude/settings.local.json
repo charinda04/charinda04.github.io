@@ -9,7 +9,10 @@
       "Bash(npm install:*)",
       "Bash(timeout 10 npm run dev:*)",
       "Bash(mv:*)",
-      "Bash(true)"
+      "Bash(true)",
+      "Bash(npm run lint)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }

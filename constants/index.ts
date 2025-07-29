@@ -436,7 +436,25 @@ export const WORK_PROJECTS = [
   // },
 ];
 
-export const PROJECTS = [
+// Types for project data
+export interface ProjectDescriptionItem {
+  type: "link";
+  url: string;
+  text: string;
+}
+
+export interface PersonalProject {
+  id: number;
+  title: string;
+  description: (string | ProjectDescriptionItem)[];
+  image: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl: string | null;
+  status: string;
+}
+
+export const PROJECTS: PersonalProject[] = [
   {
     id: 1,
     title: "Personal webpage",
@@ -453,8 +471,37 @@ export const PROJECTS = [
     technologies: ["NextJs", "Tailwind"],
     githubUrl: "https://github.com/charinda04/charinda04.github.io",
     liveUrl: "https://charinda04.github.io/",
-    status: "Live",
+    status: "Live & Updating",
   },
+  // {
+  //   id: 2,
+  //   title: "React Component Library",
+  //   description: [
+  //     "Building a comprehensive, reusable component library with modern React patterns, TypeScript, and Storybook documentation.",
+  //     " Currently exploring ",
+  //     { type: "link", url: "https://storybook.js.org/", text: "Storybook" },
+  //     " integration and automated testing workflows."
+  //   ],
+  //   image: "/assets/images/personal.png",
+  //   technologies: ["React", "TypeScript", "Storybook", "Jest"],
+  //   githubUrl: "https://github.com/charinda04/react-components",
+  //   liveUrl: null,
+  //   status: "In Development",
+  // },
+  // {
+  //   id: 3,
+  //   title: "AI-Powered Code Assistant",
+  //   description: [
+  //     "Experimenting with AI integration for code generation and optimization. Researching latest developments in ",
+  //     { type: "link", url: "https://openai.com/", text: "OpenAI APIs" },
+  //     " and developer productivity tools."
+  //   ],
+  //   image: "/assets/images/personal.png",
+  //   technologies: ["Python", "OpenAI API", "React", "FastAPI"],
+  //   githubUrl: "https://github.com/charinda04/ai-code-assistant",
+  //   liveUrl: null,
+  //   status: "Research Phase",
+  // },
   // {
   //   id: 2,
   //   title: "Task Management Dashboard",
@@ -514,7 +561,9 @@ export const PROJECTS = [
 
 export const PROJECT_STATUS_VARIANTS = {
   Live: "default",
+  "Live & Updating": "default",
   "In Development": "secondary",
+  "Research Phase": "outline",
   "Coming Soon": "outline",
 } as const;
 
