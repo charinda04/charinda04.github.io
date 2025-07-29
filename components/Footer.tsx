@@ -36,7 +36,18 @@ export const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-8 h-8 p-1.5 flex items-center justify-center rounded-md text-theme-text-secondary hover:text-theme-accent hover:bg-theme-button-bg transition-colors duration-200"
+                  className="w-8 h-8 p-1.5 flex items-center justify-center rounded-md transition-all duration-200 group"
+                  style={{
+                    color: 'var(--theme-text-secondary)'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.color = 'var(--theme-accent)';
+                    e.currentTarget.style.backgroundColor = 'var(--theme-accent)' + '20';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.color = 'var(--theme-text-secondary)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
                   aria-label={social.name}
                 >
                   <Icon className="w-5 h-5" />
