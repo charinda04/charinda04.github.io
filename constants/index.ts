@@ -440,8 +440,15 @@ export const PROJECTS = [
   {
     id: 1,
     title: "Personal webpage",
-    description:
-      "A personal webpage created to show my work experience, personal details and things I have worked on and working on",
+    description: [
+      "A personal webpage created to show my work experience, personal details and things I have worked on and working on. Got hands on with vibe coding to get this running.",
+      " ",
+      "Got inspiration from ",
+      { type: "link", url: "https://www.taniarascia.com/", text: "https://www.taniarascia.com/" },
+      " and ",
+      { type: "link", url: "https://www.sahan.tech/", text: "https://www.sahan.tech/" },
+      " creating this",
+    ],
     image: "/assets/images/personal.png",
     technologies: ["NextJs", "Tailwind"],
     githubUrl: "https://github.com/charinda04/charinda04.github.io",

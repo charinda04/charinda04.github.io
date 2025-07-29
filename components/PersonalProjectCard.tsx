@@ -8,7 +8,7 @@ import Image from "next/image";
 interface PersonalProject {
   id: number;
   title: string;
-  description: string;
+  description: (string | { type: "link"; url: string; text: string })[];
   image: string;
   technologies: string[];
   githubUrl: string;
@@ -53,7 +53,26 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = ({ projec
       </CardHeader>
 
       <CardContent className="space-y-4">
-        <p className="text-theme-sm text-theme-text-secondary leading-relaxed">{project.description}</p>
+        <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
+          {project.description.map((item, index) => {
+            if (typeof item === "string") {
+              return <span key={index}>{item}</span>;
+            } else if (item.type === "link") {
+              return (
+                <a
+                  key={index}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-theme-accent hover:text-theme-accent-hover underline transition-colors"
+                >
+                  {item.text}
+                </a>
+              );
+            }
+            return null;
+          })}
+        </p>
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-1">

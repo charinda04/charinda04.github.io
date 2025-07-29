@@ -22,7 +22,6 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <div className="bg-theme-bg flex flex-col page-transition min-h-[calc(100vh-80px)]">
-
       <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full">
         {/* Header */}
         <div className="text-center space-minimal animate-fade-in-up animate-stagger-1">
@@ -53,9 +52,12 @@ export default function WorkPage() {
             }`}
           >
             {TECHNICAL_SKILLS.map((skillGroup, index) => (
-              <Card 
-                key={index} 
-                className={`border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm hover-lift animate-fade-in-up animate-stagger-${Math.min(index + 4, 6)}`}
+              <Card
+                key={index}
+                className={`border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm hover-lift animate-fade-in-up animate-stagger-${Math.min(
+                  index + 4,
+                  6
+                )}`}
               >
                 <CardHeader className="pb-4">
                   <CardTitle className="text-theme-lg text-theme-text">{skillGroup.category}</CardTitle>
@@ -66,7 +68,7 @@ export default function WorkPage() {
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-theme-accent/10 text-theme-accent border-theme-accent/20 hover:bg-theme-accent/20 border-[0.01px] transition-all duration-200 hover:scale-105"
+                        className="bg-theme-accent/10 text-theme-accent  hover:bg-theme-accent/20 border-[0.01px] transition-all duration-200 hover:scale-105"
                       >
                         {tech}
                       </Badge>

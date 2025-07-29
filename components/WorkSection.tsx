@@ -53,7 +53,7 @@ export const WorkSection = () => {
                         <p className="text-theme-lg text-theme-text font-semibold">{work.company}</p>
                       </div>
                       <div className="text-right">
-                        <span className="inline-flex items-center  border-[0.01px] px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/10 text-theme-accent border border-theme-accent/20">
+                        <span className="inline-flex items-center   px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/10 text-theme-accent ">
                           {work.employmentType}
                         </span>
                       </div>
@@ -120,12 +120,12 @@ export const WorkSection = () => {
                             {/* Project Technologies */}
                             {project.technologies && project.technologies.length > 0 && (
                               <div className="border-t border-theme-accent/10 pt-3">
-                                <p className="text-theme-xs font-medium text-theme-accent mb-2">Technologies:</p>
+                                <p className="text-theme-xs font-medium text-theme-text mb-2">Technologies:</p>
                                 <div className="flex flex-wrap gap-1">
                                   {project.technologies.map((tech, techIndex) => (
                                     <span
                                       key={techIndex}
-                                      className="inline-flex items-center px-2 py-0.5 rounded text-theme-xs bg-theme-accent/10 text-theme-accent border border-theme-accent/20"
+                                      className="inline-flex items-center px-2 py-0.5 rounded text-theme-xs bg-theme-accent/10 text-theme-accent "
                                     >
                                       {tech}
                                     </span>
@@ -146,7 +146,7 @@ export const WorkSection = () => {
                           {work.skills.map((skill, skillIndex) => (
                             <span
                               key={skillIndex}
-                              className="inline-flex border-[0.01px] items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent border border-theme-accent/10 hover:bg-theme-accent/10 transition-colors duration-200"
+                              className="inline-flex  items-center px-3 py-1 rounded-full text-theme-xs font-medium bg-theme-accent/5 text-theme-accent  hover:bg-theme-accent/10 transition-colors duration-200"
                             >
                               {skill}
                             </span>
