@@ -12,7 +12,9 @@
       "Bash(true)",
       "Bash(npm run lint)",
       "mcp__ide__getDiagnostics",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(ls:*)",
+      "Bash(npm audit:*)"
     ],
     "deny": []
   }
