@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "../../components/Footer";
 import { PERSONAL_INFO } from "@/constants";
+import { PassionLinks } from "./components/PassionLinks";
 
 export const metadata: Metadata = {
   title: "About Charinda Dissanayake | Senior Software Engineer Biography",
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
 export default function BioPage() {
   return (
     <div className="bg-theme-bg flex flex-col page-transition min-h-[calc(100vh-80px)]">
-
       <main className="flex-1 max-w-4xl mx-auto px-6 py-12 space-minimal-lg w-full">
         {/* Header */}
         <div className="text-center space-minimal animate-fade-in-up animate-stagger-1">
@@ -96,6 +96,9 @@ export default function BioPage() {
             </Card>
           </div>
         </section>
+
+        {/* Passions */}
+        <PassionLinks />
 
         {/* Timeline */}
         {/* <BioSection /> */}

@@ -10,6 +10,7 @@ import {
   TwitterIcon,
 } from "@/assets/icons";
 import { SOCIAL_LINKS } from "@/constants";
+import { trackExternalLink } from "@/lib/analytics";
 
 export const Footer = () => {
   const iconMap = {
@@ -48,6 +49,7 @@ export const Footer = () => {
                     e.currentTarget.style.color = 'var(--theme-text-secondary)';
                     e.currentTarget.style.backgroundColor = 'transparent';
                   }}
+                  onClick={() => trackExternalLink(social.url, `${social.name} Social Icon`)}
                   aria-label={social.name}
                 >
                   <Icon className="w-5 h-5" />

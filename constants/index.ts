@@ -364,7 +364,7 @@ export const WORK_PROJECTS = [
   // },
   {
     id: 1,
-    title: "AiScout",
+    title: "AiScout - Player",
     company: "United Kingdom",
     role: "Associate Technical Lead",
     period: "Jan 2021 - Jun 2023",
@@ -380,7 +380,7 @@ export const WORK_PROJECTS = [
   },
   {
     id: 2,
-    title: "AiScout",
+    title: "AiScout - Scout",
     company: "United Kingdom",
     role: "Associate Technical Lead",
     period: "Jan 2021 - Jun 2023",
