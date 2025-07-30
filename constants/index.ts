@@ -8,7 +8,7 @@ export const PERSONAL_INFO = {
   initials: "CD",
   email: "charinda04@gmail.com",
   intro:
-    "Hello! I'm Charinda Dissanayake, a passionate Senior Software Engineer and Frontend Engineer based in Sri Lanka, specializing in React, React Native, and full-stack development. With 5+ years of experience, I create beautiful and functional web and mobile applications.",
+    "Hello! I'm Charinda Dissanayake, a Senior Software Engineer and Frontend Specialist based in Sri Lanka, with over 5 years of experience building elegant, high performance web and mobile applications using React and React Native. I’m currently focused on developing robust full stack applications, combining intuitive user interfaces with scalable backend architecture.",
 };
 
 export const BIO_TIMELINE = [

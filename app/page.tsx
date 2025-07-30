@@ -39,9 +39,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-theme-bg flex flex-col items-center justify-center px-6 py-8 page-transition">
+    <div className="min-h-screen bg-theme-bg flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8 page-transition">
       {/* Top Controls - Accent Color Picker & Theme Toggle */}
-      <div className="fixed top-6 right-6 flex items-center gap-2 z-50 animate-fade-in-down animate-stagger-1">
+      <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-50 animate-fade-in-down animate-stagger-1">
         {/* Accent Color Picker */}
         <AccentColorPicker />
         
@@ -66,7 +66,7 @@ export default function Home() {
       </div>
 
       {/* Main Content - Centered */}
-      <div className="w-full max-w-xl mx-auto text-center space-y-12">
+      <div className="w-full max-w-md sm:max-w-xl lg:max-w-2xl mx-auto text-center space-y-6 sm:space-y-8">
         {/* Profile Section */}
         <div className="animate-fade-in-up animate-stagger-2">
           <ProfileSection />
@@ -74,7 +74,7 @@ export default function Home() {
 
         {/* Navigation Links - Enhanced Clickable Cards */}
         <nav className="flex justify-center animate-fade-in-up animate-stagger-3">
-          <div className="flex gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
             {[
               {
                 href: "/work",
@@ -125,7 +125,7 @@ export default function Home() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group flex flex-col items-center p-4 bg-theme-card-bg border border-theme-card-border rounded-2xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 w-[160px] hover-lift"
+                className="group flex flex-col items-center p-3 sm:p-4 bg-theme-card-bg border border-theme-card-border rounded-2xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 w-full sm:w-[160px] hover-lift"
               >
                 <div className="w-10 h-10 bg-theme-accent/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-theme-accent/20 transition-colors duration-300">
                   <div className="text-theme-accent group-hover:text-theme-accent transition-colors duration-300">

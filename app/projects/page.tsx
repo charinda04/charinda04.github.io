@@ -25,13 +25,13 @@ export default function ProjectsPage() {
 
         {/* Project Toggle */}
         <div className="flex justify-center mb-8 animate-fade-in-up animate-stagger-2">
-          <div className="bg-theme-card-bg border border-theme-border rounded-lg p-1 shadow-minimal">
+          <div className="bg-theme-card-bg border border-theme-border rounded-lg p-1 shadow-minimal w-full max-w-sm flex">
             <button
               onClick={() => {
                 setActiveSection("work");
                 trackButtonClick("Projects Tab - Work", "/projects");
               }}
-              className={` text-theme-text px-6 py-2 rounded-md text-theme-sm font-medium transition-all duration-200 ${
+              className={` text-theme-text px-3 sm:px-6 py-2 rounded-md text-theme-xs sm:text-theme-sm font-medium transition-all duration-200 flex-1 ${
                 activeSection === "work"
                   ? "bg-theme-accent text-theme-bg shadow-minimal"
                   : "text-theme-text-secondary hover:text-theme-text hover:bg-theme-button-bg"
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
                 setActiveSection("personal");
                 trackButtonClick("Projects Tab - Personal", "/projects");
               }}
-              className={`text-theme-text px-6 py-2 rounded-md text-theme-sm font-medium transition-all duration-200 ${
+              className={`text-theme-text px-3 sm:px-6 py-2 rounded-md text-theme-xs sm:text-theme-sm font-medium transition-all duration-200 flex-1 ${
                 activeSection === "personal"
                   ? "bg-theme-accent text-theme-bg shadow-minimal"
                   : "text-theme-text-secondary hover:text-theme-text hover:bg-theme-button-bg"
