@@ -1,13 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
-import { ProfileSection } from "../components/ProfileSection";
-import { AccentColorPicker } from "../components/AccentColorPicker";
-import { SOCIAL_LINKS, PERSONAL_INFO } from "../constants";
-import { trackDownload, trackExternalLink, trackButtonClick } from "../lib/analytics";
+import { ProfileSection } from "@/components/ProfileSection";
+import { AccentColorPicker } from "@/components/AccentColorPicker";
+import { IconButton } from "@/components/ui/icon-button";
+import { LinkCard } from "@/components/ui/link-card";
+import { AnimatedContainer } from "@/components/ui/animated-container";
+import { useThemeControls } from "@/hooks";
+import { SOCIAL_LINKS, PERSONAL_INFO } from "@/constants";
+import { trackDownload, trackExternalLink } from "@/lib/analytics";
 import {
   SunIcon,
   MoonIcon,
@@ -18,15 +19,58 @@ import {
   BlueSkyIcon,
   FacebookIcon,
   ThreadsIcon,
-} from "../assets/icons";
+} from "@/assets/icons";
+
+const NAVIGATION_CARDS = [
+  {
+    href: "/work",
+    label: "Work",
+    description: "View my professional experience",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6z"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/projects",
+    label: "Projects",
+    description: "Explore my portfolio",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/bio",
+    label: "Bio",
+    description: "Learn about my journey",
+    icon: (
+      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+        />
+      </svg>
+    ),
+  },
+];
 
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const { theme, toggleTheme, mounted } = useThemeControls();
 
   const iconMap = {
     GitHubIcon,
@@ -41,108 +85,53 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-theme-bg flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-6 sm:py-8 page-transition">
       {/* Top Controls - Accent Color Picker & Theme Toggle */}
-      <div className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-50 animate-fade-in-down animate-stagger-1">
-        {/* Accent Color Picker */}
+      <AnimatedContainer 
+        className="fixed top-4 right-4 sm:top-6 sm:right-6 flex items-center gap-2 z-50"
+        animation="fade-in-down"
+        delay={1}
+      >
         <AccentColorPicker />
-        
-        {/* Theme Toggle */}
-        <button
-          onClick={() => {
-            const newTheme = theme === "dark" ? "light" : "dark";
-            setTheme(newTheme);
-            trackButtonClick(`Homepage Theme Toggle - ${newTheme}`, "/");
-          }}
-          className="w-10 h-10 p-2 bg-theme-card-bg border border-theme-border rounded-full hover:bg-theme-button-bg transition-all duration-200 flex items-center justify-center hover-lift"
+        <IconButton
+          onClick={toggleTheme}
+          icon={
+            !mounted ? (
+              <div className="w-6 h-6" />
+            ) : theme === "dark" ? (
+              <SunIcon className="w-6 h-6 text-theme-icon-sun" />
+            ) : (
+              <MoonIcon className="w-6 h-6 text-theme-icon" />
+            )
+          }
+          size="lg"
+          className="rounded-full"
           aria-label="Toggle theme"
-        >
-          {!mounted ? (
-            <div className="w-6 h-6" />
-          ) : theme === "dark" ? (
-            <SunIcon className="w-6 h-6 text-theme-icon-sun" />
-          ) : (
-            <MoonIcon className="w-6 h-6 text-theme-icon" />
-          )}
-        </button>
-      </div>
+        />
+      </AnimatedContainer>
 
       {/* Main Content - Centered */}
       <div className="w-full max-w-md sm:max-w-xl lg:max-w-2xl mx-auto text-center space-y-6 sm:space-y-8">
         {/* Profile Section */}
-        <div className="animate-fade-in-up animate-stagger-2">
+        <AnimatedContainer delay={2}>
           <ProfileSection />
-        </div>
+        </AnimatedContainer>
 
         {/* Navigation Links - Enhanced Clickable Cards */}
-        <nav className="flex justify-center animate-fade-in-up animate-stagger-3">
+        <AnimatedContainer className="flex justify-center" delay={3}>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-            {[
-              {
-                href: "/work",
-                label: "Work",
-                description: "View my professional experience",
-                icon: (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 012 2v6a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2V6z"
-                    />
-                  </svg>
-                ),
-              },
-              {
-                href: "/projects",
-                label: "Projects",
-                description: "Explore my portfolio",
-                icon: (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-                    />
-                  </svg>
-                ),
-              },
-              {
-                href: "/bio",
-                label: "Bio",
-                description: "Learn about my journey",
-                icon: (
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                ),
-              },
-            ].map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="group flex flex-col items-center p-3 sm:p-4 bg-theme-card-bg border border-theme-card-border rounded-2xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 w-full sm:w-[160px] hover-lift"
-              >
-                <div className="w-10 h-10 bg-theme-accent/10 rounded-full flex items-center justify-center mb-3 group-hover:bg-theme-accent/20 transition-colors duration-300">
-                  <div className="text-theme-accent group-hover:text-theme-accent transition-colors duration-300">
-                    {link.icon}
-                  </div>
-                </div>
-                <h3 className="text-theme-lg font-semibold text-theme-text mb-2 group-hover:text-theme-accent transition-colors duration-300">
-                  {link.label}
-                </h3>
-                <p className="text-theme-sm text-theme-text-secondary text-center leading-tight">{link.description}</p>
-              </Link>
+            {NAVIGATION_CARDS.map((card) => (
+              <LinkCard
+                key={card.href}
+                href={card.href}
+                title={card.label}
+                description={card.description}
+                icon={card.icon}
+              />
             ))}
           </div>
-        </nav>
+        </AnimatedContainer>
 
         {/* Contact Email */}
-        <div className="flex justify-center animate-fade-in-up animate-stagger-4">
+        <AnimatedContainer className="flex justify-center" delay={4}>
           <a
             href={`mailto:${PERSONAL_INFO.email}`}
             className="inline-flex items-center gap-2 px-4 py-2 text-theme-base text-theme-text-secondary hover:text-theme-accent transition-colors duration-200 rounded-lg hover:bg-theme-button-bg hover-lift"
@@ -157,10 +146,10 @@ export default function Home() {
             </svg>
             {PERSONAL_INFO.email}
           </a>
-        </div>
+        </AnimatedContainer>
 
         {/* Download Resume Button */}
-        <div className="flex justify-center animate-fade-in-up animate-stagger-5">
+        <AnimatedContainer className="flex justify-center" delay={5}>
           <a
             href="/assets/documents/CV_Charinda.pdf"
             download="CV_Charinda.pdf"
@@ -186,10 +175,10 @@ export default function Home() {
               Download Résumé
             </span>
           </a>
-        </div>
+        </AnimatedContainer>
 
         {/* Social Media Links - Centered */}
-        <div className="flex justify-center animate-fade-in-up animate-stagger-6">
+        <AnimatedContainer className="flex justify-center" delay={6}>
           <div className="flex gap-3 flex-wrap justify-center">
             {SOCIAL_LINKS.map((social) => {
               const Icon = iconMap[social.icon as keyof typeof iconMap];
@@ -210,7 +199,7 @@ export default function Home() {
               );
             })}
           </div>
-        </div>
+        </AnimatedContainer>
 
         <div className="text-center">
           <p className="text-theme-text-secondary text-theme-xs">Made with ❤️ by Charinda Dissanayake</p>

@@ -1,27 +1,54 @@
 import type { NextConfig } from "next";
+import type { Configuration } from "webpack";
 
 const nextConfig: NextConfig = {
-  output: "export",
+  // Remove static export for development - can be enabled for production builds
+  // output: "export",
+  // trailingSlash: true,
+  // distDir: "out",
 
-  // ✅ Disable image optimization for static export
+  // Image optimization settings for static export
   images: {
     unoptimized: true,
+    formats: ["image/webp", "image/avif"],
   },
 
-  // ✅ Disable ESLint during build
+  // Build optimization
   eslint: {
     ignoreDuringBuilds: true,
   },
 
-  // ✅ Optional: Add trailing slash to URLs
-  // /about → /about/
-  // trailingSlash: true,
+  // Performance optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === "production",
+  },
 
-  // ✅ Optional: Custom output directory (default is 'out')
-  // distDir: 'dist',
+  // Bundle analyzer (enabled with ANALYZE=true)
+  ...(process.env.ANALYZE === "true" && {
+    webpack: (config: Configuration) => {
+      // eslint-disable-next-line @typescript-eslint/no-require-imports
+      const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+      config.plugins?.push(
+        new BundleAnalyzerPlugin({
+          analyzerMode: "static",
+          reportFilename: "./analyze/client.html",
+          openAnalyzer: false,
+        })
+      );
+      return config;
+    },
+  }),
 
-  // ✅ Optional: Prevent automatic redirects like /me → /me/
-  // skipTrailingSlashRedirect: true,
+  // Experimental features for better performance
+  experimental: {
+    optimizeCss: true,
+    optimizePackageImports: [
+      "lucide-react",
+      "@radix-ui/react-avatar",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-separator",
+    ],
+  },
 };
 
 export default nextConfig;

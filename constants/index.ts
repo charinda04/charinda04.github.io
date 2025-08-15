@@ -1,4 +1,18 @@
-export const PERSONAL_INFO = {
+import type {
+  PersonalInfo,
+  TimelineItem,
+  WorkExperience,
+  ValueItem,
+  InterestCategory,
+  TechnicalSkillGroup,
+  Achievement,
+  WorkProject,
+  PersonalProject as PersonalProjectType,
+  ProjectStatusVariants,
+  SocialLink,
+} from "@/types";
+
+export const PERSONAL_INFO: PersonalInfo = {
   name: "Charinda Dissanayake",
   title: "Senior Software Engineer • React & React Native Expert",
   location: "Gampaha, Sri Lanka",
@@ -11,7 +25,7 @@ export const PERSONAL_INFO = {
     "Hello! I'm Charinda Dissanayake, a Senior Software Engineer and Frontend Specialist based in Sri Lanka, with over 5 years of experience building elegant, high performance web and mobile applications using React and React Native. I’m currently focused on developing robust full stack applications, combining intuitive user interfaces with scalable backend architecture.",
 };
 
-export const BIO_TIMELINE = [
+export const BIO_TIMELINE: TimelineItem[] = [
   {
     year: "1994",
     title: "Born in Kandy, Sri Lanka",
@@ -89,7 +103,7 @@ export const BIO_TIMELINE = [
   },
 ];
 
-export const WORK_EXPERIENCE = [
+export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     title: "Senior Frontend Developer",
     company: "RozieAI",
@@ -233,7 +247,7 @@ export const WORK_EXPERIENCE = [
   },
 ];
 
-export const VALUES_AND_PHILOSOPHY = [
+export const VALUES_AND_PHILOSOPHY: ValueItem[] = [
   {
     title: "Continuous Learning",
     description:
@@ -256,7 +270,7 @@ export const VALUES_AND_PHILOSOPHY = [
   },
 ];
 
-export const INTERESTS = [
+export const INTERESTS: InterestCategory[] = [
   {
     category: "Technology Trends",
     items: ["AI/Machine Learning", "Web3 & Blockchain", "IoT Development", "Cloud Computing"],
@@ -275,7 +289,7 @@ export const INTERESTS = [
   },
 ];
 
-export const TECHNICAL_SKILLS = [
+export const TECHNICAL_SKILLS: TechnicalSkillGroup[] = [
   {
     category: "Frontend Development",
     technologies: [
@@ -325,7 +339,7 @@ export const TECHNICAL_SKILLS = [
   // },
 ];
 
-export const ACHIEVEMENTS = [
+export const ACHIEVEMENTS: Achievement[] = [
   // {
   //   title: "10+ Mobile Apps Published",
   //   description:
@@ -347,7 +361,7 @@ export const ACHIEVEMENTS = [
   // },
 ];
 
-export const WORK_PROJECTS = [
+export const WORK_PROJECTS: WorkProject[] = [
   // {
   //   id: 1,
   //   title: "Stampen Media",
@@ -454,7 +468,7 @@ export interface PersonalProject {
   status: string;
 }
 
-export const PROJECTS: PersonalProject[] = [
+export const PROJECTS: PersonalProjectType[] = [
   {
     id: 1,
     title: "Personal webpage",
@@ -559,7 +573,7 @@ export const PROJECTS: PersonalProject[] = [
   // },
 ];
 
-export const PROJECT_STATUS_VARIANTS = {
+export const PROJECT_STATUS_VARIANTS: ProjectStatusVariants = {
   Live: "default",
   "Live & Updating": "default",
   "In Development": "secondary",
@@ -567,7 +581,7 @@ export const PROJECT_STATUS_VARIANTS = {
   "Coming Soon": "outline",
 } as const;
 
-export const SOCIAL_LINKS = [
+export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "GitHub",
     url: "https://github.com/charinda04",

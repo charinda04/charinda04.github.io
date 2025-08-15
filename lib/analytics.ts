@@ -1,30 +1,5 @@
 // Google Analytics utility functions
-
-// Proper types for Google Analytics
-interface GtagConfig {
-  page_title?: string;
-  page_location?: string;
-  page_path?: string;
-  custom_map?: Record<string, string>;
-}
-
-interface GtagEvent {
-  event_category?: string;
-  event_label?: string;
-  value?: number;
-  custom_parameter?: string;
-  [key: string]: string | number | boolean | undefined;
-}
-
-declare global {
-  interface Window {
-    gtag: (
-      command: 'config' | 'event' | 'js' | 'set',
-      targetId: string,
-      config?: GtagConfig | GtagEvent
-    ) => void;
-  }
-}
+import type { GtagEvent } from "@/types";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 

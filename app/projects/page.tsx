@@ -37,7 +37,7 @@ export default function ProjectsPage() {
                   : "text-theme-text-secondary hover:text-theme-text hover:bg-theme-button-bg"
               }`}
             >
-              Recent Projects
+              Work Projects
             </button>
             <button
               onClick={() => {

@@ -3,65 +3,80 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ===== THEME VARIABLES ===== */
 :root,
 [data-theme="light"] {
-  /* Enhanced light theme colors */
+  /* Background Colors */
   --theme-bg: #ffffff;
+  --theme-card-bg: #ffffff;
+  --theme-button-bg: #f9fafb;
+  --theme-button-hover: #f3f4f6;
+  
+  /* Text Colors */
   --theme-text: #1f2937;
   --theme-text-secondary: #6b7280;
   --theme-text-accent: #2563eb;
-  --theme-border: #e5e7eb;
-  --theme-card-bg: #ffffff;
-  --theme-card-border: #e5e7eb;
-  --theme-button-bg: #f9fafb;
-  --theme-button-hover: #f3f4f6;
   --theme-button-text: #1f2937;
+  
+  /* Border Colors */
+  --theme-border: #e5e7eb;
+  --theme-card-border: #e5e7eb;
+  
+  /* Accent Colors (customizable) */
   --theme-accent: #8b5cf6;
   --theme-accent-secondary: #7c3aed;
-
-  /* Button specific colors */
+  
+  /* Interactive Colors */
   --theme-primary: #2563eb;
   --theme-primary-hover: #1d4ed8;
   --theme-primary-text: #ffffff;
-
-  /* Icon colors */
+  
+  /* Icon Colors */
   --theme-icon: #6b7280;
   --theme-icon-sun: #fcd34d;
-
-  /* Minimal font sizes with better hierarchy */
-  --theme-font-xs: 0.75rem;
-  --theme-font-sm: 0.875rem;
-  --theme-font-base: 1rem;
-  --theme-font-lg: 1.125rem;
-  --theme-font-xl: 1.25rem;
-  --theme-font-2xl: 1.5rem;
-  --theme-font-3xl: 2rem;
-  --theme-font-4xl: 2.5rem;
 }
 
 [data-theme="dark"] {
-  /* Enhanced dark theme colors inspired by tania.dev */
+  /* Background Colors */
   --theme-bg: #0d1117;
+  --theme-card-bg: #161b22;
+  --theme-button-bg: #21262d;
+  --theme-button-hover: #30363d;
+  
+  /* Text Colors */
   --theme-text: #e6edf3;
   --theme-text-secondary: #8b949e;
   --theme-text-accent: #58a6ff;
-  --theme-border: #21262d;
-  --theme-card-bg: #161b22;
-  --theme-card-border: #30363d;
-  --theme-button-bg: #21262d;
-  --theme-button-hover: #30363d;
   --theme-button-text: #e6edf3;
+  
+  /* Border Colors */
+  --theme-border: #21262d;
+  --theme-card-border: #30363d;
+  
+  /* Accent Colors (customizable) */
   --theme-accent: #8b5cf6;
   --theme-accent-secondary: #7c3aed;
-
-  /* Button specific colors */
+  
+  /* Interactive Colors */
   --theme-primary: #58a6ff;
   --theme-primary-hover: #1f6feb;
   --theme-primary-text: #ffffff;
-
-  /* Icon colors */
+  
+  /* Icon Colors */
   --theme-icon: #8b949e;
   --theme-icon-sun: #fcd34d;
+}
+
+/* ===== TYPOGRAPHY SCALE ===== */
+:root {
+  --theme-font-xs: 0.75rem;    /* 12px */
+  --theme-font-sm: 0.875rem;   /* 14px */
+  --theme-font-base: 1rem;     /* 16px */
+  --theme-font-lg: 1.125rem;   /* 18px */
+  --theme-font-xl: 1.25rem;    /* 20px */
+  --theme-font-2xl: 1.5rem;    /* 24px */
+  --theme-font-3xl: 2rem;      /* 32px */
+  --theme-font-4xl: 2.5rem;    /* 40px */
 }
 
 @theme inline {
@@ -239,96 +254,48 @@
 }
 
 @layer utilities {
-  /* Custom font size utilities */
-  .text-theme-xs {
-    font-size: var(--theme-font-xs);
-  }
-  .text-theme-sm {
-    font-size: var(--theme-font-sm);
-  }
-  .text-theme-base {
-    font-size: var(--theme-font-base);
-  }
-  .text-theme-lg {
-    font-size: var(--theme-font-lg);
-  }
-  .text-theme-xl {
-    font-size: var(--theme-font-xl);
-  }
-  .text-theme-2xl {
-    font-size: var(--theme-font-2xl);
-  }
-  .text-theme-3xl {
-    font-size: var(--theme-font-3xl);
-  }
-  .text-theme-4xl {
-    font-size: var(--theme-font-4xl);
-  }
+  /* ===== TYPOGRAPHY UTILITIES ===== */
+  .text-theme-xs { font-size: var(--theme-font-xs); }
+  .text-theme-sm { font-size: var(--theme-font-sm); }
+  .text-theme-base { font-size: var(--theme-font-base); }
+  .text-theme-lg { font-size: var(--theme-font-lg); }
+  .text-theme-xl { font-size: var(--theme-font-xl); }
+  .text-theme-2xl { font-size: var(--theme-font-2xl); }
+  .text-theme-3xl { font-size: var(--theme-font-3xl); }
+  .text-theme-4xl { font-size: var(--theme-font-4xl); }
 
-  /* Custom color utilities */
-  .bg-theme-bg {
-    background-color: var(--theme-bg);
-  }
-  .bg-theme-card-bg {
-    background-color: var(--theme-card-bg);
-  }
-  .bg-theme-button-bg {
-    background-color: var(--theme-button-bg);
-  }
-  .bg-theme-text-accent {
-    background-color: var(--theme-text-accent);
-  }
-  .text-theme-text {
-    color: var(--theme-text);
-  }
-  .text-theme-text-secondary {
-    color: var(--theme-text-secondary);
-  }
-  .text-theme-text-accent {
-    color: var(--theme-text-accent);
-  }
-  .text-theme-accent {
-    color: var(--theme-accent);
-  }
-  .text-theme-icon {
-    color: var(--theme-icon);
-  }
-  .text-theme-icon-sun {
-    color: var(--theme-icon-sun);
-  }
-  .bg-theme-accent {
-    background-color: var(--theme-accent);
-  }
-  .border-theme-border {
-    border-color: var(--theme-border);
-  }
-  .border-theme-card-border {
-    border-color: var(--theme-card-border);
-  }
-  .border-theme-accent {
-    border-color: var(--theme-accent);
-  }
+  /* ===== BACKGROUND COLOR UTILITIES ===== */
+  .bg-theme-bg { background-color: var(--theme-bg); }
+  .bg-theme-card-bg { background-color: var(--theme-card-bg); }
+  .bg-theme-button-bg { background-color: var(--theme-button-bg); }
+  .bg-theme-text-accent { background-color: var(--theme-text-accent); }
+  .bg-theme-accent { background-color: var(--theme-accent); }
 
-  /* Minimal spacing utilities */
-  .space-minimal {
-    @apply space-y-6;
-  }
-  .space-minimal-sm {
-    @apply space-y-4;
-  }
-  .space-minimal-lg {
-    @apply space-y-8;
-  }
+  /* ===== TEXT COLOR UTILITIES ===== */
+  .text-theme-text { color: var(--theme-text); }
+  .text-theme-text-secondary { color: var(--theme-text-secondary); }
+  .text-theme-text-accent { color: var(--theme-text-accent); }
+  .text-theme-accent { color: var(--theme-accent); }
+  .text-theme-icon { color: var(--theme-icon); }
+  .text-theme-icon-sun { color: var(--theme-icon-sun); }
 
-  /* Enhanced shadows for both themes */
+  /* ===== BORDER COLOR UTILITIES ===== */
+  .border-theme-border { border-color: var(--theme-border); }
+  .border-theme-card-border { border-color: var(--theme-card-border); }
+  .border-theme-accent { border-color: var(--theme-accent); }
+
+  /* ===== SPACING UTILITIES ===== */
+  .space-minimal { @apply space-y-6; }
+  .space-minimal-sm { @apply space-y-4; }
+  .space-minimal-lg { @apply space-y-8; }
+
+  /* ===== SHADOW UTILITIES ===== */
   .shadow-minimal {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px 0 rgb(0 0 0 / 0.06);
   }
   .shadow-minimal-lg {
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -1px rgb(0 0 0 / 0.06);
   }
-
-  /* Dark mode shadow adjustments */
   .dark .shadow-minimal {
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px 0 rgb(0 0 0 / 0.2);
   }
@@ -336,7 +303,7 @@
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -1px rgb(0 0 0 / 0.2);
   }
 
-  /* Subtle backdrop blur for cards */
+  /* ===== EFFECT UTILITIES ===== */
   .backdrop-blur-card {
     backdrop-filter: blur(8px);
     background-color: rgb(255 255 255 / 0.8);
@@ -345,7 +312,6 @@
     background-color: rgb(22 27 34 / 0.8);
   }
 
-  /* Enhanced gradient backgrounds */
   .gradient-card {
     background: linear-gradient(135deg, var(--theme-card-bg) 0%, rgb(255 255 255 / 0.95) 100%);
   }
@@ -353,15 +319,6 @@
     background: linear-gradient(135deg, var(--theme-card-bg) 0%, rgb(22 27 34 / 0.95) 100%);
   }
 
-  /* Improved hover states */
-  .hover-lift {
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  }
-  .hover-lift:hover {
-    transform: translateY(-2px);
-  }
-
-  /* Professional text styling */
   .text-gradient {
     background: linear-gradient(135deg, var(--theme-text) 0%, var(--theme-text-accent) 100%);
     -webkit-background-clip: text;
@@ -369,43 +326,46 @@
     background-clip: text;
   }
 
-  /* Animation utilities */
+  /* ===== INTERACTION UTILITIES ===== */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+
+  /* ===== ANIMATION UTILITIES ===== */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
     opacity: 0;
   }
-
   .animate-fade-in-up {
     animation: fadeInUp 0.6s ease-out forwards;
     opacity: 0;
     transform: translateY(20px);
   }
-
   .animate-fade-in-down {
     animation: fadeInDown 0.6s ease-out forwards;
     opacity: 0;
     transform: translateY(-20px);
   }
-
   .animate-slide-in-left {
     animation: slideInLeft 0.6s ease-out forwards;
     opacity: 0;
     transform: translateX(-30px);
   }
-
   .animate-slide-in-right {
     animation: slideInRight 0.6s ease-out forwards;
     opacity: 0;
     transform: translateX(30px);
   }
-
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
     opacity: 0;
     transform: scale(0.9);
   }
 
-  /* Stagger delays */
+  /* Animation Delays */
   .animate-stagger-1 { animation-delay: 0.1s; }
   .animate-stagger-2 { animation-delay: 0.2s; }
   .animate-stagger-3 { animation-delay: 0.3s; }

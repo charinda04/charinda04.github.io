@@ -14,7 +14,10 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm run build:*)",
       "Bash(ls:*)",
-      "Bash(npm audit:*)"
+      "Bash(npm audit:*)",
+      "Bash(pkill:*)",
+      "Bash(find:*)",
+      "Bash(node:*)"
     ],
     "deny": []
   }
