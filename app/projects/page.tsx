@@ -6,10 +6,9 @@ import { Footer } from "../../components/Footer";
 import { WorkProjectCard } from "../../components/WorkProjectCard";
 import { PersonalProjectCard } from "../../components/PersonalProjectCard";
 import { PROJECTS, WORK_PROJECTS } from "@/constants";
-import { trackButtonClick } from "@/lib/analytics";
 
 export default function ProjectsPage() {
-  const [activeSection, setActiveSection] = useState<"work" | "personal">("work");
+  const [activeSection, setActiveSection] = useState<"work" | "personal">("personal");
 
   return (
     <div className="bg-theme-bg flex flex-col page-transition min-h-[calc(100vh-80px)]">
@@ -24,7 +23,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Project Toggle */}
-        <div className="flex justify-center mb-8 animate-fade-in-up animate-stagger-2">
+        {/* <div className="flex justify-center mb-8 animate-fade-in-up animate-stagger-2">
           <div className="bg-theme-card-bg border border-theme-border rounded-lg p-1 shadow-minimal w-full max-w-sm flex">
             <button
               onClick={() => {
@@ -53,7 +52,7 @@ export default function ProjectsPage() {
               Personal Projects
             </button>
           </div>
-        </div>
+        </div> */}
 
         {/* Dynamic Projects Section */}
         <section className="space-minimal">
@@ -113,7 +112,7 @@ export default function ProjectsPage() {
               ))}
             </div>
           ) : (
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="flex">
               {PROJECTS.map((project, index) => (
                 <PersonalProjectCard key={project.id} project={project} index={index} />
               ))}

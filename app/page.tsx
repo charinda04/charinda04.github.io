@@ -7,8 +7,8 @@ import { IconButton } from "@/components/ui/icon-button";
 import { LinkCard } from "@/components/ui/link-card";
 import { AnimatedContainer } from "@/components/ui/animated-container";
 import { useThemeControls } from "@/hooks";
-import { SOCIAL_LINKS, PERSONAL_INFO } from "@/constants";
-import { trackDownload, trackExternalLink } from "@/lib/analytics";
+import { SOCIAL_LINKS } from "@/constants";
+import { trackExternalLink } from "@/lib/analytics";
 import {
   SunIcon,
   MoonIcon,
@@ -130,55 +130,9 @@ export default function Home() {
           </div>
         </AnimatedContainer>
 
-        {/* Contact Email */}
-        <AnimatedContainer className="flex justify-center" delay={4}>
-          <a
-            href={`mailto:${PERSONAL_INFO.email}`}
-            className="inline-flex items-center gap-2 px-4 py-2 text-theme-base text-theme-text-secondary hover:text-theme-accent transition-colors duration-200 rounded-lg hover:bg-theme-button-bg hover-lift"
-          >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-              />
-            </svg>
-            {PERSONAL_INFO.email}
-          </a>
-        </AnimatedContainer>
-
-        {/* Download Resume Button */}
-        <AnimatedContainer className="flex justify-center" delay={5}>
-          <a
-            href="/assets/documents/CV_Charinda.pdf"
-            download="CV_Charinda.pdf"
-            onClick={() => trackDownload("CV_Charinda.pdf")}
-            className="group inline-flex items-center gap-3 px-6 py-3 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 font-medium hover-lift"
-          >
-            <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
-              <svg
-                className="w-4 h-4 text-theme-accent group-hover:text-theme-accent transition-colors duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-            </div>
-            <span className="text-theme-text group-hover:text-theme-accent transition-colors duration-300">
-              Download Résumé
-            </span>
-          </a>
-        </AnimatedContainer>
 
         {/* Social Media Links - Centered */}
-        <AnimatedContainer className="flex justify-center" delay={6}>
+        <AnimatedContainer className="flex justify-center" delay={4}>
           <div className="flex gap-3 flex-wrap justify-center">
             {SOCIAL_LINKS.map((social) => {
               const Icon = iconMap[social.icon as keyof typeof iconMap];

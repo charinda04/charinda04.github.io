@@ -7,10 +7,10 @@
 :root,
 [data-theme="light"] {
   /* Background Colors */
-  --theme-bg: #ffffff;
+  --theme-bg: #fdf9ee;
   --theme-card-bg: #ffffff;
-  --theme-button-bg: #f9fafb;
-  --theme-button-hover: #f3f4f6;
+  --theme-button-bg: #f9f5ea;
+  --theme-button-hover: #f5f1e6;
   
   /* Text Colors */
   --theme-text: #1f2937;
@@ -19,8 +19,8 @@
   --theme-button-text: #1f2937;
   
   /* Border Colors */
-  --theme-border: #e5e7eb;
-  --theme-card-border: #e5e7eb;
+  --theme-border: #f0ece1;
+  --theme-card-border: #ede9de;
   
   /* Accent Colors (customizable) */
   --theme-accent: #8b5cf6;

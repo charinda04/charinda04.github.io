@@ -30,7 +30,6 @@ export default function BioPage() {
             experiences.
           </p>
         </div>
-
         {/* Personal Introduction */}
         <Card className="border-theme-border bg-theme-card-bg shadow-minimal animate-fade-in-up animate-stagger-2 hover-lift">
           <CardContent className="pt-6 space-minimal-sm">
@@ -96,13 +95,10 @@ export default function BioPage() {
             </Card>
           </div>
         </section>
-
         {/* Passions */}
         <PassionLinks />
-
-        {/* Timeline */}
-        {/* <BioSection /> */}
-
+        {/* Professional Timeline */}
+        {/* <ProfessionalTimeline /> */}
         {/* Values & Philosophy */}
         {/* <section className="space-minimal">
           <div className="text-center mb-8">
@@ -121,7 +117,6 @@ export default function BioPage() {
             ))}
           </div>
         </section> */}
-
         {/* Interests */}
         {/* <section className="space-minimal">
           <div className="text-center mb-8">

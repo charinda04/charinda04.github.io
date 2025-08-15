@@ -1,23 +1,12 @@
-import type { Metadata } from "next";
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { WorkSection } from "../../components/WorkSection";
 import { Footer } from "../../components/Footer";
-import { TECHNICAL_SKILLS } from "@/constants";
-
-export const metadata: Metadata = {
-  title: "Work Experience - Charinda Dissanayake | Senior Software Engineer",
-  description:
-    "Explore Charinda Dissanayake's professional work experience as a Senior Software Engineer, Frontend Engineer, and Fullstack Engineer. Expert in React, React Native, and modern web technologies.",
-  keywords:
-    "Charinda work experience, React developer, React Native engineer, Frontend engineer career, Software engineer experience",
-  openGraph: {
-    title: "Work Experience - Charinda Dissanayake",
-    description: "Professional journey of a Senior Software Engineer specializing in React and React Native",
-    url: "https://charinda04.github.io/work",
-  },
-};
+import { TECHNICAL_SKILLS, PERSONAL_INFO } from "@/constants";
+import { trackDownload } from "@/lib/analytics";
 
 export default function WorkPage() {
   return (
@@ -32,14 +21,75 @@ export default function WorkPage() {
           </p>
         </div>
 
+        {/* Contact & Resume Section */}
+        <section className="space-minimal">
+          <div className="text-center mb-8 animate-fade-in-up animate-stagger-2">
+            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">Let's Work Together</h2>
+            <Separator className="w-12 mx-auto bg-theme-accent" />
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            {/* Contact Email */}
+            <div className="animate-fade-in-up animate-stagger-3">
+              <a
+                href={`mailto:${PERSONAL_INFO.email}`}
+                className="inline-flex items-center gap-3 px-6 py-3 bg-theme-card-bg border border-theme-card-border rounded-xl shadow-minimal hover:shadow-minimal-lg hover:border-theme-accent/30 transition-all duration-300 font-medium hover-lift"
+              >
+                <div className="w-8 h-8 bg-theme-accent/10 rounded-full flex items-center justify-center group-hover:bg-theme-accent/20 transition-colors duration-300">
+                  <svg className="w-4 h-4 text-theme-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <span className="text-theme-text hover:text-theme-accent transition-colors duration-300">
+                  {PERSONAL_INFO.email}
+                </span>
+              </a>
+            </div>
+
+            {/* Download Resume Button */}
+            <div className="animate-fade-in-up animate-stagger-4">
+              <a
+                href="/assets/documents/CV_Charinda.pdf"
+                download="CV_Charinda.pdf"
+                onClick={() => trackDownload("CV_Charinda.pdf")}
+                className="group inline-flex items-center gap-3 px-6 py-3 bg-theme-accent text-theme-bg rounded-xl shadow-minimal hover:shadow-minimal-lg hover:bg-theme-accent-secondary transition-all duration-300 font-medium hover-lift"
+              >
+                <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors duration-300">
+                  <svg
+                    className="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                </div>
+                <span className="text-white">
+                  Download Résumé
+                </span>
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* Work Experience Section */}
-        <div className="animate-fade-in-up animate-stagger-2">
+        <div className="animate-fade-in-up animate-stagger-5">
           <WorkSection />
         </div>
 
         {/* Skills Section */}
         <section className="space-minimal">
-          <div className="text-center mb-8 animate-fade-in-up animate-stagger-3">
+          <div className="text-center mb-8 animate-fade-in-up animate-stagger-6">
             <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">Technical Skills</h2>
             <Separator className="w-12 mx-auto bg-theme-accent" />
           </div>
@@ -55,8 +105,8 @@ export default function WorkPage() {
               <Card
                 key={index}
                 className={`border-theme-border bg-theme-card-bg shadow-minimal w-full max-w-sm hover-lift animate-fade-in-up animate-stagger-${Math.min(
-                  index + 4,
-                  6
+                  index + 7,
+                  12
                 )}`}
               >
                 <CardHeader className="pb-4">
@@ -79,37 +129,6 @@ export default function WorkPage() {
             ))}
           </div>
         </section>
-
-        {/* Achievements Section */}
-        {/* <section className="space-minimal">
-          <div className="text-center mb-8">
-            <h2 className="text-theme-2xl font-semibold text-theme-text mb-2">
-              Key Achievements
-            </h2>
-            <Separator className="w-12 mx-auto bg-theme-accent" />
-          </div>
-
-          <div className={`grid gap-6 ${ACHIEVEMENTS.length === 1 ? 'max-w-lg mx-auto' : 'md:grid-cols-2'}`}>
-            {ACHIEVEMENTS.map((achievement, index) => (
-              <Card
-                key={index}
-                className="border-theme-border bg-theme-card-bg shadow-minimal"
-              >
-                <CardContent className="pt-6">
-                  <h3 className="text-theme-lg font-medium text-theme-text mb-3">
-                    {achievement.title}
-                  </h3>
-                  <p className="text-theme-sm text-theme-text-secondary leading-relaxed">
-                    {achievement.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section> */}
-
-        {/* Call to Action */}
-        {/* <CallToAction /> */}
       </main>
 
       <Footer />

@@ -1,6 +1,7 @@
 import type {
   PersonalInfo,
   TimelineItem,
+  ProfessionalTimelineItem,
   WorkExperience,
   ValueItem,
   InterestCategory,
@@ -484,8 +485,9 @@ export const PROJECTS: PersonalProjectType[] = [
     image: "/assets/images/personal.png",
     technologies: ["NextJs", "Tailwind"],
     githubUrl: "https://github.com/charinda04/charinda04.github.io",
-    liveUrl: "https://charinda04.github.io/",
+    liveUrl: "https://charinda.com",
     status: "Live & Updating",
+    // stars: 1,
   },
   // {
   //   id: 2,
@@ -580,6 +582,77 @@ export const PROJECT_STATUS_VARIANTS: ProjectStatusVariants = {
   "Research Phase": "outline",
   "Coming Soon": "outline",
 } as const;
+
+export const PROFESSIONAL_TIMELINE: ProfessionalTimelineItem[] = [
+  {
+    id: 1,
+    period: "2018 - 2019",
+    title: "Bachelor's Degree",
+    subtitle: "Management and Information Technology",
+    description:
+      "Graduated with a bachelor's degree in Management and Information Technology from University of Kelaniya. Built foundational knowledge in computer science, business management, and software engineering principles.",
+    icon: "🎓",
+  },
+  {
+    id: 2,
+    period: "2018 - 2019",
+    title: "Software Engineer Intern",
+    subtitle: "Calcey Technologies",
+    description:
+      "Started my professional journey as a software engineering intern. Got hands on experience with React Native development and learned software engineering best practices while contributing to real client projects.",
+    icon: "💼",
+  },
+  {
+    id: 3,
+    period: "2019 - 2022",
+    title: "Software Engineer",
+    subtitle: "Full time at Calcey Technologies",
+    description:
+      "Worked as a React Native developer on multiple client projects including healthcare apps, tourism platforms, and sports applications. Gained expertise in mobile app development, state management, and real time data handling.",
+    icon: "📱",
+    achievements: [
+      "Built 5+ mobile applications from scratch",
+      "Implemented offline functionality using local databases",
+      "Created custom charting components using D3.js",
+    ],
+  },
+  {
+    id: 4,
+    period: "2022 - 2023",
+    title: "Senior Software Engineer",
+    subtitle: "Team Leadership & Architecture",
+    description:
+      "Promoted to senior role with increased responsibilities in technical leadership. Led development teams, made architectural decisions, and mentored junior developers while continuing hands on development work.",
+    icon: "🚀",
+  },
+  {
+    id: 5,
+    period: "2023",
+    title: "Associate Technical Lead",
+    subtitle: "Mobile Development Leadership",
+    description:
+      "Stepped into technical leadership role managing mobile development projects. Responsible for team coordination, code reviews, release management, and ensuring high quality deliverables across multiple client projects.",
+    icon: "⭐",
+  },
+  {
+    id: 6,
+    period: "2023 - 2025",
+    title: "Senior Frontend Developer",
+    subtitle: "RozieAI",
+    description:
+      "Joined RozieAI as Senior Frontend Developer working on AI powered products. Created user interfaces for video galleries, insights dashboards, and experience studio app using React, Angular, and modern frontend technologies.",
+    icon: "🤖",
+  },
+  {
+    id: 7,
+    period: "2025 - Present",
+    title: "Associate Technical Lead",
+    subtitle: "Avantrio",
+    description:
+      "Currently working at Avantrio, focusing on building innovative software solutions. Continuing to expand expertise in full-stack development while mentoring team members and contributing to architectural decisions.",
+    icon: "💡",
+  },
+];
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {

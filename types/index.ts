@@ -17,6 +17,17 @@ export interface TimelineItem {
   description: string;
 }
 
+export interface ProfessionalTimelineItem {
+  id: number;
+  period: string;
+  title: string;
+  subtitle?: string;
+  description: string;
+  image?: string;
+  icon?: string;
+  achievements?: string[];
+}
+
 export interface Project {
   id?: number;
   name: string;
@@ -87,6 +98,7 @@ export interface PersonalProject {
   githubUrl: string;
   liveUrl: string | null;
   status: string;
+  stars?: number;
 }
 
 export type ProjectStatusVariant = "default" | "secondary" | "outline";

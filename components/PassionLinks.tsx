@@ -18,7 +18,7 @@ export function PassionLinks() {
           <CardContent className="pt-6 space-y-4">
             <div className="text-center">
               <div className="text-theme-2xl mb-2">📚</div>
-              <h3 className="text-theme-lg font-medium text-theme-text">Literary Explorer</h3>
+              <h3 className="text-theme-lg font-medium text-theme-text">Book Wanderer</h3>
             </div>
             <p className="text-theme-sm text-theme-text-secondary leading-relaxed text-center">
               Books are my gateway to countless worlds. From technical deep-dives to captivating fiction, each page
@@ -43,7 +43,7 @@ export function PassionLinks() {
           <CardContent className="pt-6 space-y-4">
             <div className="text-center">
               <div className="text-theme-2xl mb-2">🎬</div>
-              <h3 className="text-theme-lg font-medium text-theme-text">Cinema Enthusiast</h3>
+              <h3 className="text-theme-lg font-medium text-theme-text">Movie buff</h3>
             </div>
             <p className="text-theme-sm text-theme-text-secondary leading-relaxed text-center">
               Cinema is storytelling at its finest. From thought-provoking dramas to mind-bending sci-fi, every film
@@ -55,7 +55,9 @@ export function PassionLinks() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-theme-xs text-theme-accent hover:text-theme-accent-hover transition-colors font-medium"
-                onClick={() => trackExternalLink("https://www.imdb.com/user/ur68134226/?ref_=ext_shr_lnk", "IMDB Profile")}
+                onClick={() =>
+                  trackExternalLink("https://www.imdb.com/user/ur68134226/?ref_=ext_shr_lnk", "IMDB Profile")
+                }
               >
                 Explore My Watchlist →
               </a>
@@ -68,7 +70,7 @@ export function PassionLinks() {
           <CardContent className="pt-6 space-y-4">
             <div className="text-center">
               <div className="text-theme-2xl mb-2">🎵</div>
-              <h3 className="text-theme-lg font-medium text-theme-text">Sonic Voyager</h3>
+              <h3 className="text-theme-lg font-medium text-theme-text">Music enthusiast</h3>
             </div>
             <p className="text-theme-sm text-theme-text-secondary leading-relaxed text-center">
               Music is the soundtrack to life's moments. Whether coding to ambient beats or discovering new artists,
@@ -80,7 +82,12 @@ export function PassionLinks() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-theme-xs text-theme-accent hover:text-theme-accent-hover transition-colors font-medium"
-                onClick={() => trackExternalLink("https://open.spotify.com/user/a3nh53nmndd7l8lmj8bycmfdw?si=75d1ec7a01e34083", "Spotify Profile")}
+                onClick={() =>
+                  trackExternalLink(
+                    "https://open.spotify.com/user/a3nh53nmndd7l8lmj8bycmfdw?si=75d1ec7a01e34083",
+                    "Spotify Profile"
+                  )
+                }
               >
                 Listen Along →
               </a>
