@@ -16,35 +16,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { SEO_CONFIG, STRUCTURED_DATA } from "@/lib/seo";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://charinda04.github.io"),
-  title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
-  description:
-    "Charinda Dissanayake is a Senior Software Engineer and Frontend Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications with 8+ years of experience.",
+  metadataBase: new URL(SEO_CONFIG.siteUrl),
+  title: SEO_CONFIG.main.title,
+  description: SEO_CONFIG.main.description,
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
-  keywords: [
-    "Charinda",
-    "Charinda Dissanayake",
-    "React",
-    "React Native",
-    "Next.js",
-    "NextJS",
-    "Frontend Engineer",
-    "Fullstack Engineer",
-    "Senior Software Engineer",
-    "JavaScript",
-    "TypeScript",
-    "Mobile Development",
-    "Web Development",
-    "Software Engineer Sri Lanka",
-  ],
-  authors: [{ name: "Charinda Dissanayake" }],
-  creator: "Charinda Dissanayake",
-  publisher: "Charinda Dissanayake",
+  keywords: SEO_CONFIG.main.keywords,
+  authors: [{ name: SEO_CONFIG.author }],
+  creator: SEO_CONFIG.author, 
+  publisher: SEO_CONFIG.author,
   robots: {
     index: true,
     follow: true,
@@ -59,32 +45,31 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://charinda04.github.io",
-    title: "Charinda Dissanayake - Senior Software Engineer | React, Next.js & React Native Expert",
-    description:
-      "Senior Software Engineer specializing in React, Next.js, React Native, and full-stack development. Expert in mobile and web applications.",
-    siteName: "Charinda Dissanayake Portfolio",
+    url: SEO_CONFIG.siteUrl,
+    title: SEO_CONFIG.main.title,
+    description: SEO_CONFIG.main.description,
+    siteName: SEO_CONFIG.siteName,
     images: [
       {
-        url: "/assets/images/profile.jpg",
+        url: SEO_CONFIG.profileImage,
         width: 1200,
         height: 630,
-        alt: "Charinda Dissanayake - Senior Software Engineer",
+        alt: "Charinda Dissanayake - Senior Software Engineer & React Expert",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Charinda Dissanayake - Senior Software Engineer",
-    description: "React, Next.js & React Native Expert | Frontend & Fullstack Engineer",
+    title: "Charinda - Senior Software Engineer & React Expert",
+    description: "8+ years building exceptional React, Next.js & React Native applications | Senior Software Engineer",
     creator: "@Charinda_D",
-    images: ["/assets/images/profile.jpg"],
+    images: [SEO_CONFIG.profileImage],
   },
   verification: {
-    google: "your-google-verification-code", // You'll need to add this later
+    google: "your-google-verification-code",
   },
   alternates: {
-    canonical: "https://charinda04.github.io",
+    canonical: SEO_CONFIG.siteUrl,
   },
 };
 
@@ -93,47 +78,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Charinda Dissanayake",
-    jobTitle: "Senior Software Engineer",
-    description:
-      "Senior Software Engineer specializing in React, React Native, and full-stack development with 8+ years of experience.",
-    url: "https://charinda04.github.io",
-    image: "https://charinda04.github.io/assets/images/profile.jpg",
-    sameAs: [
-      "https://github.com/charinda04",
-      "https://www.linkedin.com/in/charinda-dissanayake/",
-      "https://x.com/Charinda_D",
-      "https://www.instagram.com/charinda_jayath/",
-    ],
-    knowsAbout: [
-      "React",
-      "Next.js",
-      "React Native",
-      "JavaScript",
-      "TypeScript",
-      "Frontend Development",
-      "Full Stack Development",
-      "Mobile Development",
-      "Web Development",
-      "Software Engineering",
-    ],
-    hasOccupation: {
-      "@type": "Occupation",
-      name: "Senior Software Engineer",
-      occupationLocation: {
-        "@type": "Place",
-        name: "Colombo, Sri Lanka",
-      },
-    },
-    alumniOf: {
-      "@type": "CollegeOrUniversity",
-      name: "University of Colombo",
-    },
-  };
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -161,7 +105,7 @@ export default function RootLayout({
           </>
         )}
 
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STRUCTURED_DATA) }} />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-theme-bg text-theme-text`} style={{backgroundColor: 'var(--theme-bg)', color: 'var(--theme-text)'}}>
         <ThemeProvider attribute="data-theme" defaultTheme="dark" themes={["light", "dark"]} enableSystem={false}>

@@ -5,16 +5,20 @@ import { Footer } from "../../components/Footer";
 import { PERSONAL_INFO } from "@/constants";
 import { PassionLinks } from "@/components/PassionLinks";
 
+import { SEO_CONFIG } from "@/lib/seo";
+
 export const metadata: Metadata = {
-  title: "About Charinda Dissanayake | Senior Software Engineer Biography",
-  description:
-    "Learn about Charinda Dissanayake, a passionate Senior Software Engineer from Sri Lanka specializing in React, React Native, and full-stack development. Personal journey and professional values.",
-  keywords:
-    "Charinda Dissanayake bio, software engineer Sri Lanka, React developer about, personal story, career journey",
+  title: SEO_CONFIG.bio.title,
+  description: SEO_CONFIG.bio.description,
+  keywords: SEO_CONFIG.bio.keywords,
   openGraph: {
-    title: "About Charinda Dissanayake - Software Engineer",
-    description: "Personal journey and professional story of a Senior Software Engineer",
-    url: "https://charinda04.github.io/bio",
+    title: SEO_CONFIG.bio.title,
+    description: SEO_CONFIG.bio.description,
+    url: `${SEO_CONFIG.siteUrl}/bio`,
+    type: "website",
+  },
+  alternates: {
+    canonical: `${SEO_CONFIG.siteUrl}/bio`,
   },
 };
 

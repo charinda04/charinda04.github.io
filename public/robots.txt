@@ -1,17 +1,18 @@
 User-agent: *
 Allow: /
 
-# Main sitemap
-Sitemap: https://charinda04.github.io/sitemap.xml
-
-# Key pages for indexing
-Allow: /
+# Priority pages for Charinda searches
 Allow: /work
+Allow: /projects  
 Allow: /bio
+Allow: /blogs
 
 # Allow static assets for better rendering
 Allow: /assets/
-Allow: /favicon.ico
+Allow: /favicon.svg
+
+# Updated sitemap location
+Sitemap: https://charinda.com/sitemap.xml
 
 # Disallow build files but allow static content
 Disallow: /_next/webpack-hmr
