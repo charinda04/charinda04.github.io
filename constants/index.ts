@@ -385,8 +385,9 @@ export const WORK_PROJECTS: WorkProject[] = [
     period: "Jan 2021 - Jun 2023",
     image: "/assets/images/ai_scout_player.webp",
     achievements: [
-      // "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
-      // "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features.",
+      "Built comprehensive player profile system with video and statistics integration",
+      "Implemented offline-first architecture for seamless user experience",
+      "Led mobile app development team and mentored junior developers",
     ],
     technologies: ["React Native"],
     webUrl: "https://www.ai.io/",
@@ -401,8 +402,9 @@ export const WORK_PROJECTS: WorkProject[] = [
     period: "Jan 2021 - Jun 2023",
     image: "/assets/images/ai_scout_scout.webp",
     achievements: [
-      // "Led an initiative to decouple analysis functionality, resulting in improved system operations and enhanced code maintainability.",
-      // "Rapidly integrated into the team, quickly mastering a complex domain and contributing to the development of key system features.",
+      "Developed scout evaluation tools with real-time data synchronization",
+      "Implemented advanced filtering and search capabilities for player discovery",
+      "Optimized app performance for large datasets and complex UI interactions",
     ],
     technologies: ["React Native"],
     webUrl: "https://www.ai.io/",

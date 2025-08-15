@@ -1,8 +1,6 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { GitHubIcon } from "@/assets/icons";
-import { PROJECT_STATUS_VARIANTS, PersonalProject } from "@/constants";
+import { PersonalProject } from "@/constants";
 import { trackButtonClick } from "@/lib/analytics";
 import Image from "next/image";
 import { memo, useMemo } from "react";
@@ -13,10 +11,7 @@ interface PersonalProjectCardProps {
 }
 
 export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ project, index }) => {
-  const animationClass = useMemo(() => 
-    `animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`,
-    [index]
-  );
+  const animationClass = useMemo(() => `animate-fade-in-up animate-stagger-${Math.min(index + 1, 6)}`, [index]);
 
   return (
     <div
@@ -39,17 +34,12 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ p
           {/* Title with Arrow */}
           <div className="flex items-center gap-2 mb-2">
             <h3 className="text-lg font-semibold text-theme-text">{project.title}</h3>
-            <svg 
-              className="w-4 h-4 text-theme-text-secondary" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+            <svg className="w-4 h-4 text-theme-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
           </div>
@@ -91,7 +81,7 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ p
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="bg-theme-accent/20 text-theme-accent border border-theme-accent/30 px-2.5 py-1 rounded-full text-xs font-medium"
+                className="bg-theme-accent/20 text-theme-accent  px-2.5 py-1 rounded-full text-xs font-medium"
               >
                 {tech}
               </span>
@@ -127,10 +117,10 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ p
             size="sm"
             className="p-0 h-auto text-theme-accent hover:text-theme-accent-secondary hover:bg-transparent"
           >
-            <a 
-              href={project.liveUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-sm"
               onClick={() => trackButtonClick(`Project Demo - ${project.title}`, "/projects")}
             >
@@ -143,4 +133,4 @@ export const PersonalProjectCard: React.FC<PersonalProjectCardProps> = memo(({ p
   );
 });
 
-PersonalProjectCard.displayName = 'PersonalProjectCard';
+PersonalProjectCard.displayName = "PersonalProjectCard";

@@ -2,7 +2,7 @@
 import type { ComponentType } from "react";
 
 // Lazy load icons to improve bundle splitting
-const iconComponents: Record<string, () => Promise<{ default: ComponentType<any> }>> = {
+const iconComponents: Record<string, () => Promise<{ [key: string]: ComponentType<any> }>> = {
   GitHubIcon: () => import("@/assets/icons/GitHubIcon"),
   LinkedInIcon: () => import("@/assets/icons/LinkedInIcon"), 
   TwitterIcon: () => import("@/assets/icons/TwitterIcon"),
@@ -34,7 +34,11 @@ export async function getIcon(iconName: string): Promise<ComponentType<any> | nu
 
   try {
     const module = await iconLoader();
-    const IconComponent = module.default;
+    const IconComponent = module[iconName];
+    if (!IconComponent) {
+      console.warn(`Icon "${iconName}" not found in module`);
+      return null;
+    }
     iconCache.set(iconName, IconComponent);
     return IconComponent;
   } catch (error) {

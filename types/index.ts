@@ -75,7 +75,7 @@ export interface WorkProject {
   role: string;
   period: string;
   image: string;
-  achievements?: string[];
+  achievements: string[];
   technologies: string[];
   webUrl?: string;
   androidUrl?: string;

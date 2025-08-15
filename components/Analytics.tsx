@@ -20,6 +20,7 @@ export const Analytics: React.FC = () => {
 
       return () => clearTimeout(timeoutId);
     }
+    return undefined;
   }, [pathname]);
 
   return null; // This component doesn't render anything

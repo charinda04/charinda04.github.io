@@ -22,6 +22,7 @@ export const AccentColorPicker: React.FC<AccentColorPickerProps> = ({ onColorCha
       document.addEventListener("mousedown", handleClickOutside);
       return () => document.removeEventListener("mousedown", handleClickOutside);
     }
+    return undefined;
   }, [isOpen, handleClickOutside]);
 
   // Handle color selection
